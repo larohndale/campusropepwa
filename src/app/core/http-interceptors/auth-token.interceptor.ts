@@ -1,13 +1,13 @@
-import { Injectable, Inject } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   HttpEvent,
   HttpInterceptor,
   HttpHandler,
   HttpRequest,
   HttpHeaders
-} from "@angular/common/http";
-import { Observable } from "rxjs";
-import { AuthService } from "../auth/auth.service";
+} from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class AuthTokenInterceptor implements HttpInterceptor {
@@ -26,9 +26,9 @@ export class AuthTokenInterceptor implements HttpInterceptor {
       headerSettings[key] = request.headers.getAll(key);
     }
     if (token) {
-      headerSettings.Authorization = "Bearer " + token;
+      headerSettings.Authorization = 'Bearer ' + token;
     }
-    headerSettings["Content-Type"] = "application/json";
+    headerSettings['Content-Type'] = 'application/json';
     const newHeader = new HttpHeaders(headerSettings);
 
     /* changedRequest = request.clone({
