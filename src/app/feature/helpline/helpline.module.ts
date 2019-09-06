@@ -8,7 +8,6 @@ import { HelplineListComponent } from './components/helpline-list/helpline-list.
   declarations: [HelplineListComponent],
   imports: [
     CommonModule
-  ],
-  entryComponents: [HelplineListComponent]
+  ]
 })
 export class HelplineModule { }

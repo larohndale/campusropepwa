@@ -1,1 +1,14 @@
-<p>top-bar works!</p>
+<mat-toolbar color="primary">
+  <img src="assets/app-back-icon.png" alt="go-back" (click)="goBack()" />
+  <h3 class="app-title" [routerLink]="'/'">CampusRope</h3>
+  <button
+    [style.visibility]="(isAuthenticated$ | async) ? 'visible' : 'hidden'"
+    mat-icon-button
+    class="menu-button"
+    (click)="toggleSidenav()"
+  >
+    <mat-icon aria-hidden="false" aria-label="drawer menu icon"
+      >reorder</mat-icon
+    >
+  </button>
+</mat-toolbar>
