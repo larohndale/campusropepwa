@@ -45,19 +45,19 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   imports: [
-  // angular
+    // angular
     CommonModule,
     HttpClientModule,
-    SharedModule,
+    SharedModule
 
     // 3rd party
-    TranslateModule.forRoot({
+    /* TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }) */
   ],
   declarations: [],
   providers: [

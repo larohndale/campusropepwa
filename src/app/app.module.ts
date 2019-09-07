@@ -6,16 +6,16 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ShellModule } from './shell/shell.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    ShellModule,
     SharedModule,
     AppRoutingModule,
+    CoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     }),

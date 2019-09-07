@@ -15,7 +15,7 @@ export class AuthService {
   public loggedUser$ = this.loggedUser.asObservable();
 
   constructor(
-    private readonly httpClient: HttpClient,
+    private httpClient: HttpClient,
     private router: Router
   ) {}
 
