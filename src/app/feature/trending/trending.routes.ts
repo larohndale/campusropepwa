@@ -1,0 +1,34 @@
+import { Routes } from '@angular/router';
+
+const trendingRoutes: Routes = [
+  {
+    path: '',
+    loadChildren: () =>
+      import('./pages/user-trending/user-trending.module').then(
+        m => m.UserTrendingModule
+      )
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./pages/admin-trending/admin-trending.module').then(
+        m => m.AdminTrendingModule
+      )
+  },
+  {
+    path: 'add',
+    loadChildren: () =>
+      import('./pages/trending-add/trending-add.module').then(
+        m => m.TrendingAddModule
+      )
+  },
+  {
+    path: 'edit/:id',
+    loadChildren: () =>
+      import('./pages/trending-edit/trending-edit.module').then(
+        m => m.TrendingEditModule
+      )
+  }
+];
+
+export default trendingRoutes;

@@ -12,14 +12,14 @@ export class ShellComponent implements OnInit {
   isMobile$: Observable<boolean>;
   showSidenav$: Observable<boolean>;
   loggedUser$: Observable<any>;
-  routes: string[] = ['', '/helpline', '/trending-news'];
+  routes: string[] = ['', '/helpline', '/trending'];
   currentRoutePosition: string;
   routeChangeCounter = 0;
 
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
-    this.isMobile$ = of(false);
+    this.isMobile$ = of(true);
     this.showSidenav$ = of(false);
     this.loggedUser$ = this.authService.loggedUser$;
   }
