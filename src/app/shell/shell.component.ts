@@ -19,7 +19,7 @@ export class ShellComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
-    this.isMobile$ = of(true);
+    this.isMobile$ = of(false);
     this.showSidenav$ = of(false);
     this.loggedUser$ = this.authService.loggedUser$;
   }

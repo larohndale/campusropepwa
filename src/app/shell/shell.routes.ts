@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { ShellComponent } from './shell.component';
 
-export const shellRoutes: Routes = [
+export const shellChildRoutes: Routes = [
   {
     path: '',
     loadChildren: () =>
@@ -16,22 +16,15 @@ export const shellRoutes: Routes = [
     path: 'trending',
     loadChildren: () =>
       import('../feature/trending/trending.module').then(m => m.TrendingModule)
-  },
-  {
-    path: 'admin-task',
-    loadChildren: () =>
-      import('../feature/admin-task/admin-task.module').then(
-        m => m.AdminTaskModule
-      )
   }
 ];
 
-const routes: Routes = [
+export const shellRoutes: Routes = [
   {
     path: '',
     component: ShellComponent,
-    children: shellRoutes
+    children: shellChildRoutes
   }
 ];
 
-export default routes;
+export default shellRoutes;

@@ -12,6 +12,13 @@ const routes: Routes = [
       import('./feature/login/login.module').then(m => m.LoginModule)
   },
   {
+    path: 'admin-task',
+    loadChildren: () =>
+      import('./feature/admin-task/admin-task.module').then(
+        m => m.AdminTaskModule
+      )
+  },
+  {
     path: '**',
     redirectTo: ''
   }
