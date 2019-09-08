@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import routes from './shell.routes';
+import { RouterModule } from '@angular/router';
+import { shellRoutes } from './shell.routes';
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(shellRoutes)],
   exports: [RouterModule]
 })
-export class ShellRoutingModule { }
+export class ShellRoutingModule {}

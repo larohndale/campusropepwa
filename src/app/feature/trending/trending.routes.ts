@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-const trendingRoutes: Routes = [
+export const trendingRoutes: Routes = [
   {
     path: '',
     loadChildren: () =>

@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 
-const helplineRoutes: Routes = [
+export const helplineRoutes: Routes = [
   {
     path: '',
     loadChildren: () =>

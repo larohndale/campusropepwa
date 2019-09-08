@@ -1,10 +1,9 @@
-
 import { NgModule } from '@angular/core';
-import {  RouterModule } from '@angular/router';
-import routes from './helpline.routes';
+import { RouterModule } from '@angular/router';
+import { helplineRoutes } from './helpline.routes';
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(helplineRoutes)],
   exports: [RouterModule]
 })
-export class HelplineRoutingModule { }
+export class HelplineRoutingModule {}

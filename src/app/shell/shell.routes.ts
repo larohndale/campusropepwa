@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { ShellComponent } from './shell.component';
 
-const shellRoutes: Routes = [
+export const shellRoutes: Routes = [
   {
     path: '',
     loadChildren: () =>
