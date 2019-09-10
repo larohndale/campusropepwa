@@ -1,1 +1,53 @@
-<p>login works!</p>
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <mat-card-content>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit(loginForm.value)"
+      novalidate
+    >
+      <p>
+        <mat-form-field>
+          <mat-icon matSuffix>person_outline</mat-icon>
+          <input
+            type="text"
+            matInput
+            placeholder="Email"
+            formControlName="email"
+          />
+          <mat-error *ngIf="hasError('email', 'required')"
+            >Email is required</mat-error
+          >
+          <mat-error *ngIf="hasError('email', 'email')"
+            >Please provide valid email</mat-error
+          >
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <mat-icon matSuffix>lock_outline</mat-icon>
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            formControlName="password"
+          />
+          <mat-error *ngIf="hasError('password', 'required')"
+            >Password is required</mat-error
+          >
+          <mat-error *ngIf="hasError('password', 'minlength')"
+            >Password should contain atleast 4 character</mat-error
+          >
+          <mat-error *ngIf="hasError('password', 'maxlength')"
+            >You have more than 15 characters</mat-error
+          >
+        </mat-form-field>
+      </p>
+
+      <div class="button">
+        <button type="submit" mat-button>Login</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
