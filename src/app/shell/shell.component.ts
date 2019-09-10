@@ -11,6 +11,7 @@ import { LayoutService } from '../core/services/layout.service';
 })
 export class ShellComponent implements OnInit {
   isMobile$: Observable<boolean>;
+  isDesktop$: Observable<boolean>;
   showDrawer$: Observable<boolean>;
   loggedUser$: Observable<any>;
   routes: string[] = ['', '/helpline', '/trending'];
@@ -25,14 +26,10 @@ export class ShellComponent implements OnInit {
 
   ngOnInit() {
     this.isMobile$ = this.layoutService.isMobile$;
+    this.isDesktop$ = this.layoutService.isDesktop$;
     this.showDrawer$ = this.layoutService.showDrawer$;
     this.loggedUser$ = this.authService.loggedUser$;
   }
-
-  get isDesktop$() {
-    return of(true);
-  }
-
   navigateToDirection(direction: number) {
     this.routeChangeCounter = this.routeChangeCounter + direction;
     if (direction === -1 && this.routeChangeCounter < 0) {

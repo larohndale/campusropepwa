@@ -18,9 +18,8 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit() {}
 
-  toggleSidenav() {
-    const layoutStateSnapshot = this.layoutService.getStateSnapshot();
-    this.layoutService.setDrawerShown(!layoutStateSnapshot.showDrawer);
+  toggleDrawer() {
+    this.layoutService.toggleDrawer();
   }
 
   goBack() {

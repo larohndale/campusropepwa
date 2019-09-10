@@ -49,6 +49,10 @@ export class LayoutService {
     this.updateState({ ..._state, showDrawer: value });
   }
 
+  public toggleDrawer() {
+    this.setDrawerShown(!_state.showDrawer);
+  }
+
   private updateState(state: LayoutState) {
     this.store.next((_state = state));
   }
