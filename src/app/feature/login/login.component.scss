@@ -1,7 +1,10 @@
+@import '../../variables';
+
 :host {
   display: flex;
   justify-content: center;
-  margin: 100px 0;
+  align-items: center;
+  height: calc(100vh - #{$toolbar-height});
 }
 
 .mat-form-field {

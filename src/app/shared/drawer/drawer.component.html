@@ -1,1 +1,21 @@
-<p>drawer works!</p>
+<mat-nav-list>
+  <mat-expansion-panel
+    (opened)="adminTaskExpanded = true"
+    (closed)="adminTaskExpanded = false"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Admin Tasks
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item
+        *ngFor="let task of assignedTasks | async"
+        (click)="onTaskItemClick(task)"
+      >
+        {{ task.taskName }}
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+  <mat-list-item (click)="onLogout()"> logout </mat-list-item>
+</mat-nav-list>
