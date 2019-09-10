@@ -20,8 +20,13 @@ export class BaseUrlInterceptor implements HttpInterceptor {
       const finalUrl = `${this.baseUrl}/${request.url.substring(4)}`;
       const apiReq = request.clone({ url: finalUrl });
       return next.handle(apiReq);
-    } else {
-      return next.handle(request.clone());
     }
+    if (request.url.includes('unauth')) {
+      // the word unauth is removed from the request url to point to cms
+      const finalUrl = `${this.baseUrl}/${request.url.substring(7)}`;
+      const apiReq = request.clone({ url: finalUrl });
+      return next.handle(apiReq);
+    }
+    return next.handle(request.clone());
   }
 }

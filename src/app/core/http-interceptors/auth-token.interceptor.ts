@@ -31,8 +31,11 @@ export class AuthTokenInterceptor implements HttpInterceptor {
     headerSettings['Content-Type'] = 'application/json';
     const newHeader = new HttpHeaders(headerSettings);
 
-    /* changedRequest = request.clone({
-        headers: newHeader}); */
+    if (request.url.includes('api')) {
+      changedRequest = request.clone({
+        headers: newHeader
+      });
+    }
 
     changedRequest = request.clone({}); // todo this should be changed
     return next.handle(changedRequest);
