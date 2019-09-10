@@ -51,6 +51,10 @@ export class LocalStorageService {
     localStorage.removeItem(`${APP_PREFIX}${key}`);
   }
 
+  clear() {
+    localStorage.clear();
+  }
+
   /** Tests that localStorage exists, can be written to, and read from. */
   testLocalStorage() {
     const testValue = 'testValue';
