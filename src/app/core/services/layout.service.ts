@@ -9,6 +9,7 @@ export interface LayoutState {
   showDrawer: boolean;
 }
 
+// tslint:disable-next-line: variable-name
 let _state: LayoutState = {
   isMobile: false,
   isDesktop: true,

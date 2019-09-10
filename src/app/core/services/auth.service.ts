@@ -15,6 +15,7 @@ export interface AuthState {
   loading: boolean;
 }
 
+// tslint:disable-next-line: variable-name
 let _state: AuthState = {
   loggedUser: null,
   isAuthenticated: false,

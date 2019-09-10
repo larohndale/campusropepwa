@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
-  location: Location;
-
-  constructor(location: Location) {
-    this.location = location;
-  }
+  constructor(private location: Location, private router: Router) {}
 
   goBack() {
     this.location.back();
@@ -19,4 +16,7 @@ export class LocationService {
     this.location.go(path);
   }
 
+  navigate(path: string[]) {
+    this.router.navigate(path);
+  }
 }
