@@ -41,6 +41,14 @@ export class LayoutService {
     });
   }
 
+  public getStateSnapshot(): LayoutState {
+    return { ..._state };
+  }
+
+  public setDrawerShown(value: boolean) {
+    this.updateState({ ..._state, showDrawer: value });
+  }
+
   private updateState(state: LayoutState) {
     this.store.next((_state = state));
   }

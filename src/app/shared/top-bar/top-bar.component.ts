@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../../core/services/location.service';
 import { Observable, of } from 'rxjs';
+import { LayoutService } from 'src/app/core/services/layout.service';
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
@@ -8,13 +9,19 @@ import { Observable, of } from 'rxjs';
 })
 export class TopBarComponent implements OnInit {
   isAuthenticated$: Observable<boolean>;
-  constructor(private locationService: LocationService) {
+  constructor(
+    private locationService: LocationService,
+    private layoutService: LayoutService
+  ) {
     this.isAuthenticated$ = of(true);
   }
 
   ngOnInit() {}
 
-  toggleSidenav() {}
+  toggleSidenav() {
+    const layoutStateSnapshot = this.layoutService.getStateSnapshot();
+    this.layoutService.setDrawerShown(!layoutStateSnapshot.showDrawer);
+  }
 
   goBack() {
     this.locationService.goBack();

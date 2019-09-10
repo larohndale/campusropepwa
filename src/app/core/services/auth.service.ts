@@ -6,8 +6,11 @@ import { tap, distinctUntilChanged, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { LocalStorageService } from './local-storage.service';
 import { IUser } from '../models/user';
+import { LocationService } from './location.service';
 
 const USER_TOKEN = 'USER_TOKEN';
+
+const LOGIN_URL = 'unauth/auth/local';
 
 export interface AuthState {
   loggedUser: IUser | null;
@@ -42,7 +45,8 @@ export class AuthService {
   constructor(
     private httpClient: HttpClient,
     private router: Router,
-    private localStorageService: LocalStorageService
+    private localStorageService: LocalStorageService,
+    private locationService: LocationService
   ) {}
 
   getStateSnapshot(): AuthState {
@@ -76,14 +80,19 @@ export class AuthService {
 
   loginWithCredentials(credentials: { email: string; password: string }) {
     this.httpClient
-      .post('api/auth/local', {
+      .post(LOGIN_URL, {
         identifier: credentials.email,
         password: credentials.password
       })
       .pipe(
         tap((res: any) => {
           this.setToken(res.jwt);
-          this.router.navigate(['/']);
+          this.updateState({
+            ..._state,
+            isAuthenticated: true,
+            loggedUser: res.user
+          });
+          this.locationService.navigate(['/']);
         })
       )
       .subscribe();

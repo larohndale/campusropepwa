@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
+import { LayoutService } from '../core/services/layout.service';
 
 @Component({
   selector: 'app-shell',
@@ -10,17 +11,21 @@ import { AuthService } from '../core/services/auth.service';
 })
 export class ShellComponent implements OnInit {
   isMobile$: Observable<boolean>;
-  showSidenav$: Observable<boolean>;
+  showDrawer$: Observable<boolean>;
   loggedUser$: Observable<any>;
   routes: string[] = ['', '/helpline', '/trending'];
   currentRoutePosition: string;
   routeChangeCounter = 0;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private layoutService: LayoutService
+  ) {}
 
   ngOnInit() {
-    this.isMobile$ = of(false);
-    this.showSidenav$ = of(false);
+    this.isMobile$ = this.layoutService.isMobile$;
+    this.showDrawer$ = this.layoutService.showDrawer$;
     this.loggedUser$ = this.authService.loggedUser$;
   }
 
@@ -38,9 +43,5 @@ export class ShellComponent implements OnInit {
     }
     this.currentRoutePosition = this.routes[this.routeChangeCounter];
     this.router.navigate([this.currentRoutePosition]);
-  }
-
-  openedChangeSidenav(value: boolean) {
-    this.showSidenav$ = of(value);
   }
 }

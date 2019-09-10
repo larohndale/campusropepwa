@@ -1,47 +1,45 @@
 <mat-drawer-container>
-    <mat-drawer
-      class="mat-elevation-z4 app-sidenav"
-      fixedTopGap="56"
-      fixedInViewport="true"
-      [mode]="'over'"
-      [opened]="showSidenav$ | async"
-      [position]="'end'"
-      (openedStart)="openedChangeSidenav(true)"
-      (closedStart)="openedChangeSidenav(false)"
-    >
-      <app-drawer></app-drawer>
-    </mat-drawer>
-    <mat-drawer-content>
-      <div class="Container">
-        <button
-          mat-button
-          *ngIf="isDesktop$ | async"
-          class="left-btn"
-          (click)="navigateToDirection(-1)"
-        >
-          <img src="assets/left-icon.png" alt="" />
-        </button>
-        <div class="Left" *ngIf="isDesktop$ | async">
-          <app-left-pane></app-left-pane>
-        </div>
-        <div
-          class="Middle"
-          (swipeleft)="navigateToDirection(-1)"
-          (swiperight)="navigateToDirection(1)"
-        >
-          <router-outlet></router-outlet>
-        </div>
-        <div class="Right" *ngIf="isDesktop$ | async">
-          <app-right-pane></app-right-pane>
-        </div>
-        <button
-          mat-button
-          class="right-btn"
-          *ngIf="isDesktop$ | async"
-          (click)="navigateToDirection(1)"
-        >
-          <img src="assets/right-icon.png" alt="" />
-        </button>
+  <mat-drawer
+    class="mat-elevation-z4 app-sidenav"
+    fixedTopGap="56"
+    fixedInViewport="true"
+    [mode]="'over'"
+    [opened]="showDrawer$ | async"
+    [position]="'end'"
+  >
+    <app-drawer></app-drawer>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div class="Container">
+      <button
+        mat-button
+        *ngIf="isDesktop$ | async"
+        class="left-btn"
+        (click)="navigateToDirection(-1)"
+      >
+        <img src="assets/left-icon.png" alt="" />
+      </button>
+      <div class="Left" *ngIf="isDesktop$ | async">
+        <app-left-pane></app-left-pane>
       </div>
-    </mat-drawer-content>
-  </mat-drawer-container>
+      <div
+        class="Middle"
+        (swipeleft)="navigateToDirection(-1)"
+        (swiperight)="navigateToDirection(1)"
+      >
+        <router-outlet></router-outlet>
+      </div>
+      <div class="Right" *ngIf="isDesktop$ | async">
+        <app-right-pane></app-right-pane>
+      </div>
+      <button
+        mat-button
+        class="right-btn"
+        *ngIf="isDesktop$ | async"
+        (click)="navigateToDirection(1)"
+      >
+        <img src="assets/right-icon.png" alt="" />
+      </button>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
