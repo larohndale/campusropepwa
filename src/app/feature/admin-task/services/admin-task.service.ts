@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IAdminTask } from '../../../core/models/admin-task';
+import { IAdminTask, ITask } from '../../../core/models/admin-task';
 import { BehaviorSubject } from 'rxjs';
 import {
   map,
@@ -14,7 +14,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 const ADMIN_TASKS_URL = `unauth/admintasks`;
 export interface AdminTaskState {
   allAdminTasks: IAdminTask[];
-  adminTasksOfLoggedUser: IAdminTask;
+  adminTasksOfLoggedUser: ITask[];
   inViewAdminTask: IAdminTask;
 }
 
@@ -69,10 +69,12 @@ export class AdminTaskService {
 
   public findAdminTasksOfUser(userId) {
     return this.http.get(`${ADMIN_TASKS_URL}?user=${userId}`).pipe(
-      tap((adminTaskByUser: IAdminTask) => {
+      map(admintask => admintask[0].tasks),
+      map(tasks => tasks.filter(task => task.assigned)),
+      tap((tasks: ITask[]) => {
         this.updateState({
           ..._state,
-          adminTasksOfLoggedUser: adminTaskByUser[0] // api returns an array for every query
+          adminTasksOfLoggedUser: tasks // api returns an array for every query
         });
       })
     );

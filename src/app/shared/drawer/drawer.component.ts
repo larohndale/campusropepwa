@@ -23,10 +23,7 @@ export class DrawerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.assignedTasks = this.adminTaskService.adminTasksOfLoggedUser$.pipe(
-      filter(adminTask => !!adminTask),
-      map(adminTask => adminTask.tasks)
-    );
+    this.assignedTasks = this.adminTaskService.adminTasksOfLoggedUser$;
   }
 
   onLogout() {
