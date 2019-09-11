@@ -3,7 +3,7 @@ import { IUser } from './user';
 export interface IAdminTask {
   _id: string;
   tasks: ITask[];
-  user: string | IUser;
+  user: IUser;
 }
 
 export interface ITask {

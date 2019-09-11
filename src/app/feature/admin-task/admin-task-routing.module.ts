@@ -3,10 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'view'
-  },
-  {
     path: 'view',
     loadChildren: () =>
       import('./pages/admin-task-view/admin-task-view.module').then(

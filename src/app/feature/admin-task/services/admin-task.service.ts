@@ -36,6 +36,21 @@ export class AdminTaskService {
     map(state => state.allAdminTasks),
     distinctUntilChanged()
   );
+
+  allUserAdminTaskDataForTable$ = this.allAdminTasks$.pipe(
+    map(adminTasks =>
+      adminTasks.map(adminTask => {
+        return {
+          _id: adminTask._id,
+          email: adminTask.user.email,
+          tasks: adminTask.tasks
+            .filter(task => task.assigned)
+            .map(task => task.taskName)
+            .join(' , ')
+        };
+      })
+    )
+  );
   adminTasksOfLoggedUser$ = this.state$.pipe(
     map(state => state.adminTasksOfLoggedUser),
     distinctUntilChanged()
@@ -53,7 +68,7 @@ export class AdminTaskService {
     return { ..._state };
   }
 
-  public findAllAdmintasks() {
+  public findAllAdminTasks() {
     this.http
       .get(ADMIN_TASKS_URL)
       .pipe(

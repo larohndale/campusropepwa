@@ -3,13 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { AdminTaskViewRoutingModule } from './admin-task-view-routing.module';
 import { AdminTaskViewComponent } from './admin-task-view.component';
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [AdminTaskViewComponent],
-  imports: [
-    CommonModule,
-    AdminTaskViewRoutingModule
-  ]
+  imports: [CommonModule, SharedModule, AdminTaskViewRoutingModule]
 })
-export class AdminTaskViewModule { }
+export class AdminTaskViewModule {}
