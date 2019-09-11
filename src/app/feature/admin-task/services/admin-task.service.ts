@@ -51,10 +51,17 @@ export class AdminTaskService {
       })
     )
   );
+
   adminTasksOfLoggedUser$ = this.state$.pipe(
     map(state => state.adminTasksOfLoggedUser),
     distinctUntilChanged()
   );
+
+  inViewAdminTask$ = this.state$.pipe(
+    map(state => state.inViewAdminTask),
+    distinctUntilChanged()
+  );
+
   constructor(private http: HttpClient, private authService: AuthService) {
     this.authService.loggedUser$
       .pipe(
@@ -84,7 +91,7 @@ export class AdminTaskService {
 
   public findAdminTasksOfUser(userId) {
     return this.http.get(`${ADMIN_TASKS_URL}?user=${userId}`).pipe(
-      map(admintask => admintask[0].tasks),
+      map(adminTask => adminTask[0].tasks),
       map(tasks => tasks.filter(task => task.assigned)),
       tap((tasks: ITask[]) => {
         this.updateState({
@@ -107,6 +114,19 @@ export class AdminTaskService {
         })
       )
       .subscribe();
+  }
+
+  public clearInViewAdminTask() {
+    this.updateState({
+      ..._state,
+      inViewAdminTask: null
+    });
+  }
+
+  public updateAdminTask(id: string, tasks: ITask[]) {
+    return this.http.put(`${ADMIN_TASKS_URL}/${id}`, {
+      tasks
+    });
   }
 
   private updateState(state: AdminTaskState) {

@@ -1,1 +1,58 @@
-<p>admin-task-edit works!</p>
+<mat-card>
+  <mat-card-header>Update Admin Tasks for user</mat-card-header>
+  <mat-card-content>
+    <div *ngIf="inEditAdminTask$ | async as adminTask">
+      <form>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>User Name</mat-label>
+            <input
+              matInput
+              disabled
+              [value]="adminTask.user.username"
+              placeholder="username"
+            />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              disabled
+              placeholder="email"
+              [value]="adminTask.user.email"
+            />
+            <mat-icon matSuffix>email</mat-icon>
+          </mat-form-field>
+        </p>
+
+        <div>
+          <h3>Select Control System</h3>
+          <mat-checkbox
+            *ngFor="let task of adminTask.tasks"
+            name="task.taskName"
+            [checked]="task.assigned"
+            [(ngModel)]="task.assigned"
+            [ngModelOptions]="{ standalone: true }"
+          >
+            {{ task.taskName }}
+          </mat-checkbox>
+        </div>
+
+        <div>
+          <button (click)="goBack()" mat-flat-button>Cancel</button>
+          <button
+            mat-flat-button
+            color="primary"
+            (click)="onUpdateAdminTaskClick(adminTask)"
+          >
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
