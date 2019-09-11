@@ -1,41 +1,47 @@
-<div>
-  <table
-    mat-table
-    [dataSource]="allUserAdminTaskData$ | async"
-    class="mat-elevation-z8"
-    style="width: 98%;margin: 10px;position: relative;"
-  >
-    <!--- Note that these columns can be defined in any order.
+<mat-card>
+  <mat-card-header>
+    <mat-form-field>
+      <input
+        matInput
+        (keyup)="applyFilter($event.target.value)"
+        placeholder="Search email"
+      />
+    </mat-form-field>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="email">
-      <th mat-header-cell *matHeaderCellDef>Admins</th>
-      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
-    </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Admins</th>
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
 
-    <!-- Control System Column -->
-    <ng-container matColumnDef="tasks">
-      <th mat-header-cell *matHeaderCellDef>Assigned tasks</th>
-      <td mat-cell *matCellDef="let element">{{ element.tasks }}</td>
-    </ng-container>
+      <!-- Control System Column -->
+      <ng-container matColumnDef="tasks">
+        <th mat-header-cell *matHeaderCellDef>Assigned tasks</th>
+        <td mat-cell *matCellDef="let element">{{ element.tasks }}</td>
+      </ng-container>
 
-    <!-- Actions Column -->
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
-      <td mat-cell *matCellDef="let element; let i = index">
-        <mat-icon
-          [routerLink]="['/admin-task', 'edit', element._id]"
-          style="color:rgb(32, 25, 128);cursor: pointer;"
-          >edit</mat-icon
-        >
-      </td>
-    </ng-container>
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <mat-icon
+            [routerLink]="['/admin-task', 'edit', element._id]"
+            style="color:rgb(32, 25, 128);cursor: pointer;"
+            >edit</mat-icon
+          >
+        </td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr
-      mat-row
-      *matRowDef="let row; columns: displayedColumns; let i = index"
-    ></tr>
-  </table>
-</div>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns; let i = index"
+      ></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
