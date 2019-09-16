@@ -3,11 +3,13 @@ import { of, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
 import { LayoutService } from '../core/services/layout.service';
+import { routeAnimations } from '../core/core.module';
 
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.scss']
+  styleUrls: ['./shell.component.scss'],
+  animations: [routeAnimations]
 })
 export class ShellComponent implements OnInit {
   isMobile$: Observable<boolean>;

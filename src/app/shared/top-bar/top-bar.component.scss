@@ -9,6 +9,10 @@ mat-toolbar {
   align-items: center;
   height: $toolbar-height;
 
+  img {
+    cursor: pointer;
+  }
+
   mat-icon {
     font-size: 24px;
   }
