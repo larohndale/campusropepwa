@@ -1,1 +1,60 @@
-<p>helpline-list works!</p>
+<div class="helpline-wrapper ">
+  <mat-accordion
+    *ngFor="let helplineData of helplineList"
+    class="mat-accordion-head">
+    <mat-expansion-panel class="helpline-accordion-panel">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{helplineData.name}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <p class="expansion-panel-desc">
+        {{helplineData.description}}
+      </p>
+
+      <div class="expansion-panel-items">
+        <div class="helpline-content-btn">
+          <span>
+            Helpline Number
+          </span>
+          <h2>
+            {{helplineData.phoneNumber}}
+          </h2>
+        </div>
+        <div class="helpline-content-btn">
+          <span>
+            Website
+          </span>
+          <h5>
+            <a href="JavaScript:void(0);">
+              {{helplineData.websiteLink}}
+            </a>
+          </h5>
+        </div>
+
+        <div class="helpline-content-btn">
+          <span style="color: #FF0000">
+            File Online Complaints
+          </span>
+          <h5>
+            <a href="JavaScript:void(0);">
+              {{helplineData.fileOnlineComplaintLink}}
+            </a>
+          </h5>
+        </div>
+
+        <div class="social-icons">
+          <img
+            src="assets/facebook.png" />
+          <img
+            src="assets/twitter.png" />
+          <img
+            src="assets/instagram.png" />
+          <img
+            src="assets/whatsapp.png" />
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
