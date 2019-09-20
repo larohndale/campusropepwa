@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Helpline } from 'src/app/core/models/helpline';
 
 @Component({
   selector: 'app-helpline-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./helpline-list.component.scss']
 })
 export class HelplineListComponent implements OnInit {
+
+  @Input() helplineList: Helpline[] ;
 
   constructor() { }
 
