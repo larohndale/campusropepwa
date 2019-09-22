@@ -1,16 +1,18 @@
 <div class="helpline-wrapper ">
-  <mat-accordion
-    *ngFor="let helplineData of helplineList$ | async"
-    class="mat-accordion-head">
-    <mat-expansion-panel class="helpline-accordion-panel">
+  <pre>{{ (helplineList$ | async).length }}</pre>
+  <mat-accordion class="mat-accordion-head">
+    <mat-expansion-panel
+      *ngFor="let helplineData of helplineList$ | async"
+      class="helpline-accordion-panel"
+    >
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{helplineData.name}}
+          {{ helplineData.name }}
         </mat-panel-title>
       </mat-expansion-panel-header>
 
       <p class="expansion-panel-desc">
-        {{helplineData.description}}
+        {{ helplineData.description }}
       </p>
 
       <div class="expansion-panel-items">
@@ -19,7 +21,7 @@
             Helpline Number
           </span>
           <h2>
-            {{helplineData.phoneNumber}}
+            {{ helplineData.phoneNumber }}
           </h2>
         </div>
         <div class="helpline-content-btn">
@@ -28,7 +30,7 @@
           </span>
           <h5>
             <a href="JavaScript:void(0);">
-              {{helplineData.websiteLink}}
+              {{ helplineData.websiteLink }}
             </a>
           </h5>
         </div>
@@ -39,20 +41,16 @@
           </span>
           <h5>
             <a href="JavaScript:void(0);">
-              {{helplineData.fileOnlineComplaintLink}}
+              {{ helplineData.fileOnlineComplaintLink }}
             </a>
           </h5>
         </div>
 
         <div class="social-icons">
-          <img
-            src="assets/facebook.png" />
-          <img
-            src="assets/twitter.png" />
-          <img
-            src="assets/instagram.png" />
-          <img
-            src="assets/whatsapp.png" />
+          <img src="assets/facebook.png" />
+          <img src="assets/twitter.png" />
+          <img src="assets/instagram.png" />
+          <img src="assets/whatsapp.png" />
         </div>
       </div>
     </mat-expansion-panel>
