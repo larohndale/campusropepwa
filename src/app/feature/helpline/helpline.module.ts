@@ -1,16 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HelplineRoutingModule } from './helpline.routing.module';
-import { MaterialModule } from 'src/app/shared/material/material.module';
-import { UserHelplineModule } from './pages/user-helpline/user-helpline.module';
-
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HelplineRoutingModule,
-    UserHelplineModule
-  ]
+  imports: [CommonModule, HelplineRoutingModule, SharedModule]
 })
-export class HelplineModule { }
+export class HelplineModule {}

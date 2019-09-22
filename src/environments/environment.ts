@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   appName: 'Campusrope',
-  apiUrl: 'http://localhost:1337',
+  apiUrl: 'https://vast-sands-97057.herokuapp.com',
   envName: 'DEV',
   test: false,
   i18nPrefix: ''
