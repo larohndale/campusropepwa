@@ -4,7 +4,7 @@ import { tap, distinctUntilChanged, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
-const HELPLINE_URL = `unauth/helpline`;
+const HELPLINE_URL = `api/helplines`;
 export interface HelpLineState {
   helplines: IHelpline[];
   inViewHelpline: IHelpline;

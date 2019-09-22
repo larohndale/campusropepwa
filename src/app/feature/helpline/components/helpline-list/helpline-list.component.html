@@ -1,6 +1,6 @@
 <div class="helpline-wrapper ">
   <mat-accordion
-    *ngFor="let helplineData of helplineList"
+    *ngFor="let helplineData of helplineList$ | async"
     class="mat-accordion-head">
     <mat-expansion-panel class="helpline-accordion-panel">
       <mat-expansion-panel-header>

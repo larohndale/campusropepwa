@@ -4,15 +4,17 @@ import { CommonModule } from '@angular/common';
 import { UserHelplineRoutingModule } from './user-helpline-routing.module';
 import { UserHelplineComponent } from './user-helpline.component';
 import { HelplineListComponent } from '../../components/helpline-list/helpline-list.component';
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 
 @NgModule({
   declarations: [
-    HelplineListComponent,
-    UserHelplineComponent
+    UserHelplineComponent,
+    HelplineListComponent
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     UserHelplineRoutingModule
   ]
 })
