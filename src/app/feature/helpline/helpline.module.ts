@@ -1,15 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HelplineListComponent } from './components/helpline-list/helpline-list.component';
 import { HelplineRoutingModule } from './helpline.routing.module';
-
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [HelplineListComponent],
-  imports: [
-    CommonModule,
-    HelplineRoutingModule
-  ]
+  imports: [CommonModule, HelplineRoutingModule, SharedModule]
 })
-export class HelplineModule { }
+export class HelplineModule {}

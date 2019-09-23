@@ -1,5 +1,5 @@
 export interface IHelpline {
-  _id: string;
+  _id?: string;
   name: string;
   description: string;
   phoneNumber: string;

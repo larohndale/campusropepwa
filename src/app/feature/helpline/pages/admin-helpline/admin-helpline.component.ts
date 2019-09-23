@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HelplineService } from '../../services/helpline.service';
 
 @Component({
   selector: 'app-admin-helpline',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminHelplineComponent implements OnInit {
 
-  constructor() { }
+  helplines$ = this.helplineService.helplines$;
+
+  constructor(private helplineService: HelplineService) { }
 
   ngOnInit() {
+    this.helplineService.findHelplines();
   }
 
 }
