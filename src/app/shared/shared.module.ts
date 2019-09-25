@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DrawerComponent } from './drawer/drawer.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 import { UserSearchComponent } from './user-search/user-search.component';
+import { StateSelectionComponent } from './states/state-selection.component';
 import { MaterialModule } from './material/material.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,7 +14,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     TopBarComponent,
     DrawerComponent,
     YoutubePlayerComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    StateSelectionComponent
   ],
   imports: [
     CommonModule,
