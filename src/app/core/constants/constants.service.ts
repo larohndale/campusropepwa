@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import states from './states';
 
 @Injectable({
   providedIn: 'root'
@@ -6,5 +7,9 @@ import { Injectable } from '@angular/core';
 export class ConstantsService {
 
 constructor() { }
+
+public getStates() {
+  return states;
+}
 
 }

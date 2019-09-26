@@ -1,4 +1,5 @@
 export default [
+    {code: 'NA', name: 'National'},
     {code: 'AN', name: 'Andaman and Nicobar Islands'},
     {code: 'AP', name: 'Andhra Pradesh'},
     {code: 'AR', name: 'Arunachal Pradesh'},

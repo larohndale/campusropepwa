@@ -30,7 +30,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     FormsModule,
     ReactiveFormsModule,
     TopBarComponent,
-    DrawerComponent
+    DrawerComponent,
+    StateSelectionComponent
   ]
 })
 export class SharedModule {}
