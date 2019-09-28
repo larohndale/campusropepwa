@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/animations/route.animations';
 import { HelplineService } from '../../services/helpline.service';
 import { ConstantsService } from 'src/app/core/core.module';
-import { IStates } from 'src/app/core/models/states';
+import { IState } from 'src/app/core/models/state';
 
 @Component({
   selector: 'app-user-helpline',
@@ -11,7 +11,7 @@ import { IStates } from 'src/app/core/models/states';
 })
 export class UserHelplineComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  states: IStates[];
+  states: IState[];
   selectedState = 'National';
 
   helplines$ = this.helplineService.helplines$;
@@ -24,7 +24,7 @@ export class UserHelplineComponent implements OnInit {
     this.states = this.constantsService.getStates();
   }
 
-  onStateSelect(selectedState: string) {
+  onStateChange(selectedState: string) {
     console.log(selectedState);
   }
 }

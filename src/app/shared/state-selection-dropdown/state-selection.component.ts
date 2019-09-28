@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IStates } from 'src/app/core/models/states';
+import { IState } from 'src/app/core/models/state';
 
 @Component({
   selector: 'app-state-selection',
@@ -8,10 +8,10 @@ import { IStates } from 'src/app/core/models/states';
 })
 export class StateSelectionComponent implements OnInit {
 
-  @Input()states: IStates[];
+  @Input()states: IState[];
   @Input()selectedState: string;
   // tslint:disable-next-line: no-output-on-prefix
-  @Output()onStateSelect: EventEmitter<string> = new EventEmitter<string>();
+  @Output()onStateChange: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
@@ -19,7 +19,7 @@ export class StateSelectionComponent implements OnInit {
   }
 
   selectOption() {
-    this.onStateSelect.emit(this.selectedState);
+    this.onStateChange.emit(this.selectedState);
   }
 
 }

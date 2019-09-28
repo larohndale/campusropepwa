@@ -1,7 +1,7 @@
 <div [ngClass]="routeAnimationsElements">
   <app-state-selection
     [states]="states" [selectedState]="selectedState"
-    (onStateSelect)="onStateSelect($event)"></app-state-selection>
+    (onStateChange)="onStateChange($event)"></app-state-selection>
   <app-helpline-list
     [helplineList$]="helplines$"></app-helpline-list>
 </div>
