@@ -1,0 +1,15 @@
+<div class="left-side-pane">
+  <div class="search-state-wrapper">
+    <mat-icon class="search-icon">search</mat-icon>
+         <input type="text" class="search-state-box"
+          [(ngModel)]="filterState"
+          placeholder="Search State">
+  </div>
+  <div class="search-list-options">
+      <div (click)="onStateClick(state)"
+        [ngClass]="{'selected':state.selected}"
+        *ngFor="let state of states | filter : filterState">
+        {{state.name}}
+      </div>
+  </div>
+</div>

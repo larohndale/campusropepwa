@@ -7,13 +7,17 @@ import { MaterialModule } from './material/material.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { StateSelectionPaneComponent } from './state-selection-pane/state-selection-pane.component';
+import { FilterPipe } from './utils/filter.pipe';
 
 @NgModule({
   declarations: [
     TopBarComponent,
     DrawerComponent,
     YoutubePlayerComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    StateSelectionPaneComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     FormsModule,
     ReactiveFormsModule,
     TopBarComponent,
-    DrawerComponent
+    DrawerComponent,
+    StateSelectionPaneComponent,
+    FilterPipe
   ]
 })
 export class SharedModule {}
