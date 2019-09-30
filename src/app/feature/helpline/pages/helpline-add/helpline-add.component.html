@@ -1,1 +1,8 @@
-<p>helpline-add works!</p>
+<div class="helpline-container">
+    <h3 class="text-center">Add New Content</h3>
+    <app-helpline-add-edit
+      [formGroup]="formGroup"
+      [titleAlert]="titleAlert"
+      (onHeadlineAddEvent)="onHeadlineAdd()"
+    ></app-helpline-add-edit>
+</div>
