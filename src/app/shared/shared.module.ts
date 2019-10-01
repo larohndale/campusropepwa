@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DrawerComponent } from './drawer/drawer.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 import { UserSearchComponent } from './user-search/user-search.component';
+import { StateSelectionComponent } from './state-selection-dropdown/state-selection.component';
 import { MaterialModule } from './material/material.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +19,7 @@ import { FilterPipe } from './utils/filter.pipe';
     UserSearchComponent,
     StateSelectionPaneComponent,
     FilterPipe
-  ],
+    StateSelectionComponent  ],
   imports: [
     CommonModule,
     MaterialModule,
@@ -35,6 +36,7 @@ import { FilterPipe } from './utils/filter.pipe';
     DrawerComponent,
     StateSelectionPaneComponent,
     FilterPipe
+    StateSelectionComponent
   ]
 })
 export class SharedModule {}
