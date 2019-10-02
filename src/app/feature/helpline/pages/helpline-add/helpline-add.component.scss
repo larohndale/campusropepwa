@@ -7,3 +7,13 @@
 .helpline-container > * {
   width: 100%;
 }
+
+.example-button-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}

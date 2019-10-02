@@ -19,7 +19,8 @@ import { FilterPipe } from './utils/filter.pipe';
     UserSearchComponent,
     StateSelectionPaneComponent,
     FilterPipe,
-    StateSelectionComponent  ],
+    StateSelectionComponent
+    ],
   imports: [
     CommonModule,
     MaterialModule,

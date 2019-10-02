@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { IState } from 'src/app/core/models/state';
+import { ConstantsService } from 'src/app/core/core.module';
 
 @Component({
   selector: 'app-helpline-add-edit',
@@ -10,16 +12,18 @@ export class HelplineAddEditComponent implements OnInit {
 
   @Input() formGroup: FormGroup;
   @Input() titleAlert: string;
-    // tslint:disable-next-line: no-output-on-prefix
-  @Output() onHeadlineAddEvent: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  states: IState[];
+  selectedState = '';
+
+  constructor(private constantsService: ConstantsService) { }
 
   ngOnInit() {
+    this.states = this.constantsService.getStates();
   }
 
-  onHeadlineAdd() {
-    this.onHeadlineAddEvent.emit();
+  onStateChange(selectedState: string) {
+    this.formGroup.value.state = selectedState;
   }
 
 }

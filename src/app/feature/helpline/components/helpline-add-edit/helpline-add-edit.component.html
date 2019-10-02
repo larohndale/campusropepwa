@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" class="form" (ngSubmit)="onHeadlineAdd()">
+<form [formGroup]="formGroup" class="form">
     <mat-form-field>
       <input matInput placeholder="Headline" formControlName="headline">
         <mat-error *ngIf="!formGroup.controls['headline'].valid
@@ -16,14 +16,12 @@
     </mat-form-field>
 
     <!-- <mat-form-field>
-        <mat-select placeholder="State" formControlName="state">
-          <mat-option *ngFor="let state of states" [value]="state.name">
-            {{ state.name }}
-          </mat-option>
-        </mat-select>
+        <app-state-selection
+        [states]="states" [selectedState]="selectedState"
+        (onStateChange)="onStateChange($event)"></app-state-selection>
         <mat-error *ngIf="!formGroup.controls['state'].valid
-          && formGroup.controls['state'].touched">
-          {{ titleAlert }}
+            && formGroup.controls['state'].touched">
+            {{ titleAlert }}
         </mat-error>
     </mat-form-field> -->
 

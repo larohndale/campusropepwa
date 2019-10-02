@@ -3,6 +3,13 @@
     <app-helpline-add-edit
       [formGroup]="formGroup"
       [titleAlert]="titleAlert"
-      (onHeadlineAddEvent)="onHeadlineAdd()"
     ></app-helpline-add-edit>
+    <div class="example-button-row">
+        <button (click)="goBack()" mat-flat-button>Cancel</button>
+        <button mat-flat-button color="primary"
+          (click)="onHeadlineAdd()"
+          type="button">
+          Post
+        </button>
+    </div>
 </div>

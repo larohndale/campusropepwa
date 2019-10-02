@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { LocationService } from 'src/app/core/services/location.service';
 
 @Component({
   selector: 'app-helpline-add',
@@ -12,7 +13,8 @@ export class HelplineAddComponent implements OnInit {
   titleAlert = 'This field is required';
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private locationService: LocationService
   ) { }
 
   ngOnInit() {
@@ -36,5 +38,9 @@ export class HelplineAddComponent implements OnInit {
 
   onHeadlineAdd() {
     console.log(this.formGroup.value);
+  }
+
+  goBack(): any {
+    this.locationService.goBack();
   }
 }
