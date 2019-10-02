@@ -1,4 +1,5 @@
-<mat-select placeholder="State"
+<mat-select
+    placeholder="State"
     (selectionChange)="selectOption()"
     [(ngModel)]="selectedState">
     <mat-option *ngFor="let state of states" [value]="state.name">
