@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IHelpline } from 'src/app/core/models/helpline';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-helpline-list',
@@ -7,12 +8,9 @@ import { IHelpline } from 'src/app/core/models/helpline';
   styleUrls: ['./helpline-list.component.scss']
 })
 export class HelplineListComponent implements OnInit {
+  @Input() helplineList$: Observable<IHelpline[]>;
 
-  @Input() helplineList$: IHelpline[] ;
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

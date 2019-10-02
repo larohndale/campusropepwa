@@ -1,0 +1,9 @@
+<ng-select
+  [items]="helplineList$ | async"
+  bindLabel="name"
+  [trackByFn]="trackByFn"
+  [loading]="helplineLoading"
+  [typeahead]="helplineInput$"
+  [(ngModel)]="selectedHelpline"
+>
+</ng-select>

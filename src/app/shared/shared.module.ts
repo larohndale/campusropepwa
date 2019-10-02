@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { DrawerComponent } from './drawer/drawer.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 import { UserSearchComponent } from './user-search/user-search.component';
@@ -19,13 +20,15 @@ import { FilterPipe } from './utils/filter.pipe';
     UserSearchComponent,
     StateSelectionPaneComponent,
     FilterPipe,
-    StateSelectionComponent  ],
+    StateSelectionComponent
+  ],
   imports: [
     CommonModule,
     MaterialModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgSelectModule
   ],
   exports: [
     MaterialModule,
@@ -36,7 +39,8 @@ import { FilterPipe } from './utils/filter.pipe';
     DrawerComponent,
     StateSelectionPaneComponent,
     FilterPipe,
-    StateSelectionComponent
+    StateSelectionComponent,
+    NgSelectModule
   ]
 })
 export class SharedModule {}
