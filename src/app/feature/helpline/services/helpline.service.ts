@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IHelpline } from '../../../core/models/helpline';
 import { tap, distinctUntilChanged, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const HELPLINE_URL = `api/helplines`;
 export interface HelpLineState {
@@ -65,6 +65,10 @@ export class HelplineService {
         })
       )
       .subscribe();
+  }
+
+  searchHelpline(term: string) {
+    return this.http.get(`${HELPLINE_URL}?name_contains=${term}`);
   }
 
   deleteHelpline(helplineId) {
