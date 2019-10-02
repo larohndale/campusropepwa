@@ -8,6 +8,8 @@ import { MaterialModule } from './material/material.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopBarComponent } from './top-bar/top-bar.component';
+import { StateSelectionPaneComponent } from './state-selection-pane/state-selection-pane.component';
+import { FilterPipe } from './utils/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     DrawerComponent,
     YoutubePlayerComponent,
     UserSearchComponent,
-    StateSelectionComponent
-  ],
+    StateSelectionPaneComponent,
+    FilterPipe,
+    StateSelectionComponent  ],
   imports: [
     CommonModule,
     MaterialModule,
@@ -31,6 +34,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
     ReactiveFormsModule,
     TopBarComponent,
     DrawerComponent,
+    StateSelectionPaneComponent,
+    FilterPipe,
     StateSelectionComponent
   ]
 })
