@@ -18,7 +18,7 @@ import { FilterPipe } from './utils/filter.pipe';
     YoutubePlayerComponent,
     UserSearchComponent,
     StateSelectionPaneComponent,
-    FilterPipe
+    FilterPipe,
     StateSelectionComponent  ],
   imports: [
     CommonModule,
@@ -35,7 +35,7 @@ import { FilterPipe } from './utils/filter.pipe';
     TopBarComponent,
     DrawerComponent,
     StateSelectionPaneComponent,
-    FilterPipe
+    FilterPipe,
     StateSelectionComponent
   ]
 })
