@@ -1,21 +1,39 @@
 <form [formGroup]="formGroup" class="form">
-    <mat-form-field>
-      <input matInput placeholder="Headline" formControlName="headline">
-        <mat-error *ngIf="!formGroup.controls['headline'].valid
-          && formGroup.controls['headline'].touched">
-            {{ titleAlert }}
-        </mat-error>
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matNativeControl
+      matInput
+      placeholder="Headline"
+      formControlName="headline"
+    />
+    <mat-error
+      *ngIf="
+        !formGroup.controls['headline'].valid &&
+        formGroup.controls['headline'].touched
+      "
+    >
+      {{ titleAlert }}
+    </mat-error>
+  </mat-form-field>
 
-    <mat-form-field>
-      <textarea matInput placeholder="Description" formControlName="description"></textarea>
-      <mat-error *ngIf="!formGroup.controls['description'].valid
-          && formGroup.controls['description'].touched">
-            {{ titleAlert }}
-      </mat-error>
-    </mat-form-field>
+  <mat-form-field>
+    <textarea
+      matNativeControl
+      matInput
+      placeholder="Description"
+      formControlName="description"
+    ></textarea>
+    <mat-error
+      *ngIf="
+        !formGroup.controls['description'].valid &&
+        formGroup.controls['description'].touched
+      "
+    >
+      {{ titleAlert }}
+    </mat-error>
+  </mat-form-field>
 
-    <!-- <mat-form-field>
+  <!-- <mat-form-field>
         <app-state-selection
         [states]="states" [selectedState]="selectedState"
         (onStateChange)="onStateChange($event)"></app-state-selection>
@@ -25,47 +43,98 @@
         </mat-error>
     </mat-form-field> -->
 
-    <mat-form-field>
-        <input matInput placeholder="Headline Number" formControlName="headlineNumber">
-        <mat-error *ngIf="!formGroup.controls['headlineNumber'].valid
-          && formGroup.controls['headlineNumber'].touched">
-            {{ titleAlert }}
-        </mat-error>
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matNativeControl
+      matInput
+      placeholder="Headline Number"
+      formControlName="headlineNumber"
+    />
+    <mat-error
+      *ngIf="
+        !formGroup.controls['headlineNumber'].valid &&
+        formGroup.controls['headlineNumber'].touched
+      "
+    >
+      {{ titleAlert }}
+    </mat-error>
+  </mat-form-field>
 
-    <mat-form-field>
-        <input matInput placeholder="Website Link" formControlName="websiteLink">
-        <mat-error *ngIf="!formGroup.controls['websiteLink'].valid
-          && formGroup.controls['websiteLink'].touched">
-            {{ titleAlert }}
-        </mat-error>
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matNativeControl
+      matInput
+      placeholder="Website Link"
+      formControlName="websiteLink"
+    />
+    <mat-error
+      *ngIf="
+        !formGroup.controls['websiteLink'].valid &&
+        formGroup.controls['websiteLink'].touched
+      "
+    >
+      {{ titleAlert }}
+    </mat-error>
+  </mat-form-field>
 
-    <mat-form-field>
-        <input matInput placeholder="File Online Complaint Link" formControlName="fileOnlineComplaintLink">
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      matNativeControl
+      placeholder="File Online Complaint Link"
+      formControlName="fileOnlineComplaintLink"
+    />
+  </mat-form-field>
 
-    <mat-form-field>
-        <input matInput placeholder="Twitter Link" formControlName="twitterLink">
-        <mat-error *ngIf="!formGroup.controls['twitterLink'].valid
-          && formGroup.controls['twitterLink'].touched">
-            {{ titleAlert }}
-        </mat-error>
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      matNativeControl
+      placeholder="Twitter Link"
+      formControlName="twitterLink"
+    />
+    <mat-error
+      *ngIf="
+        !formGroup.controls['twitterLink'].valid &&
+        formGroup.controls['twitterLink'].touched
+      "
+    >
+      {{ titleAlert }}
+    </mat-error>
+  </mat-form-field>
 
-    <mat-form-field>
-        <input matInput placeholder="Facebook Link" formControlName="facebookLink">
-        <mat-error *ngIf="!formGroup.controls['facebookLink'].valid
-          && formGroup.controls['facebookLink'].touched">
-          {{ titleAlert }}
-      </mat-error>
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      matNativeControl
+      placeholder="Facebook Link"
+      formControlName="facebookLink"
+    />
+    <mat-error
+      *ngIf="
+        !formGroup.controls['facebookLink'].valid &&
+        formGroup.controls['facebookLink'].touched
+      "
+    >
+      {{ titleAlert }}
+    </mat-error>
+  </mat-form-field>
 
-    <mat-form-field>
-        <input matInput placeholder="Instagram Link" formControlName="instagramLink">
-    </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      matNativeControl
+      placeholder="Instagram Link"
+      formControlName="instagramLink"
+    />
+  </mat-form-field>
 
-    <mat-form-field>
-        <input matInput placeholder="Whats app Link" formControlName="whatsappLink">
-    </mat-form-field>
-  </form>
+  <mat-form-field>
+    <input
+      matInput
+      matNativeControl
+      placeholder="Whats app Link"
+      formControlName="whatsappLink"
+    />
+  </mat-form-field>
+</form>
