@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { NotificationService } from 'src/app/core/core.module';
 
 @Component({
   selector: 'app-click-to-call',
@@ -12,8 +11,7 @@ export class ClickToCallComponent implements OnInit {
   @Input() phoneNumber: string;
 
   constructor(
-    private dialogRef: MatDialogRef<ClickToCallComponent>,
-    private notificationService: NotificationService,
+    private dialogRef: MatDialogRef<ClickToCallComponent>
   ) { }
 
   ngOnInit() {
@@ -35,7 +33,6 @@ export class ClickToCallComponent implements OnInit {
     selBox.select();
     document.execCommand('copy');
     document.body.removeChild(selBox);
-    this.notificationService.success('Text Copied');
   }
 
   onCancelClick(): void {
