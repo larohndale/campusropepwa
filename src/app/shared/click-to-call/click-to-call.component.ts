@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { MatDialog } from '@angular/material';
+import { ClickToCallDialogComponent } from '../click-to-call-dialog/click-to-call-dialog.component';
 
 @Component({
   selector: 'app-click-to-call',
@@ -11,32 +12,19 @@ export class ClickToCallComponent implements OnInit {
   @Input() phoneNumber: string;
 
   constructor(
-    private dialogRef: MatDialogRef<ClickToCallComponent>
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
   }
 
-  getPhoneNo() {
-    return `tel:${this.phoneNumber}`;
-  }
-
-  copyText() {
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = this.phoneNumber;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
-  }
-
-  onCancelClick(): void {
-    this.dialogRef.close();
+  openDialog() {
+    this.dialog.open(ClickToCallDialogComponent, {
+      width: '350px',
+      data: {
+        phoneNumber: this.phoneNumber
+      }
+    });
   }
 
 }

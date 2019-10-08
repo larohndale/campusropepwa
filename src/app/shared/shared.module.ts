@@ -12,6 +12,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { StateSelectionPaneComponent } from './state-selection-pane/state-selection-pane.component';
 import { FilterPipe } from './utils/filter.pipe';
 import { ClickToCallComponent } from './click-to-call/click-to-call.component';
+import { ClickToCallDialogComponent } from './click-to-call-dialog/click-to-call-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ClickToCallComponent } from './click-to-call/click-to-call.component';
     StateSelectionPaneComponent,
     FilterPipe,
     StateSelectionComponent,
-    ClickToCallComponent
+    ClickToCallComponent,
+    ClickToCallDialogComponent
   ],
   imports: [
     CommonModule,

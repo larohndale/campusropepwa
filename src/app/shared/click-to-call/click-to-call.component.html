@@ -1,15 +1,9 @@
-<div mat-dialog-content>
-  <mat-form-field class="full-width">
-    <input matInput disabled=true [(ngModel)]="phoneNumber" #linkInput>
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button>
-    <a href="{{getPhoneNo()}}" target="blank">
-        Call
-    </a>
-  </button>
-  <button mat-button
-    (click)="copyText()" >Copy</button>
-  <button mat-button (click)="onCancelClick()">Close</button>
+<div class="helpline-content-btn"
+          (click)="openDialog()">
+    <span>
+        Helpline Number
+    </span>
+    <h2>
+        {{ phoneNumber }}
+    </h2>
 </div>

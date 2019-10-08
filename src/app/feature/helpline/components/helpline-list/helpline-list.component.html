@@ -16,15 +16,11 @@
       </p>
 
       <div class="expansion-panel-items">
-        <div class="helpline-content-btn"
-          (click)="openDialog()">
-          <span>
-            Helpline Number
-          </span>
-          <h2>
-            {{ helplineData.phoneNumber }}
-          </h2>
-        </div>
+
+        <app-click-to-call
+            phoneNumber="{{helplineData.phoneNumber}}">
+        </app-click-to-call>
+
         <div class="helpline-content-btn">
           <span>
             Website
