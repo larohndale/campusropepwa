@@ -20,7 +20,7 @@
           <span>
             Helpline Number
           </span>
-          <h2>
+          <h2 (click)="goToLink('phone',helplineData.phoneNumber)">
             {{ helplineData.phoneNumber }}
           </h2>
         </div>
@@ -29,7 +29,7 @@
             Website
           </span>
           <h5>
-            <a href="JavaScript:void(0);">
+            <a href="" (click)="goToLink('website',helplineData.websiteLink)">
               {{ helplineData.websiteLink }}
             </a>
           </h5>
@@ -40,7 +40,7 @@
             File Online Complaints
           </span>
           <h5>
-            <a href="JavaScript:void(0);">
+            <a href="" (click)="goToLink('complaint',helplineData.fileOnlineComplaintLink)">
               {{ helplineData.fileOnlineComplaintLink }}
             </a>
           </h5>
