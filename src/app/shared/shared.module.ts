@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { StateSelectionPaneComponent } from './state-selection-pane/state-selection-pane.component';
 import { FilterPipe } from './utils/filter.pipe';
+import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterPipe } from './utils/filter.pipe';
     UserSearchComponent,
     StateSelectionPaneComponent,
     FilterPipe,
-    StateSelectionComponent
+    StateSelectionComponent,
+    DialogModalComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,9 @@ import { FilterPipe } from './utils/filter.pipe';
     StateSelectionPaneComponent,
     FilterPipe,
     StateSelectionComponent,
-    NgSelectModule
-  ]
+    NgSelectModule,
+    DialogModalComponent
+  ],
+  entryComponents: [DialogModalComponent]
 })
 export class SharedModule {}
