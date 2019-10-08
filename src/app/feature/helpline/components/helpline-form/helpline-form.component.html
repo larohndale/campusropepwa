@@ -33,7 +33,7 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+
           <app-state-selection
           [states]="states" [selectedState]="selectedState"
           (onStateChange)="onStateChange($event)"></app-state-selection>
@@ -41,7 +41,6 @@
               && formGroup.controls['state'].touched">
               {{ titleAlert }}
           </mat-error>
-    </mat-form-field>
 
     <mat-form-field>
       <input
