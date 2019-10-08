@@ -20,13 +20,12 @@
         <app-click-to-call
             phoneNumber="{{helplineData.phoneNumber}}">
         </app-click-to-call>
-
         <div class="helpline-content-btn">
           <span>
             Website
           </span>
           <h5>
-            <a href="JavaScript:void(0);">
+            <a href="" (click)="goToLink('website',helplineData.websiteLink)">
               {{ helplineData.websiteLink }}
             </a>
           </h5>
@@ -37,7 +36,7 @@
             File Online Complaints
           </span>
           <h5>
-            <a href="JavaScript:void(0);">
+            <a href="" (click)="goToLink('complaint',helplineData.fileOnlineComplaintLink)">
               {{ helplineData.fileOnlineComplaintLink }}
             </a>
           </h5>

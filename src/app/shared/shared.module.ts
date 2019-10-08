@@ -13,6 +13,7 @@ import { StateSelectionPaneComponent } from './state-selection-pane/state-select
 import { FilterPipe } from './utils/filter.pipe';
 import { ClickToCallComponent } from './click-to-call/click-to-call.component';
 import { ClickToCallDialogComponent } from './click-to-call-dialog/click-to-call-dialog.component';
+import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ClickToCallDialogComponent } from './click-to-call-dialog/click-to-call
     FilterPipe,
     StateSelectionComponent,
     ClickToCallComponent,
-    ClickToCallDialogComponent
+    ClickToCallDialogComponent,
+    DialogModalComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +47,9 @@ import { ClickToCallDialogComponent } from './click-to-call-dialog/click-to-call
     FilterPipe,
     StateSelectionComponent,
     NgSelectModule,
-    ClickToCallComponent
-  ]
+    ClickToCallComponent,
+    DialogModalComponent
+  ],
+  entryComponents: [DialogModalComponent]
 })
 export class SharedModule {}
