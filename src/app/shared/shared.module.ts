@@ -44,6 +44,7 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
     StateSelectionComponent,
     NgSelectModule,
     DialogModalComponent
-  ]
+  ],
+  entryComponents: [DialogModalComponent]
 })
 export class SharedModule {}
