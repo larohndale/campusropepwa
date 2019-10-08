@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { StateSelectionPaneComponent } from './state-selection-pane/state-selection-pane.component';
 import { FilterPipe } from './utils/filter.pipe';
+import { ClickToCallComponent } from './click-to-call/click-to-call.component';
+import { ClickToCallDialogComponent } from './click-to-call-dialog/click-to-call-dialog.component';
 import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
 
 @NgModule({
@@ -22,6 +24,8 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
     StateSelectionPaneComponent,
     FilterPipe,
     StateSelectionComponent,
+    ClickToCallComponent,
+    ClickToCallDialogComponent,
     DialogModalComponent
   ],
   imports: [
@@ -43,6 +47,7 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
     FilterPipe,
     StateSelectionComponent,
     NgSelectModule,
+    ClickToCallComponent,
     DialogModalComponent
   ],
   entryComponents: [DialogModalComponent]

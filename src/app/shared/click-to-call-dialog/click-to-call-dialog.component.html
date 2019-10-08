@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Phone Number</h1>
+<div mat-dialog-content>
+  <mat-form-field class="full-width">
+    <input matInput disabled=true [(ngModel)]="data.phoneNumber" #linkInput>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button>
+    <a href="{{getPhoneNo()}}" target="blank">
+        Call
+    </a>
+  </button>
+  <button mat-button
+    (click)="copyText()" >Copy</button>
+  <button mat-button (click)="onCancelClick()">Close</button>
+</div>
