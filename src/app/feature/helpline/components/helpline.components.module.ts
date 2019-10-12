@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HelplineListComponent } from './helpline-list/helpline-list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { HelplineFormComponent } from './helpline-form/helpline-form.component';
+import { HelplineSearchComponent } from './helpline-search/helpline-search.component';
+import { ClickToCallDialogComponent } from 'src/app/shared/click-to-call-dialog/click-to-call-dialog.component';
 
 @NgModule({
-  declarations: [HelplineListComponent, HelplineFormComponent],
+  declarations: [HelplineListComponent, HelplineSearchComponent],
   imports: [CommonModule, SharedModule],
-  exports: [HelplineListComponent, HelplineFormComponent]
+  entryComponents: [ ClickToCallDialogComponent ],
+  exports: [HelplineListComponent, HelplineSearchComponent]
 })
 export class HelplineComponentsModule {}
