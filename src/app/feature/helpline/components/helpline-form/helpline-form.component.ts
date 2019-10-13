@@ -23,7 +23,7 @@ export class HelplineFormComponent implements OnInit {
   }
 
   onStateChange(selectedState: string) {
-    this.formGroup.controls['state'].setValue(selectedState)
+    this.formGroup.controls.state.setValue(selectedState);
   }
 
 }
