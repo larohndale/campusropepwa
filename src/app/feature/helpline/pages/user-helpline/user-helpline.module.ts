@@ -12,7 +12,7 @@ import { HelplineComponentsModule } from '../../components/helpline.components.m
     CommonModule,
     SharedModule,
     UserHelplineRoutingModule,
-    HelplineComponentsModule
+    HelplineComponentsModule,
   ]
 })
 export class UserHelplineModule {}

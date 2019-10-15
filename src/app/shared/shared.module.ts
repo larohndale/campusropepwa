@@ -26,7 +26,7 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
     StateSelectionComponent,
     ClickToCallComponent,
     ClickToCallDialogComponent,
-    DialogModalComponent
+    DialogModalComponent,
   ],
   imports: [
     CommonModule,
@@ -48,7 +48,8 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
     StateSelectionComponent,
     NgSelectModule,
     ClickToCallComponent,
-    DialogModalComponent
+    DialogModalComponent,
+    UserSearchComponent
   ],
   entryComponents: [DialogModalComponent]
 })
