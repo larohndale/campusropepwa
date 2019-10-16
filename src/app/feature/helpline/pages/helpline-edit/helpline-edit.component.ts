@@ -11,7 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HelplineEditComponent implements OnInit {
 
-  selectedHelpline$ = this.helplineService.inViewHelpline$;
   formGroup: FormGroup;
   titleAlert = 'This field is required';
 
@@ -25,7 +24,9 @@ export class HelplineEditComponent implements OnInit {
   ngOnInit() {
     this.createForm();
     this.helplineService.findHelplineById(this.route.snapshot.params.id);
-    this.setFormValues();
+    this.helplineService.inViewHelpline$.subscribe((helpline) => {
+      this.formGroup.patchValue(helpline);
+    });
   }
 
   createForm() {
@@ -41,10 +42,6 @@ export class HelplineEditComponent implements OnInit {
       instagramLink: '',
       whatsappLink: ''
     });
-  }
-
-  setFormValues() {
-    this.formGroup.patchValue(this.selectedHelpline$);
   }
 
   onHeadlineUpdate() {

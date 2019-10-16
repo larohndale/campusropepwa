@@ -14,7 +14,7 @@ export class HelplineFormComponent implements OnInit {
   @Input() titleAlert: string;
 
   states: IState[];
-  selectedState = '';
+  selectedState = this.formGroup ? this.formGroup.controls.state.value : '';
 
   constructor(private constantsService: ConstantsService) { }
 

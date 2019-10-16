@@ -16,8 +16,4 @@ export class HelplineFormActionsComponent implements OnInit {
   ngOnInit() {
   }
 
-  goToEditPage() {
-    this.router.navigate(['/edit/', this.helplineData._id]);
-  }
-
 }
