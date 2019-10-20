@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LocationService } from 'src/app/core/services/location.service';
 import { HelplineService } from '../../services/helpline.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-helpline-edit',
@@ -19,6 +19,7 @@ export class HelplineEditComponent implements OnInit {
     private locationService: LocationService,
     private helplineService: HelplineService,
     private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -45,7 +46,11 @@ export class HelplineEditComponent implements OnInit {
   }
 
   onHeadlineUpdate() {
-    console.log(this.formGroup.value);
+    const id = this.route.snapshot.params.id;
+    this.helplineService.updateHelpline(id, this.formGroup.value)
+          .subscribe(() => {
+            this.router.navigate(['helpline', 'admin']);
+          });
   }
 
   goBack(): any {
