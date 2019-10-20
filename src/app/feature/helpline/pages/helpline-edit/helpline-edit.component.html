@@ -1,1 +1,15 @@
-<p>helpline-edit works!</p>
+<div class="helpline-container">
+  <h3 class="text-center">Update Content</h3>
+  <app-helpline-form
+    [formGroup]="formGroup"
+    [titleAlert]="titleAlert"
+  ></app-helpline-form>
+  <div class="example-button-row">
+      <button (click)="goBack()" mat-flat-button>Cancel</button>
+      <button mat-flat-button color="primary"
+        (click)="onHeadlineUpdate()"
+        type="button">
+        Update
+      </button>
+  </div>
+</div>
