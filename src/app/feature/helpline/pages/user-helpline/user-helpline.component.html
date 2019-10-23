@@ -4,6 +4,7 @@
     (selectedgroup)="onSelectedGroupChanged($event)"
   ></app-user-search>
   <app-state-selection
+    *ngIf="isMobile$ | async"
     [states]="states"
     [selectedState]="selectedState"
     (onStateChange)="onStateChange($event)"
