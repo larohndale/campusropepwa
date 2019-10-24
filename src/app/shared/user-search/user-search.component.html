@@ -1,1 +1,10 @@
-<p>user-search works!</p>
+<ng-select
+  [items]="userList$ | async"
+  bindLabel="username"
+  [trackByFn]="trackByFn"
+  [loading]="userLoading"
+  [typeahead]="userInput$"
+  [(ngModel)]="selectedUser"
+  (change)="onSelect()"
+>
+</ng-select>

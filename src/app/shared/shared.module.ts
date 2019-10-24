@@ -51,7 +51,8 @@ import { ImageUploadComponent } from "./image-upload/image-upload.component";
     NgSelectModule,
     ClickToCallComponent,
     DialogModalComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    UserSearchComponent
   ],
   entryComponents: [DialogModalComponent]
 })
