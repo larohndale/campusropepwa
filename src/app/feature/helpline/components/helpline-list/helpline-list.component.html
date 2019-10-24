@@ -1,10 +1,8 @@
 <div class="helpline-wrapper ">
   <pre>{{ (helplineList$ | async).length }}</pre>
-  <mat-accordion class="mat-accordion-head">
+  <mat-accordion>
     <mat-expansion-panel
-      *ngFor="let helplineData of helplineList$ | async"
-      class="helpline-accordion-panel"
-    >
+      *ngFor="let helplineData of helplineList$ | async">
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{ helplineData.name }}

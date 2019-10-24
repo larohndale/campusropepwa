@@ -1,4 +1,4 @@
-/* .helpline-wrapper {
+.helpline-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,16 +6,20 @@
   margin-bottom: 65px;
 }
 
-.mat-accordion-head {
+mat-accordion {
   margin: 20px 0;
   width: 80%;
 }
 
-.helpline-accordion-panel {
+mat-expansion-panel {
   box-shadow: none;
   border: 1px solid #ff0000;
   box-sizing: border-box;
   border-radius: 11px;
+}
+
+mat-panel-title{
+  justify-content: center;
 }
 
 .expansion-panel-desc {
@@ -39,35 +43,35 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
 
-.helpline-content-btn span {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-}
+  > span {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+  }
 
-.helpline-content-btn h2 {
-  margin: 0;
-  padding-top: 5px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 26px;
-  line-height: 30px;
-}
+  > h2 {
+    margin: 0;
+    padding-top: 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+  }
 
-.helpline-content-btn h5 {
-  margin: 0;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 19px;
+  > h5 {
+    margin: 0;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 
 
@@ -80,4 +84,3 @@
 .social-icons > img{
   cursor: pointer;
 }
- */
