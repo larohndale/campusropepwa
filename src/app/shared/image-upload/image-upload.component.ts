@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { environment } from "../../../environments/environment";
 declare const cloudinary: any;
 @Component({
@@ -7,7 +7,10 @@ declare const cloudinary: any;
   styleUrls: ["./image-upload.component.scss"]
 })
 export class ImageUploadComponent implements OnInit {
+  @Output() uploadedImage = new EventEmitter<string>();
+
   constructor() {}
+
   public widget: any;
   public imageArray = [];
   ngOnInit() {
@@ -25,8 +28,7 @@ export class ImageUploadComponent implements OnInit {
       },
       (error, result) => {
         if (!error && result && result.event === "success") {
-          this.imageArray.push(result.info.url);
-          console.log("Done! Here is the image info: ", result.info);
+          this.uploadedImage.emit(result.info.url);
         }
       }
     );
