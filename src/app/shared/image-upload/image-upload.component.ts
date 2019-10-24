@@ -18,7 +18,10 @@ export class ImageUploadComponent implements OnInit {
         showCompletedButton: true,
         cloudName: environment.cloudName,
         api_key: environment.cloudKey,
-        api_secret: environment.cloudSecretKey
+        api_secret: environment.cloudSecretKey,
+        multiple: false,
+        cropping: true,
+        singleUploadAutoClose: false
       },
       (error, result) => {
         if (!error && result && result.event === "success") {
