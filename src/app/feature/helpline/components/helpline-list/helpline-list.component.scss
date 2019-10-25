@@ -16,6 +16,7 @@ mat-expansion-panel {
   border: 1px solid #ff0000;
   box-sizing: border-box;
   border-radius: 11px;
+  margin-bottom: 15px!important;
 }
 
 mat-panel-title{
@@ -30,6 +31,7 @@ mat-panel-title{
 .expansion-panel-items{
   display:flex;
   flex-direction:column;
+  padding-bottom: 10px;
 }
 
 .helpline-content-btn {
@@ -79,8 +81,8 @@ mat-panel-title{
   display:flex;
   justify-content: center;
   margin-top: 10px;
-}
 
-.social-icons > img{
-  cursor: pointer;
+  > img{
+    cursor: pointer;
+  }
 }
