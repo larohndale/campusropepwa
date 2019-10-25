@@ -4,11 +4,14 @@
 
 export const environment = {
   production: false,
-  appName: 'Campusrope',
-  apiUrl: 'https://vast-sands-97057.herokuapp.com',
-  envName: 'DEV',
+  appName: "Campusrope",
+  apiUrl: "https://vast-sands-97057.herokuapp.com",
+  envName: "DEV",
   test: false,
-  i18nPrefix: ''
+  i18nPrefix: "",
+  cloudName: "rope",
+  cloudKey: "734944967633172",
+  cloudSecretKey: "BxxyPavRwhzG7_zx8p3Hr15esPo"
 };
 
 /*
