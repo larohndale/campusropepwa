@@ -1,14 +1,13 @@
 <div>
-      <button
-          mat-mini-fab
-          routerLink="/helpline/add"
-          matTooltip="Add Helpline"
-          class="trending-news-add-btn">
-       <i class="material-icons">add</i>
-      </button>
     <app-state-selection
     *ngIf="isMobile$ | async"
     [states]="states" [selectedState]="selectedState"
     (onStateChange)="onStateChange($event)"></app-state-selection>
+    <button
+      mat-mini-fab
+      routerLink="/helpline/add"
+      matTooltip="Add Helpline">
+      <i class="material-icons">add</i>
+    </button>
     <app-helpline-list [helplineList$]="helplines$"></app-helpline-list>
 </div>
