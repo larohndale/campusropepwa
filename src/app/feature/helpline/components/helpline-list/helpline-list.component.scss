@@ -1,14 +1,13 @@
 .helpline-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 65px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 mat-accordion {
   margin: 20px 0;
-  width: 80%;
 }
 
 mat-expansion-panel {
