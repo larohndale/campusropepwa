@@ -76,5 +76,5 @@ Aiming to strengthen the relationship between government and citizens using tech
 > A small difference now can make a huge difference later.
 
 &nbsp;
-# Documentations 
-[Wike Documentation](https://github.com/campusrope/campusropepwa/wiki)
+## Documentations 
+[Wiki Documentation](https://github.com/campusrope/campusropepwa/wiki)
