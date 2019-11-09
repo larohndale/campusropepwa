@@ -1,7 +1,5 @@
 <div [ngClass]="routeAnimationsElements">
-  <app-helpline-search></app-helpline-search>
   <app-state-selection
-    *ngIf="isMobile$ | async"
     [states]="states"
     [selectedState]="selectedState"
     (onStateChange)="onStateChange($event)"

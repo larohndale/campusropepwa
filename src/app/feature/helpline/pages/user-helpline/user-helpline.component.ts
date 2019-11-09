@@ -3,7 +3,6 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/animations/route.ani
 import { HelplineService } from '../../services/helpline.service';
 import { ConstantsService } from 'src/app/core/core.module';
 import { IState } from 'src/app/core/models/state';
-import { LayoutService } from 'src/app/core/services/layout.service';
 
 @Component({
   selector: 'app-user-helpline',
@@ -16,12 +15,10 @@ export class UserHelplineComponent implements OnInit {
   selectedState = 'National';
 
   helplines$ = this.helplineService.helplines$;
-  isMobile$ = this.layoutService.isMobile$;
 
   constructor(
     private helplineService: HelplineService,
-    private constantsService: ConstantsService,
-    private layoutService: LayoutService
+    private constantsService: ConstantsService
   ) {}
 
   ngOnInit() {
@@ -30,7 +27,7 @@ export class UserHelplineComponent implements OnInit {
   }
 
   onStateChange(selectedState: string) {
-    console.log(selectedState);
+    this.helplineService.findHelplinesByState(selectedState);
   }
   onSelectedGroupChanged(value: object) {
     console.log(value, 'testing');
