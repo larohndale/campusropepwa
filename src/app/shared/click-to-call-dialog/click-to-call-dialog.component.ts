@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { Observable } from 'rxjs';
+import { LayoutService } from 'src/app/core/services/layout.service';
 
 @Component({
   selector: 'app-click-to-call-dialog',
@@ -8,12 +10,16 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 })
 export class ClickToCallDialogComponent implements OnInit {
 
+  isMobile$: Observable<boolean>;
+
   constructor(
-    public dialogRef: MatDialogRef<ClickToCallDialogComponent>,
+    private layoutService: LayoutService,
+    private dialogRef: MatDialogRef<ClickToCallDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
   ngOnInit() {
+    this.isMobile$ = this.layoutService.isMobile$;
   }
 
   getPhoneNo() {
