@@ -16,7 +16,7 @@ export class AdminHelplineComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.helplineService.findHelplines();
+    this.onStateChange(this.selectedState);
   }
 
   onStateChange(selectedState: string) {

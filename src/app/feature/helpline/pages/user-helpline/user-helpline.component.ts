@@ -22,7 +22,7 @@ export class UserHelplineComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.helplineService.findHelplines();
+    this.onStateChange(this.selectedState);
     this.states = this.constantsService.getStates();
   }
 
