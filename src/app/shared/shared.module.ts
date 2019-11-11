@@ -15,6 +15,7 @@ import { ClickToCallComponent } from "./click-to-call/click-to-call.component";
 import { ClickToCallDialogComponent } from "./click-to-call-dialog/click-to-call-dialog.component";
 import { DialogModalComponent } from "./dialog-modal/dialog-modal.component";
 import { ImageUploadComponent } from "./image-upload/image-upload.component";
+import { CampusRopeIScrollComponent } from './campusrope-infinite-scroll/campusrope-infinite-scroll.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ImageUploadComponent } from "./image-upload/image-upload.component";
     ClickToCallComponent,
     ClickToCallDialogComponent,
     DialogModalComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    CampusRopeIScrollComponent
   ],
   imports: [
     CommonModule,
@@ -50,6 +52,7 @@ import { ImageUploadComponent } from "./image-upload/image-upload.component";
     StateSelectionComponent,
     NgSelectModule,
     ClickToCallComponent,
+    CampusRopeIScrollComponent,
     DialogModalComponent,
     ImageUploadComponent,
     UserSearchComponent
