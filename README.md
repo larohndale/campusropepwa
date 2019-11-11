@@ -74,3 +74,18 @@ Aiming to strengthen the relationship between government and citizens using tech
 ### "Social network has eroded all the barriers between an artist and a consumer through which consumers can themselves be the artist, creating a dynamic relationship between the two."
 
 > A small difference now can make a huge difference later.
+
+&nbsp;
+
+## Documentation
+
+* [Wiki Documentation](https://github.com/campusrope/campusropepwa/wiki)
+
+* [Work In Progress](https://github.com/campusrope/campusropepwa/projects)
+
+&nbsp;
+
+### [Follow us in Instagram](https://www.instagram.com/campus_rope/)
+
+
+### [Follow us on YouTube](https://www.youtube.com/channel/UCKeJ6csG3Fnz0K70WO94JCQ)

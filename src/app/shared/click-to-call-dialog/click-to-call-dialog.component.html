@@ -5,7 +5,7 @@
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
-  <button mat-button>
+  <button mat-button *ngIf="isMobile$ | async">
     <a href="{{getPhoneNo()}}" target="blank">
         Call
     </a>

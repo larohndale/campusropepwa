@@ -1,6 +1,5 @@
 <div>
     <app-state-selection
-    *ngIf="isMobile$ | async"
     [states]="states" [selectedState]="selectedState"
     (onStateChange)="onStateChange($event)"></app-state-selection>
     <button

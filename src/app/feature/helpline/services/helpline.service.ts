@@ -67,6 +67,20 @@ export class HelplineService {
       .subscribe();
   }
 
+  public findHelplinesByState(stateName: string) {
+    this.http
+      .get(`${HELPLINE_URL}?state=${stateName}`)
+      .pipe(
+        tap((helplines: IHelpline[]) => {
+          this.updateState({
+            ..._state,
+            helplines
+          });
+        })
+      )
+      .subscribe();
+  }
+
   searchHelpline(term: string) {
     return this.http.get(`${HELPLINE_URL}?name_contains=${term}`);
   }
