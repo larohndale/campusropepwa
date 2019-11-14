@@ -85,7 +85,7 @@ Aiming to strengthen the relationship between government and citizens using tech
 
 &nbsp;
 
-### [Follow us in Instagram](https://www.instagram.com/campus_rope/)
+### [Follow us on Instagram](https://www.instagram.com/campus_rope/)
 
 
 ### [Follow us on YouTube](https://www.youtube.com/channel/UCKeJ6csG3Fnz0K70WO94JCQ)
