@@ -16,6 +16,7 @@ import { ClickToCallDialogComponent } from "./click-to-call-dialog/click-to-call
 import { DialogModalComponent } from "./dialog-modal/dialog-modal.component";
 import { ImageUploadComponent } from "./image-upload/image-upload.component";
 import { CampusRopeIScrollComponent } from './campusrope-infinite-scroll/campusrope-infinite-scroll.component';
+import { SafePipe } from './utils/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CampusRopeIScrollComponent } from './campusrope-infinite-scroll/campusr
     ClickToCallDialogComponent,
     DialogModalComponent,
     ImageUploadComponent,
-    CampusRopeIScrollComponent
+    CampusRopeIScrollComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ import { CampusRopeIScrollComponent } from './campusrope-infinite-scroll/campusr
     CampusRopeIScrollComponent,
     DialogModalComponent,
     ImageUploadComponent,
-    UserSearchComponent
+    UserSearchComponent,
+    SafePipe
   ],
   entryComponents: [DialogModalComponent]
 })
