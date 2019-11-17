@@ -32,7 +32,7 @@ getYoutubeData() {
 _ytData: [];
 private cache = [];
 private pageByManual$ = new BehaviorSubject(1);
-private itemHeight = 500;
+private itemHeight = 600;
 private numberOfItems = 5;
 private pageByScroll$ = fromEvent(window, "scroll")
   .pipe(
