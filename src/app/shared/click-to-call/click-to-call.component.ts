@@ -19,6 +19,9 @@ export class ClickToCallComponent implements OnInit {
   }
 
   openDialog() {
+    if (!this.phoneNumber) {
+      return;
+    }
     this.dialog.open(ClickToCallDialogComponent, {
       width: '350px',
       data: {
