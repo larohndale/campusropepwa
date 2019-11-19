@@ -25,7 +25,7 @@
           </span>
           <h5>
             <a href="JavaScript:void(0);" (click)="goToLink('website', helplineData.websiteLink)">
-              {{ helplineData.websiteLink }}
+              {{ helplineData.websiteLink || '-' }}
             </a>
           </h5>
         </div>
@@ -36,7 +36,7 @@
           </span>
           <h5>
             <a href="JavaScript:void(0);" (click)="goToLink('complaint',helplineData.fileOnlineComplaintLink)">
-              {{ helplineData.fileOnlineComplaintLink }}
+              {{ helplineData.fileOnlineComplaintLink || '-' }}
             </a>
           </h5>
         </div>
