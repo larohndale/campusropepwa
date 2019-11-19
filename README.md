@@ -1,5 +1,5 @@
 # campusropepwa
-campusrope's progressive web app written in angular 
+CampusRope's Progressive Web App written in Angular 
 
 
 
