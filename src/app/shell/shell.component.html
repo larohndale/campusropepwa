@@ -19,7 +19,7 @@
       >
         <img src="assets/left-icon.png" alt="" />
       </button>
-      <div class="Left" *ngIf="isDesktop$ | async">
+      <div class="Left" *ngIf="(isDesktop$ | async)">
         <app-left-pane></app-left-pane>
       </div>
       <div
@@ -30,7 +30,7 @@
       >
         <router-outlet #o="outlet"></router-outlet>
       </div>
-      <div class="Right" *ngIf="isDesktop$ | async">
+      <div class="Right" *ngIf="(isDesktop$ | async)">
         <app-right-pane></app-right-pane>
       </div>
       <button

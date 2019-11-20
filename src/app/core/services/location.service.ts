@@ -19,4 +19,9 @@ export class LocationService {
   navigate(path: string[]) {
     this.router.navigate(path);
   }
+
+  getCurrentRouteUrl() {
+   return this.router.url;
+  }
+
 }

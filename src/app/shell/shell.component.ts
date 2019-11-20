@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
 import { LayoutService } from '../core/services/layout.service';
 import { routeAnimations } from '../core/core.module';
+import { LocationService } from '../core/services/location.service';
 
 @Component({
   selector: 'app-shell',
@@ -23,7 +24,8 @@ export class ShellComponent implements OnInit {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private layoutService: LayoutService
+    private layoutService: LayoutService,
+    private locationService: LocationService
   ) {}
 
   ngOnInit() {
@@ -43,4 +45,14 @@ export class ShellComponent implements OnInit {
     this.currentRoutePosition = this.routes[this.routeChangeCounter];
     this.router.navigate([this.currentRoutePosition]);
   }
+
+  isHelplineRoute() {
+    switch (this.locationService.getCurrentRouteUrl()) {
+      case '/helpline':
+          return false;
+      default:
+          return true;
+    }
+  }
+
 }
