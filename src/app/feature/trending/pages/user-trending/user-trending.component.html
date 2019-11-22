@@ -1,1 +1,16 @@
-<p>user-trending works!</p>
+<button (click)="displayContent = true">List</button>
+<button (click)="displayContent= false">YT</button>
+
+<h4>Selected Link:</h4>
+<p>{{link}}</p>
+
+<app-campusrope-infinite-list 
+  *ngIf="displayContent"
+  [YT]="YT"
+  ></app-campusrope-infinite-list>
+  
+<app-campusrope-infinite-youtube
+  *ngIf="!displayContent"
+  [YT]="YT"
+  (select)="selectedVideo($event)"
+  ></app-campusrope-infinite-youtube>

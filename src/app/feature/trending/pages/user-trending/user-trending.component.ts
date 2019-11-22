@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+const YT = [
+  { link: "link1" },
+  { link: "link2" },
+  { link: "link3" },
+];
+
 @Component({
   selector: 'app-user-trending',
   templateUrl: './user-trending.component.html',
@@ -7,9 +13,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserTrendingComponent implements OnInit {
 
+  displayContent:boolean = true;
+  YT = YT;
+  link:string
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+  selectedVideo(event) {
+    this.link = event
   }
-
 }
