@@ -1,1 +1,56 @@
-<p>feeds works!</p>
+<!-- <div style="position: fixed;"> scrollTop: {{scrollTop}}  </div><br/><br/><br/><br/>
+<div style="position: fixed;">  currentScrollTop: {{currentScrollTop}}  </div>   <br/> -->
+<div style="position: fixed;">  Count: {{count}} </div>      
+
+<!-- <mat-grid-list cols="1" rowHeight="3:1">
+        <mat-grid-tile> <iframe
+            id="active"
+            [src]="defaultYTV.iframe| safe" scrolling="no" frameborder="0" height = "280" width = "455"  allowfullscreen>
+            </iframe></mat-grid-tile>
+        <mat-grid-tile style="overflow-y: scroll;">
+                
+                      <ul>
+                            
+                      <li *ngFor = "let item of  _ytUpdatedData; let i = index;" style="padding: 1rem;">
+                    
+                                <iframe
+                                id="{{ 'iframe' + i }}"
+                                [src]="item.iframe| safe" scrolling="no" frameborder="0" height = "280" width = "455" allowfullscreen>
+                                </iframe>
+                        
+                            </li>
+                        </ul>
+        </mat-grid-tile>
+    
+      </mat-grid-list> -->
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center"  >
+  
+    <div fxFlex="20%"></div>
+        <div fxFlex="60%" id="scroll-to">
+                <!-- <div id="wrapper">
+                        <div id="top-nav">
+                         
+                        
+            <div style=" border:1px solid red;  background: grey;">
+                    <iframe
+                    id="active"
+                    [src]="defaultYTV.iframe| safe" scrolling="no" frameborder="0" height = "280" width = "455"  allowfullscreen>
+                    </iframe>
+
+            </div>
+        </div>
+                <div id = "side-nav"> -->
+                <mat-list *ngFor = "let item of  _ytData; let i = index;" style="padding: 1rem;">
+                    <mat-card class="example-card" >
+                        <iframe
+                        id="{{ 'iframe' + i }}"
+                        [src]="item.iframe| safe" scrolling="no" frameborder="0" height = "280" width = "455" allowfullscreen>
+                        </iframe>
+                    </mat-card> 
+                </mat-list>
+            <!-- </div>
+           </div> -->
+               
+</div>
+<div fxFlex="20%"></div>
+</div>
