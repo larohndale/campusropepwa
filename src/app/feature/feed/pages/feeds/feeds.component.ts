@@ -59,7 +59,7 @@ export class FeedsComponent implements OnInit  {
   constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this._ytData.map((iframe,i)=> i==0?iframe.iframe = iframe.iframe+'?autoplay=1&mute=1':iframe.iframe)
+    this._ytData.map((iframe,i)=> i==0?iframe.iframe = iframe.iframe+'?autoplay=1&mute=1&vq=medium':iframe.iframe)
     window.addEventListener('scroll', this.scroll, true); 
   }
  
@@ -91,7 +91,7 @@ export class FeedsComponent implements OnInit  {
         this.scrollTop -= e.srcElement.offsetHeight/2
     }
 
-    this._ytData.map((iframe,i)=> i===this.count?iframe.iframe = iframe.iframe+'?autoplay=1&mute=1':iframe.iframe =this.removeURLParameter(iframe.iframe))
+    this._ytData.map((iframe,i)=> i===this.count?iframe.iframe = iframe.iframe+'?autoplay=1&mute=1&vq=medium':iframe.iframe =this.removeURLParameter(iframe.iframe))
     this.active =  true
 
     this.oldScrollTop = e.srcElement.scrollTop
