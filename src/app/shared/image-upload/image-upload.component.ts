@@ -19,9 +19,9 @@ export class ImageUploadComponent implements OnInit {
         sources: ["local", "url"],
         uploadPreset: "ywio304o",
         showCompletedButton: true,
-        cloudName: environment.cloudName,
-        api_key: environment.cloudKey,
-        api_secret: environment.cloudSecretKey,
+        // cloudName: environment.cloudName,
+        // api_key: environment.cloudKey,
+        // api_secret: environment.cloudSecretKey,
         multiple: false,
         cropping: true,
         singleUploadAutoClose: false
