@@ -1,14 +1,1 @@
-<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
-  <div fxFlex="20%">
-  </div>
-  <div fxFlex="60%">    
-    <mat-list *ngFor="let item of  _ytData; " style="padding-bottom: 50px;">
-      <mat-card>
-        <iframe [src]="item.iframe| safe" scrolling="no" frameborder="0" allow="autoplay" height="280" width="500"
-          allowfullscreen>
-        </iframe>
-      </mat-card>
-    </mat-list>
-  </div>
-  <div fxFlex="20%"></div>
-</div>
+<campusrope-infinite-youtube [youtubeLinks]="_ytData"></campusrope-infinite-youtube>

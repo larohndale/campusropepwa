@@ -17,8 +17,8 @@ import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { CampusRopeIScrollComponent } from './campusrope-infinite-scroll/campusrope-infinite-scroll.component';
 import { CampusRopeISListComponent } from './campusrope-infinite-scroll/campusrope-infinite-list/campusrope-infinite-list.component';
-import { CampusRopeISYoutubeComponent } from './campusrope-infinite-scroll/campusrope-infinite-youtube/campusrope-infinite-youtube.component';
-
+import { CampusRopeISYoutubeComponent, SafePipe } from './campusrope-infinite-scroll/campusrope-infinite-youtube/campusrope-infinite-youtube.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     TopBarComponent,
@@ -34,7 +34,8 @@ import { CampusRopeISYoutubeComponent } from './campusrope-infinite-scroll/campu
     ImageUploadComponent,
     CampusRopeIScrollComponent,
     CampusRopeISListComponent,
-    CampusRopeISYoutubeComponent
+    CampusRopeISYoutubeComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,
@@ -42,7 +43,8 @@ import { CampusRopeISYoutubeComponent } from './campusrope-infinite-scroll/campu
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    NgSelectModule
+    NgSelectModule,
+    FlexLayoutModule
   ],
   exports: [
     MaterialModule,
