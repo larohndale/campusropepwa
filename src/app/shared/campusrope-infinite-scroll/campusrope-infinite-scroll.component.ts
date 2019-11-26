@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-
-
 @Component({
   selector: 'campusrope-infinite-scroll',
   templateUrl: './campusrope-infinite-scroll.component.html',
