@@ -15,7 +15,7 @@ import { ClickToCallComponent } from './click-to-call/click-to-call.component';
 import { ClickToCallDialogComponent } from './click-to-call-dialog/click-to-call-dialog.component';
 import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
-import { CampusRopeIScrollComponent } from './campusrope-infinite-scroll/campusrope-infinite-scroll.component';
+import { CampusRopeIScrollComponent, SafePipe } from './campusrope-infinite-scroll/campusrope-infinite-scroll.component';
 import { CampusRopeISListComponent } from './campusrope-infinite-scroll/campusrope-infinite-list/campusrope-infinite-list.component';
 import { CampusRopeISYoutubeComponent } from './campusrope-infinite-scroll/campusrope-infinite-youtube/campusrope-infinite-youtube.component';
 
@@ -34,7 +34,8 @@ import { CampusRopeISYoutubeComponent } from './campusrope-infinite-scroll/campu
     ImageUploadComponent,
     CampusRopeIScrollComponent,
     CampusRopeISListComponent,
-    CampusRopeISYoutubeComponent
+    CampusRopeISYoutubeComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,

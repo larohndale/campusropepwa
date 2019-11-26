@@ -41,7 +41,11 @@ body {
 }
 
 
-.rounded-button {border-radius: 20px;}
+.rounded-button {border-radius: 20px; cursor: pointer;}
 
 
-.rounded-button-micon{ font-size: 20px; vertical-align: middle; }
+.rounded-button-micon{ font-size: 20px; vertical-align: middle; cursor: pointer; }
+
+.card-clickable {
+  cursor: pointer;
+}
