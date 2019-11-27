@@ -19,6 +19,13 @@ const routes: Routes = [
       )
   },
   {
+    path: 'trending',
+    loadChildren: () =>
+      import('./feature/trending/trending.module').then(
+        m => m.TrendingModule
+      )
+  },
+  {
     path: '**',
     redirectTo: ''
   }
