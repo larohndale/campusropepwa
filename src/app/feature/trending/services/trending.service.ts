@@ -7,20 +7,30 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TrendingService {
-
+  contentPerPage: number = 100
   constructor(private http: HttpClient) { }
 
-  private _trendingAPI = 'https://vast-sands-97057.herokuapp.com/trendings';
+  private _trendingAPI: string = 'https://vast-sands-97057.herokuapp.com/trendings';
 
-  getTrendingData(): Observable<ITrending[]> {
-    return this.http.get<ITrending[]>(this._trendingAPI);
+  getTrendingData(page = 1): Observable<ITrending[]> {
+    const urlWithPagination = `${this._trendingAPI}?_start=${(this.contentPerPage * page) - (this.contentPerPage - 1)}&_limit=${this.contentPerPage}`
+    return this.http.get<ITrending[]>(urlWithPagination);
   }
 
-  addTrendingData(data) {
+  getTrendingDataBy(parameter, value): Observable<ITrending[]> {
+    const url = `${this._trendingAPI}?${parameter}=${value}`
+    return this.http.get<ITrending[]>(url);
+  }
+
+  addTrendingData(data: ITrending): Observable<any> {
     return this.http.post(this._trendingAPI, data);
   }
 
-  deleteTrendingData(id) {
+  updateTrendingData(data: ITrending, id): Observable<any> {
+    return this.http.put(`${this._trendingAPI}/${id}`, data);
+  }
+
+  deleteTrendingData(id): Observable<any> {
     return this.http.delete(`${this._trendingAPI}/${id}`);
   }
 }
