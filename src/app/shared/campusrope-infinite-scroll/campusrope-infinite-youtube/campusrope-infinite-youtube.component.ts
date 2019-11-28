@@ -8,7 +8,7 @@ import { CampusRopeIScrollComponent } from '../campusrope-infinite-scroll.compon
   styleUrls: ['./campusrope-infinite-youtube.component.scss']
 })
 export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent implements OnInit {
-  
+
 
   active: boolean = true
   oldScrollTop = 0
@@ -16,9 +16,11 @@ export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent imp
   scrollTop: number = 0;
 
   ngOnInit() {
-
     super.ngOnInit();
-    this.sampledatasource.map((item, i) => i == 0 ? item.youtubelink = item.youtubelink + '?autoplay=1&mute=1&vq=medium' : item.youtubelink)
+    super.getTrendingData()
+      .then(_ => {
+        this.sampledatasource.map((item, i) => i == 0 ? item.YoutubeUrl = item.YoutubeUrl + '?autoplay=1&mute=1&vq=medium' : item.YoutubeUrl)
+      });
     window.addEventListener('scroll', this.scroll, true);
 
   }
@@ -57,7 +59,7 @@ export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent imp
       this.scrollTop -= e.srcElement.offsetHeight / 2
     }
 
-    this.sampledatasource.map((item, i) => i === this.count ? item.youtubelink = item.youtubelink + '?autoplay=1&mute=1&vq=medium' : item.youtubelink = this.removeURLParameter(item.youtubelink))
+    this.sampledatasource.map((item, i) => i === this.count ? item.YoutubeUrl = item.YoutubeUrl + '?autoplay=1&mute=1&vq=medium' : item.YoutubeUrl = this.removeURLParameter(item.YoutubeUrl))
     this.active = true
 
     this.oldScrollTop = e.srcElement.scrollTop
@@ -76,7 +78,7 @@ export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent imp
       newURL = oldURL.substring(0, index);
     }
     return newURL;
-    
+
   }
 
 }
