@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit, Input, Pipe, PipeTransform, ElementRef, ViewChild, } from '@angular/core';
 import { CampusRopeIScrollComponent } from '../campusrope-infinite-scroll.component';
 
 
@@ -9,14 +9,11 @@ import { CampusRopeIScrollComponent } from '../campusrope-infinite-scroll.compon
 })
 export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent implements OnInit {
   
-
-  active: boolean = true
-  oldScrollTop = 0
+  @ViewChild('infiniteYT', {static: false}) infiniteYT: ElementRef;
   count = 0
-  scrollTop: number = 0;
+  savedscrollTop: number = 0;
 
   ngOnInit() {
-
     super.ngOnInit();
     this.sampledatasource.map((item, i) => i == 0 ? item.youtubelink = item.youtubelink + '?autoplay=1&mute=1&vq=medium' : item.youtubelink)
     window.addEventListener('scroll', this.scroll, true);
@@ -29,38 +26,21 @@ export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent imp
 
   }
 
-  scroll = (e): void => {
-
-    if (this.active) {
-      setTimeout(() => {
-        this.callback(e)
-      }, 1000)
-    }
-    this.active = false
-
+  scroll = (e): void => {     
+      if( this.savedscrollTop < e.srcElement.scrollTop && (e.srcElement.scrollTop - this.savedscrollTop)  > this.infiniteYT.nativeElement.offsetHeight-20){
+        this.count++
+        this.savedscrollTop = e.srcElement.scrollTop
+        this.callback( this.count)
+      }
+      if( this.savedscrollTop > e.srcElement.scrollTop && ( this.savedscrollTop- e.srcElement.scrollTop ) > this.infiniteYT.nativeElement.offsetHeight-20){
+          this.count--
+          this.savedscrollTop = e.srcElement.scrollTop
+          this.callback( this.count)
+      }
   };
 
   callback(e) {
-
-    if (e.srcElement.scrollTop > this.scrollTop) {
-
-      this.scrollTop += e.srcElement.offsetHeight / 2
-      this.count++
-    }
-
-    if (this.oldScrollTop > e.srcElement.scrollTop) {
-      if (this.count == 0) {
-        this.count = 0
-      } else {
-        this.count -= 1
-      }
-      this.scrollTop -= e.srcElement.offsetHeight / 2
-    }
-
-    this.sampledatasource.map((item, i) => i === this.count ? item.youtubelink = item.youtubelink + '?autoplay=1&mute=1&vq=medium' : item.youtubelink = this.removeURLParameter(item.youtubelink))
-    this.active = true
-
-    this.oldScrollTop = e.srcElement.scrollTop
+    this.sampledatasource.map((item, i) => i === e ? item.youtubelink = item.youtubelink + '?autoplay=1&mute=1&vq=medium' : item.youtubelink = this.removeURLParameter(item.youtubelink))
   }
 
   removeURLParameter(url) {
