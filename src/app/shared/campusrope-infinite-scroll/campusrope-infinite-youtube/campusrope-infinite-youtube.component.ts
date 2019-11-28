@@ -9,7 +9,7 @@ import { CampusRopeIScrollComponent } from '../campusrope-infinite-scroll.compon
 })
 export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent implements OnInit {
 
-
+  showData: boolean = false
   active: boolean = true
   oldScrollTop = 0
   count = 0
@@ -19,7 +19,8 @@ export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent imp
     super.ngOnInit();
     super.getTrendingData()
       .then(_ => {
-        this.sampledatasource.map((item, i) => i == 0 ? item.YoutubeUrl = item.YoutubeUrl + '?autoplay=1&mute=1&vq=medium' : item.YoutubeUrl)
+        this.showData = true
+        this.sampledatasource.map((item, i) => i == 0 ? item.youtubeUrl = item.youtubeUrl + '?autoplay=1&mute=1&vq=medium' : item.youtubeUrl)
       });
     window.addEventListener('scroll', this.scroll, true);
 
@@ -59,7 +60,7 @@ export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent imp
       this.scrollTop -= e.srcElement.offsetHeight / 2
     }
 
-    this.sampledatasource.map((item, i) => i === this.count ? item.YoutubeUrl = item.YoutubeUrl + '?autoplay=1&mute=1&vq=medium' : item.YoutubeUrl = this.removeURLParameter(item.YoutubeUrl))
+    this.sampledatasource.map((item, i) => i === this.count ? item.youtubeUrl = item.youtubeUrl + '?autoplay=1&mute=1&vq=medium' : item.youtubeUrl = this.removeURLParameter(item.youtubeUrl))
     this.active = true
 
     this.oldScrollTop = e.srcElement.scrollTop
