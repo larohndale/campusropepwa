@@ -26,13 +26,17 @@ export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent imp
 
   }
 
-  scroll = (e): void => {     
-      if( this.savedscrollTop < e.srcElement.scrollTop && (e.srcElement.scrollTop - this.savedscrollTop)  > this.infiniteYT.nativeElement.offsetHeight-20){
+  scroll = (e): void => {  
+      if(this.count == 0){
+        this.savedscrollTop = 0
+      }   
+      if( this.savedscrollTop < e.srcElement.scrollTop && (e.srcElement.scrollTop - this.savedscrollTop)  > (this.infiniteYT.nativeElement.offsetHeight-50)){
         this.count++
         this.savedscrollTop = e.srcElement.scrollTop
         this.callback( this.count)
       }
-      if( this.savedscrollTop > e.srcElement.scrollTop && ( this.savedscrollTop- e.srcElement.scrollTop ) > this.infiniteYT.nativeElement.offsetHeight-20){
+      
+      if( this.savedscrollTop > e.srcElement.scrollTop &&  (this.infiniteYT.nativeElement.offsetHeight-50) < (this.savedscrollTop- (e.srcElement.scrollTop-20) )){
           this.count--
           this.savedscrollTop = e.srcElement.scrollTop
           this.callback( this.count)
