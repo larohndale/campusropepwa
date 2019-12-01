@@ -1,12 +1,14 @@
 <div>
-    <app-state-selection
-    [states]="states" [selectedState]="selectedState"
-    (onStateChange)="onStateChange($event)"></app-state-selection>
-    <button
-      mat-mini-fab
-      routerLink="/helpline/add"
-      matTooltip="Add Helpline">
-      <i class="material-icons">add</i>
-    </button>
-    <app-helpline-list [helplineList$]="helplines$"></app-helpline-list>
+  <app-state-selection
+    [states]="states"
+    [selectedState]="selectedState"
+    (onStateChange)="onStateChange($event)"
+  ></app-state-selection>
+  <button mat-mini-fab routerLink="/helpline/add" matTooltip="Add Helpline">
+    <i class="material-icons">add</i>
+  </button>
+  <app-helpline-list
+    [helplineList$]="helplines$"
+    [showControls]="true"
+  ></app-helpline-list>
 </div>

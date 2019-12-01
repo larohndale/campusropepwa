@@ -15,6 +15,7 @@ import {
 })
 export class HelplineListComponent implements OnInit {
   @Input() helplineList$: Observable<IHelpline[]>;
+  @Input() showControls = false;
   constructor(public dialog: MatDialog) {}
 
   ngOnInit() {}
@@ -28,6 +29,5 @@ export class HelplineListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log("The dialog was closed");
     });
-    // window.open(url, '_blank');
   }
 }
