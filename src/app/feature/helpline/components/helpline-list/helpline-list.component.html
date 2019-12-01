@@ -12,7 +12,10 @@
       </p>
 
       <div class="expansion-panel-items">
-        <app-click-to-call phoneNumber="{{ helplineData.phoneNumber }}">
+        <span>
+          Helpline Number
+        </span>
+        <app-click-to-call [phoneNumber]="helplineData.phoneNumber">
         </app-click-to-call>
 
         <div class="helpline-content-btn">
@@ -20,12 +23,9 @@
             Website
           </span>
           <h5>
-            <a
-              href="JavaScript:void(0);"
-              (click)="goToLink('website', helplineData.websiteLink)"
-            >
-              {{ helplineData.websiteLink || "-" }}
-            </a>
+            <app-click-to-open
+              [url]="helplineData.websiteLink"
+            ></app-click-to-open>
           </h5>
         </div>
 
@@ -34,14 +34,9 @@
             File Online Complaints
           </span>
           <h5>
-            <a
-              href="JavaScript:void(0);"
-              (click)="
-                goToLink('complaint', helplineData.fileOnlineComplaintLink)
-              "
-            >
-              {{ helplineData.fileOnlineComplaintLink || "-" }}
-            </a>
+            <app-click-to-open
+              [url]="helplineData.fileOnlineComplaintLink"
+            ></app-click-to-open>
           </h5>
         </div>
 

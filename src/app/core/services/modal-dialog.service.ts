@@ -1,24 +1,24 @@
-import { Injectable, TemplateRef, ComponentRef } from '@angular/core';
+import { Injectable, TemplateRef, ComponentRef } from "@angular/core";
 import {
   MatDialog,
   MAT_DIALOG_DATA,
   MatDialogRef,
   MatDialogConfig
-} from '@angular/material';
-import { Observable } from 'rxjs';
+} from "@angular/material";
+import { Observable } from "rxjs";
+import { ComponentType } from "@angular/cdk/portal";
 
 export class ModalSize {
-  public static FULLSCREEN: '100%' = '100%';
+  public static FULLSCREEN: "100%" = "100%";
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ModalDialogService {
-  private static CONFIRMATION_DIALOG_DEFAULT_OPTIONS = {
-    width: '500px',
-    height: '300px'
-  };
+  private static CONFIRMATION_DIALOG_DEFAULT_OPTIONS = {};
+
+  currentDialogRef: MatDialogRef<any>;
 
   constructor(private matDialog: MatDialog) {}
 
@@ -31,11 +31,18 @@ export class ModalDialogService {
    * @returns Reference to the newly-opened dialog.
    */
   open<T>(
-    componentOrTemplateRef: TemplateRef<T>,
+    componentOrTemplateRef: ComponentType<T> | TemplateRef<T>,
     options?: MatDialogConfig
   ): MatDialogRef<T> {
-    options = options || {};
-    options.disableClose = true;
-    return this.matDialog.open(componentOrTemplateRef, options);
+    options = options || ModalDialogService.CONFIRMATION_DIALOG_DEFAULT_OPTIONS;
+    this.currentDialogRef = this.matDialog.open(
+      componentOrTemplateRef,
+      options
+    );
+    return this.currentDialogRef;
+  }
+
+  close() {
+    this.currentDialogRef.close();
   }
 }
