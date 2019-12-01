@@ -17,7 +17,9 @@ export class ClickToOpenDialogComponent implements OnInit {
 
   copyLink() {}
 
-  openURL() {}
+  openURL() {
+    window.open(this.dialogData.url, "_blank");
+  }
 
   closeDialog() {
     this.dialogService.close();

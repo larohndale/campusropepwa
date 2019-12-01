@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { NgSelectModule } from "@ng-select/ng-select";
+import { ClipboardModule } from "ngx-clipboard";
 import { DrawerComponent } from "./drawer/drawer.component";
 import { YoutubePlayerComponent } from "./youtube-player/youtube-player.component";
 import { UserSearchComponent } from "./user-search/user-search.component";
@@ -48,10 +49,12 @@ import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    NgSelectModule
+    NgSelectModule,
+    ClipboardModule
   ],
   exports: [
     MaterialModule,
+    ClipboardModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
