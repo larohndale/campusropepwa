@@ -94,8 +94,13 @@ export class AuthService {
   }
 
   logout() {
+    this.updateState({
+      ..._state,
+      isAuthenticated: false,
+      loggedUser: null
+    });
     this.localStorageService.clear();
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/"]);
   }
 
   loginWithCredentials(credentials: { email: string; password: string }) {
