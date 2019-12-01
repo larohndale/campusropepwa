@@ -1,16 +1,18 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { tap, distinctUntilChanged, map } from 'rxjs/operators';
-import { Router } from '@angular/router';
-import { LocalStorageService } from './local-storage.service';
-import { IUser } from '../models/user';
-import { LocationService } from './location.service';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable, BehaviorSubject } from "rxjs";
+import { environment } from "src/environments/environment";
+import { tap, distinctUntilChanged, map } from "rxjs/operators";
+import { Router } from "@angular/router";
+import { LocalStorageService } from "./local-storage.service";
+import { IUser } from "../models/user";
+import { LocationService } from "./location.service";
+import { state } from "@angular/animations";
 
-const USER_TOKEN = 'USER_TOKEN';
+const USER_TOKEN = "USER_TOKEN";
+const LOGGED_USER = "LOGGED_USER";
 
-const LOGIN_URL = 'unauth/auth/local';
+const LOGIN_URL = "unauth/auth/local";
 
 export interface AuthState {
   loggedUser: IUser | null;
@@ -26,7 +28,7 @@ let _state: AuthState = {
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthService {
   private store = new BehaviorSubject<AuthState>(_state);
@@ -58,7 +60,7 @@ export class AuthService {
   }
 
   googleSignIn(code: string): Observable<any> {
-    return this.httpClient.post('api/auth/google/signin', { code });
+    return this.httpClient.post("api/auth/google/signin", { code });
   }
 
   getToken(): string {
@@ -73,9 +75,27 @@ export class AuthService {
     this.localStorageService.setItem(USER_TOKEN, token);
   }
 
+  setUser(user) {
+    this.localStorageService.setItem(LOGGED_USER, user);
+  }
+
+  getLoggedUser(): IUser {
+    return this.localStorageService.getItem(LOGGED_USER);
+  }
+
+  setupLoggedUser() {
+    if (this.getToken()) {
+      this.updateState({
+        ..._state,
+        isAuthenticated: true,
+        loggedUser: this.getLoggedUser()
+      });
+    }
+  }
+
   logout() {
     this.localStorageService.clear();
-    this.router.navigate(['/login']);
+    this.router.navigate(["/login"]);
   }
 
   loginWithCredentials(credentials: { email: string; password: string }) {
@@ -87,12 +107,13 @@ export class AuthService {
       .pipe(
         tap((res: any) => {
           this.setToken(res.jwt);
+          this.setUser(res.user);
           this.updateState({
             ..._state,
             isAuthenticated: true,
             loggedUser: res.user
           });
-          this.locationService.navigate(['/']);
+          this.locationService.navigate(["/"]);
         })
       )
       .subscribe();
