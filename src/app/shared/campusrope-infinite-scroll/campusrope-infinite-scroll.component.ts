@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { TrendingService } from 'src/app/feature/trending/services/trending.service';
+import { TrendingService } from 'src/app/core/services/trending.service';
 import { ITrending } from 'src/app/core/models/trending';
 
 @Pipe({
