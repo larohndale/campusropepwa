@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrendingService } from 'src/app/core/services/trending.service';
 
 @Component({
   selector: 'app-admin-trending',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminTrendingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly trendingService: TrendingService) { }
 
   ngOnInit() {
+    console.log(this.trendingService.getTrendingData()
+      .subscribe(data => {
+        console.log("TCL: AdminTrendingComponent -> ngOnInit -> data", data)
+      }))
   }
 
 }
