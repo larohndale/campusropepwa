@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { TrendingService } from 'src/app/core/services/trending.service';
 import { ITrending } from 'src/app/core/models/trending';
+import { CommonService } from 'src/app/core/services/common.service';
 
 @Pipe({
   name: 'safe'
@@ -26,7 +26,7 @@ export class CampusRopeIScrollComponent implements OnInit {
 
   public sampledatasource: ITrending[];
 
-  constructor(private readonly trendingService: TrendingService) {
+  constructor(private readonly commonService: CommonService) {
 
   }
 
@@ -43,7 +43,7 @@ export class CampusRopeIScrollComponent implements OnInit {
 
   getTrendingData() {
     return new Promise((res) => {
-      this.trendingService.getTrendingData()
+      this.commonService.getTrendingData()
         .subscribe((data: ITrending[]) => {
           this.sampledatasource = data;
           res()
