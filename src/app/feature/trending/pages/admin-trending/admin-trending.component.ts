@@ -11,10 +11,10 @@ export class AdminTrendingComponent implements OnInit {
   constructor(private readonly commonService: CommonService) { }
 
   ngOnInit() {
-    console.log(this.commonService.getTrendingData()
+    this.commonService.getData()
       .subscribe(data => {
         console.log("TCL: AdminTrendingComponent -> ngOnInit -> data", data)
-      }))
+      })
   }
 
 }
