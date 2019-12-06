@@ -31,6 +31,7 @@ export class CampusRopeIScrollComponent implements OnInit {
   }
 
   ngOnInit() {
+
     // this.sampledatasource.push({ "title": "mytitle", "youtubelink": "https://www.youtube.com/embed/UpQbySufiak" });
     // this.sampledatasource.push({ "title": "safsdf", "youtubelink": "https://www.youtube.com/embed/MrMZzI7TOUk" });
     // this.sampledatasource.push({ "title": "gssadgsda", "youtubelink": "https://www.youtube.com/embed/mV1zX2O91hk" });
@@ -43,7 +44,8 @@ export class CampusRopeIScrollComponent implements OnInit {
 
   getTrendingData() {
     return new Promise((res) => {
-      this.commonService.getTrendingData()
+      const url = (this.apiurl == "TableNames.Trendings") ? "trendings" : ""
+      this.commonService.getData(url)
         .subscribe((data: ITrending[]) => {
           this.sampledatasource = data;
           res()

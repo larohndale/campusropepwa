@@ -10,9 +10,9 @@ export class CommonService {
 
   contentPerPage: number = 100
   constructor(private http: HttpClient) { }
-  private _commonAPI: string = 'https://vast-sands-97057.herokuapp.com/trendings';
-  getData(page = 1): Observable<ITrending[]> {
-    const urlWithPagination = `${this._commonAPI}?_start=${(this.contentPerPage * page) - (this.contentPerPage - 1)}&_limit=${this.contentPerPage}`
+  private _commonAPI: string = 'https://vast-sands-97057.herokuapp.com/';
+  getData(url, page = 1): Observable<ITrending[]> {
+    const urlWithPagination = `${this._commonAPI}${url}?_start=${(this.contentPerPage * page) - (this.contentPerPage - 1)}&_limit=${this.contentPerPage}`
     return this.http.get<ITrending[]>(urlWithPagination);
   }
   getDataBy(parameter, value): Observable<ITrending[]> {
