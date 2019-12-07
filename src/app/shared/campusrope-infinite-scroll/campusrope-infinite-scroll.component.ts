@@ -2,16 +2,9 @@ import { Component, OnInit, Input, Output, EventEmitter, Pipe, PipeTransform } f
 import { DomSanitizer } from '@angular/platform-browser';
 import { ITrending } from 'src/app/core/models/trending';
 import { CommonService } from 'src/app/core/services/common.service';
+import { TableNames } from '../../core/config/TableNames';
 
-@Pipe({
-  name: 'safe'
-})
-export class SafePipe implements PipeTransform {
-  constructor(private sanitizer: DomSanitizer) { }
-  transform(url) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-}
+
 @Component({
   selector: 'campusrope-infinite-scroll',
   templateUrl: './campusrope-infinite-scroll.component.html',
@@ -19,19 +12,21 @@ export class SafePipe implements PipeTransform {
 })
 export class CampusRopeIScrollComponent implements OnInit {
 
-  @Input() apiurl: string;
+  @Input() apiurl: String = "";
   @Input() datasource: any[];
-  @Input() youtube: boolean;
+  @Input() youtube: Boolean;
   @Output() select = new EventEmitter();
 
   public sampledatasource: ITrending[];
 
   constructor(private readonly commonService: CommonService) {
-
+    console.log("this.apiurl :" + this.apiurl)
   }
 
   ngOnInit() {
 
+    this.getData();
+    console.log("this.apiurl :" + this.apiurl)
     // this.sampledatasource.push({ "title": "mytitle", "youtubelink": "https://www.youtube.com/embed/UpQbySufiak" });
     // this.sampledatasource.push({ "title": "safsdf", "youtubelink": "https://www.youtube.com/embed/MrMZzI7TOUk" });
     // this.sampledatasource.push({ "title": "gssadgsda", "youtubelink": "https://www.youtube.com/embed/mV1zX2O91hk" });
@@ -42,9 +37,10 @@ export class CampusRopeIScrollComponent implements OnInit {
     // this.sampledatasource.push({ "title": "sadffsdsfa", "youtubelink": "https://www.youtube.com/embed/mV1zX2O91hk" });
   }
 
-  getTrendingData() {
+  getData() {
+    console.log("this.apiurl :" + this.apiurl)
     return new Promise((res) => {
-      const url = (this.apiurl == "TableNames.Trendings") ? "trendings" : ""
+      const url = this.apiurl;
       this.commonService.getData(url)
         .subscribe((data: ITrending[]) => {
           this.sampledatasource = data;
@@ -61,3 +57,12 @@ export class CampusRopeIScrollComponent implements OnInit {
 
 }
 
+@Pipe({
+  name: 'safe'
+})
+export class SafePipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) { }
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+}

@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ITrending } from 'src/app/core/models/trending';
 import { Observable } from 'rxjs';
+import { TableNames } from '../config/TableNames';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
 
+  public tableNames = TableNames;
   contentPerPage: number = 100
   constructor(private http: HttpClient) { }
   private _commonAPI: string = 'https://vast-sands-97057.herokuapp.com/';

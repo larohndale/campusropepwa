@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../../../../core/services/common.service';
 
 @Component({
   selector: 'app-user-trending',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserTrendingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly commonService: CommonService) { }
 
   ngOnInit() {
   }

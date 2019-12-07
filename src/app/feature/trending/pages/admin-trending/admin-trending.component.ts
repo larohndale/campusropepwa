@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from 'src/app/core/services/common.service';
+import { TableNames } from '../../../../core/config/TableNames';
 
 @Component({
   selector: 'app-admin-trending',
@@ -8,9 +9,12 @@ import { CommonService } from 'src/app/core/services/common.service';
 })
 export class AdminTrendingComponent implements OnInit {
 
+  
+
   constructor(private readonly commonService: CommonService) { }
 
   ngOnInit() {
+    
     /* this.commonService.getData()
       .subscribe(data => {
         console.log("TCL: AdminTrendingComponent -> ngOnInit -> data", data)

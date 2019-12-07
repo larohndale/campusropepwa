@@ -17,7 +17,7 @@ export class CampusRopeISYoutubeComponent extends CampusRopeIScrollComponent imp
 
   ngOnInit() {
     super.ngOnInit();
-    super.getTrendingData()
+    super.getData()
       .then(_ => {
         this.showData = true
         this.sampledatasource.map((item, i) => i == 0 ? item.youtubeUrl = item.youtubeUrl + '?autoplay=1&mute=1&vq=medium' : item.youtubeUrl)
