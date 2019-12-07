@@ -4,5 +4,8 @@
     [selectedState]="selectedState"
     (onStateChange)="onStateChange($event)"
   ></app-state-selection>
-  <app-helpline-list [helplineList$]="helplines$"></app-helpline-list>
+  <app-helpline-list
+    [helplineList$]="helplines$"
+    [showControls]="false"
+  ></app-helpline-list>
 </div>

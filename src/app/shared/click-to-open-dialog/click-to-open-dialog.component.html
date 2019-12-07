@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Link Actions</h1>
+<div mat-dialog-content>
+  <mat-form-field class="full-width">
+    <input
+      matInput
+      [disabled]="true"
+      [value]="dialogData.url"
+      [(ngModel)]="dialogData.url"
+      #linkInput
+    />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button ngxClipboard [cbContent]="dialogData.url">Copy</button>
+  <button mat-button (click)="openURL()">Open URL</button>
+  <button mat-button (click)="closeDialog()">Close</button>
+</div>

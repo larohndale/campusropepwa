@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ITask } from 'src/app/core/models/admin-task';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { AdminTaskService } from '../../feature/admin-task/services/admin-task.service';
-import { map, filter } from 'rxjs/operators';
-import { LocationService } from 'src/app/core/services/location.service';
-import { LayoutService } from 'src/app/core/services/layout.service';
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
+import { ITask } from "src/app/core/models/admin-task";
+import { AuthService } from "src/app/core/services/auth.service";
+import { AdminTaskService } from "../../feature/admin-task/services/admin-task.service";
+import { map, filter } from "rxjs/operators";
+import { LocationService } from "src/app/core/services/location.service";
+import { LayoutService } from "src/app/core/services/layout.service";
 
 @Component({
-  selector: 'app-drawer',
-  templateUrl: './drawer.component.html',
-  styleUrls: ['./drawer.component.scss']
+  selector: "app-drawer",
+  templateUrl: "./drawer.component.html",
+  styleUrls: ["./drawer.component.scss"]
 })
 export class DrawerComponent implements OnInit {
   adminTaskExpanded = false;
@@ -27,6 +27,7 @@ export class DrawerComponent implements OnInit {
   }
 
   onLogout() {
+    this.layoutService.setDrawerShown(false);
     this.authService.logout();
   }
 
