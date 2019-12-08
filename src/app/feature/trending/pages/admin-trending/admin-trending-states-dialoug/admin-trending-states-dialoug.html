@@ -1,13 +1,6 @@
-<h1 mat-dialog-title>Hi </h1>
-<div mat-dialog-content>
-    <p>What's your favorite animal?</p>
-    <!-- <mat-form-field> -->
+<h1 class="dialog-title" mat-dialog-title>List of States</h1>
+<div class="dialog-content" mat-dialog-content>
     <ul *ngFor="let state of states">
-        <li (click)="selectState(state.name)">{{state.name}}</li>
+        <li (click)="selectState(state)">{{state.name}}</li>
     </ul>
-    <!-- </mat-form-field> -->
-</div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
 </div>

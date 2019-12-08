@@ -10,7 +10,7 @@ import { AdminTrendingStatesDialoug } from './admin-trending-states-dialoug/admi
   styleUrls: ['./admin-trending.component.scss']
 })
 export class AdminTrendingComponent implements OnInit {
-
+  selectedState: string = "Select State"
   constructor(public dialog: MatDialog, public readonly commonService: CommonService) { }
 
   openDialog(): void {
@@ -24,13 +24,15 @@ export class AdminTrendingComponent implements OnInit {
     const elem = document.querySelector(".mat-toolbar-single-row")
     const dialogRef = this.dialog.open(AdminTrendingStatesDialoug, {
       panelClass: "admin-trending-states-dialoug",
-      width: window.innerWidth * .65 + 'px',
+      width: window.innerWidth + 'px',
       height: window.innerHeight - elem.clientHeight + 'px',
       data: states,
+      disableClose: true
     });
     dialogRef.afterClosed().
       subscribe(result => {
-        console.log('The dialog was closed');
+        this.selectedState = result.name
+        console.log('The dialog was closed', result);
       });
   }
 

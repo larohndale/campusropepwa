@@ -1,3 +1,13 @@
-li{
-    color: red;
+.dialog-title{
+    text-align: center;
+}
+
+.dialog-content{
+    ul{
+        text-align: center;
+        list-style-type:none;
+        li{
+            cursor: pointer;
+        }
+    }
 }

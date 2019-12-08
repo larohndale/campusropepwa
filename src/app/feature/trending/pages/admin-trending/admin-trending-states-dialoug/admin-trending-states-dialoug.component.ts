@@ -16,8 +16,7 @@ export class AdminTrendingStatesDialoug {
     states = this.data
 
     selectState(selectedState): void {
-        console.log("TCL: AdminTrendingStatesDialoug -> @Inject -> selectedState", selectedState)
-        this.dialogRef.close();
+        this.dialogRef.close(selectedState);
     }
 
 }
