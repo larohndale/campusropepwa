@@ -15,7 +15,8 @@
 
                 <mat-grid-list cols="3" rowHeight="40px">
                   <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <button type="button" style="height: 30px; width: 160px;" class="rounded-button">
+                    <button (click)="openDialog()" type="button" style="height: 30px; width: 160px;"
+                      class="rounded-button">
                       Select State
                     </button>
                   </mat-grid-tile>
