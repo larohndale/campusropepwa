@@ -28,6 +28,13 @@ export const trendingRoutes: Routes = [
       import('./pages/trending-edit/trending-edit.module').then(
         m => m.TrendingEditModule
       )
+  },
+  {
+    path:'topics',
+    loadChildren:() =>
+    import ('./pages/topics/topics.module').then(
+      m => m.TopicsModule
+    )
   }
 ];
 
