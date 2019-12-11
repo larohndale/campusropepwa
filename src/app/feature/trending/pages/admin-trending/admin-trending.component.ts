@@ -3,6 +3,7 @@ import { CommonService } from 'src/app/core/services/common.service';
 import { TableNames } from '../../../../core/config/TableNames';
 import { MatDialog, } from '@angular/material/dialog';
 import { AdminTrendingStatesDialoug } from './admin-trending-states-dialoug/admin-trending-states-dialoug.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-trending',
@@ -43,6 +44,7 @@ export class AdminTrendingComponent implements OnInit {
         console.log("TCL: AdminTrendingComponent -> ngOnInit -> data", data)
       }) */
   }
+
 
 }
 

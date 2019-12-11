@@ -1,9 +1,5 @@
-<div class="helpline-content-btn"
-          (click)="openDialog()">
-    <span>
-        Helpline Number
-    </span>
-    <h2>
-        {{ phoneNumber || '-' }}
-    </h2>
-</div>
+<span (click)="openClickToCallDialog()">
+  <h2>
+    {{ phoneNumber || "-" }}
+  </h2>
+</span>

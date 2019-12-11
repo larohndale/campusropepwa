@@ -1,8 +1,6 @@
 <div class="helpline-wrapper">
-  <pre>{{ (helplineList$ | async).length }}</pre>
   <mat-accordion>
-    <mat-expansion-panel
-      *ngFor="let helplineData of helplineList$ | async">
+    <mat-expansion-panel *ngFor="let helplineData of helplineList$ | async">
       <mat-expansion-panel-header>
         <mat-panel-title>
           {{ helplineData.name }}
@@ -14,9 +12,10 @@
       </p>
 
       <div class="expansion-panel-items">
-
-        <app-click-to-call
-            phoneNumber="{{helplineData.phoneNumber}}">
+        <div>
+          Helpline Number
+        </div>
+        <app-click-to-call [phoneNumber]="helplineData.phoneNumber">
         </app-click-to-call>
 
         <div class="helpline-content-btn">
@@ -24,9 +23,9 @@
             Website
           </span>
           <h5>
-            <a href="JavaScript:void(0);" (click)="goToLink('website', helplineData.websiteLink)">
-              {{ helplineData.websiteLink || '-' }}
-            </a>
+            <app-click-to-open
+              [url]="helplineData.websiteLink"
+            ></app-click-to-open>
           </h5>
         </div>
 
@@ -35,9 +34,9 @@
             File Online Complaints
           </span>
           <h5>
-            <a href="JavaScript:void(0);" (click)="goToLink('complaint',helplineData.fileOnlineComplaintLink)">
-              {{ helplineData.fileOnlineComplaintLink || '-' }}
-            </a>
+            <app-click-to-open
+              [url]="helplineData.fileOnlineComplaintLink"
+            ></app-click-to-open>
           </h5>
         </div>
 
@@ -49,12 +48,13 @@
         </div>
       </div>
       <app-helpline-form-actions
-        [helplineData]="helplineData"></app-helpline-form-actions>
+        *ngIf="showControls"
+        [helplineData]="helplineData"
+      ></app-helpline-form-actions>
     </mat-expansion-panel>
   </mat-accordion>
 
   <h3 *ngIf="(helplineList$ | async)?.length == 0" class="text-center">
     No helplines for this state
   </h3>
-
 </div>

@@ -1,17 +1,25 @@
-import { Injectable } from '@angular/core';
-import { IAdminTask, ITask } from '../../../core/models/admin-task';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { IAdminTask, ITask } from "../../../core/models/admin-task";
+import { BehaviorSubject } from "rxjs";
 import {
   map,
   distinctUntilChanged,
   tap,
   filter,
   switchMap
-} from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from 'src/app/core/services/auth.service';
+} from "rxjs/operators";
+import { HttpClient } from "@angular/common/http";
+import { AuthService } from "src/app/core/services/auth.service";
 
 const ADMIN_TASKS_URL = `unauth/admintasks`;
+const SUPER_ADMIN_EMAIL = "ropesuper1@gmail.com";
+
+const SUPER_ADMIN_ASSIGNMENT_TASK = {
+  id: 100,
+  taskName: "Assign admin task",
+  assigned: true,
+  pageUrl: "/admin-task/view"
+};
 export interface AdminTaskState {
   allAdminTasks: IAdminTask[];
   adminTasksOfLoggedUser: ITask[];
@@ -26,7 +34,7 @@ let _state: AdminTaskState = {
 };
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AdminTaskService {
   private store = new BehaviorSubject<AdminTaskState>(_state);
@@ -39,16 +47,20 @@ export class AdminTaskService {
 
   allUserAdminTaskDataForTable$ = this.allAdminTasks$.pipe(
     map(adminTasks =>
-      adminTasks.map(adminTask => {
-        return {
-          _id: adminTask._id,
-          email: adminTask.user.email,
-          tasks: adminTask.tasks
-            .filter(task => task.assigned)
-            .map(task => task.taskName)
-            .join(' , ')
-        };
-      })
+      adminTasks
+        .filter(adminTask => {
+          return adminTask.user.email !== SUPER_ADMIN_EMAIL;
+        })
+        .map(adminTask => {
+          return {
+            _id: adminTask._id,
+            email: adminTask.user.email,
+            tasks: adminTask.tasks
+              .filter(task => task.assigned)
+              .map(task => task.taskName)
+              .join(" , ")
+          };
+        })
     )
   );
 
@@ -66,8 +78,9 @@ export class AdminTaskService {
     this.authService.loggedUser$
       .pipe(
         filter(loggedUser => !!loggedUser),
-        switchMap(loggedUser => this.findAdminTasksOfUser(loggedUser._id))
+        switchMap(loggedUser => this.findAdminTasksOfUser(loggedUser))
       )
+      .pipe(tap(console.log))
       .subscribe();
   }
 
@@ -89,15 +102,22 @@ export class AdminTaskService {
       .subscribe();
   }
 
-  public findAdminTasksOfUser(userId) {
-    return this.http.get(`${ADMIN_TASKS_URL}?user=${userId}`).pipe(
+  public findAdminTasksOfUser(loggedUser) {
+    return this.http.get(`${ADMIN_TASKS_URL}?user=${loggedUser._id}`).pipe(
       map(adminTask => adminTask[0].tasks),
       map(tasks => tasks.filter(task => task.assigned)),
       tap((tasks: ITask[]) => {
-        this.updateState({
-          ..._state,
-          adminTasksOfLoggedUser: tasks // api returns an array for every query
-        });
+        if (loggedUser.email === SUPER_ADMIN_EMAIL) {
+          this.updateState({
+            ..._state,
+            adminTasksOfLoggedUser: tasks.concat([SUPER_ADMIN_ASSIGNMENT_TASK]) // api returns an array for every query
+          });
+        } else {
+          this.updateState({
+            ..._state,
+            adminTasksOfLoggedUser: tasks // api returns an array for every query
+          });
+        }
       })
     );
   }
