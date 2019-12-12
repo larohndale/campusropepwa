@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ITrending } from 'src/app/core/models/trending';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { TableNames } from '../config/TableNames';
+import { ConstantsService } from '../constants/constants.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CommonService {
 
   public tableNames = TableNames;
   contentPerPage: number = 100
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private readonly constantService: ConstantsService) { }
   private _commonAPI: string = 'https://vast-sands-97057.herokuapp.com/';
   getData(url, page = 1): Observable<ITrending[]> {
     const urlWithPagination = `${this._commonAPI}${url}?_start=${(this.contentPerPage * page) - (this.contentPerPage - 1)}&_limit=${this.contentPerPage}`
@@ -29,5 +30,12 @@ export class CommonService {
   }
   deleteData(id): Observable<any> {
     return this.http.delete(`${this._commonAPI}/${id}`);
+  }
+
+  getState(): Observable<{}[]> {
+    return new Observable(obs => {
+      obs.next(this.constantService.getStates());
+      obs.complete()
+    })
   }
 }

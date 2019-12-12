@@ -1,0 +1,6 @@
+<h1 class="dialog-title" mat-dialog-title>List of States</h1>
+<div class="dialog-content" mat-dialog-content>
+    <ul *ngFor="let state of states">
+        <li (click)="selectState(state)">{{state.name}}</li>
+    </ul>
+</div>

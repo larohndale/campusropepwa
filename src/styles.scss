@@ -49,3 +49,18 @@ body {
 .card-clickable {
   cursor: pointer;
 }
+
+.admin-trending-states-dialoug{
+  .mat-dialog-container{
+  margin-top: 30px;
+  background: #EDEDED;
+  }
+  .mat-dialog-content {
+    display: block;
+    margin: 0 -24px;
+    padding: 15 24px;
+    max-height: 75vh;
+    overflow: auto;
+  }
+}
+

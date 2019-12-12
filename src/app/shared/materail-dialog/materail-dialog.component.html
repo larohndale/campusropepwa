@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+  <p>Add Topic</p>
+  <form class="example-form" autocomplete="off">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Topic Title">
+    </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Post</button>
+</div>

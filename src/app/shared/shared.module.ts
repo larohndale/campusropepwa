@@ -23,6 +23,7 @@ import { CampusRopeISListComponent } from "./campusrope-infinite-scroll/campusro
 import { CampusRopeISYoutubeComponent } from "./campusrope-infinite-scroll/campusrope-infinite-youtube/campusrope-infinite-youtube.component";
 import { ClickToOpenComponent } from "./click-to-open/click-to-open.component";
 import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open-dialog.component";
+import { MaterailDialogComponent } from './materail-dialog/materail-dialog.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open
     CampusRopeIScrollComponent,
     CampusRopeISListComponent,
     CampusRopeISYoutubeComponent,
-    SafePipe
+    SafePipe,
+    MaterailDialogComponent
   ],
   imports: [
     CommonModule,
@@ -75,6 +77,6 @@ import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open
     ClickToOpenComponent,
     ClickToOpenDialogComponent
   ],
-  entryComponents: [ClickToOpenDialogComponent, ClickToCallDialogComponent]
+  entryComponents: [ClickToOpenDialogComponent, ClickToCallDialogComponent,MaterailDialogComponent]
 })
 export class SharedModule {}

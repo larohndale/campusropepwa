@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ITrending } from 'src/app/core/models/trending';
 import { CommonService } from 'src/app/core/services/common.service';
 import { TableNames } from '../../core/config/TableNames';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class CampusRopeIScrollComponent implements OnInit {
 
   public sampledatasource: ITrending[];
 
-  constructor(private readonly commonService: CommonService) {
+  constructor(private readonly commonService: CommonService,public router:Router) {
     console.log("this.apiurl :" + this.apiurl)
   }
 
@@ -52,6 +53,7 @@ export class CampusRopeIScrollComponent implements OnInit {
   selectDataFromSource(data: any) {
     console.log(data);
     this.select.emit(data);
+    this.router.navigate(['/trending/admin'])
   }
 
 
