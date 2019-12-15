@@ -4,6 +4,7 @@ import { TableNames } from '../../../../core/config/TableNames';
 import { MatDialog, } from '@angular/material/dialog';
 import { AdminTrendingStatesDialoug } from './admin-trending-states-dialoug/admin-trending-states-dialoug.component';
 import { Router } from '@angular/router';
+import { AdminTrendingClientsDialogue } from './admin-trending-clients-dialogue/admin-trending-clients-dialogue.component';
 
 @Component({
   selector: 'app-admin-trending',
@@ -11,37 +12,50 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-trending.component.scss']
 })
 export class AdminTrendingComponent implements OnInit {
-  selectedState: string = "Select State"
+  selectedState: string = "Select State";
+  selectedClient: string = "Manage Clients";
+
   constructor(public dialog: MatDialog, public readonly commonService: CommonService) { }
 
-  openDialog(): void {
+  dialogueConfig(data) {
+    const elem = document.querySelector(".mat-toolbar-single-row")
+    const config = {
+      panelClass: "admin-trending-dialougs",
+      width: window.innerWidth + 'px',
+      height: window.innerHeight - elem.clientHeight + 'px',
+      data: data,
+      disableClose: true
+    }
+    return (component) => this.dialog.open(component, config);
+  }
+
+  openStatesDialog(): void {
     this.commonService.getState()
       .subscribe(states => {
-        this.dialogueActivity(states)
+        const dialogRef = this.dialogueConfig(states)(AdminTrendingStatesDialoug)
+        dialogRef.afterClosed().
+          subscribe(result => {
+            this.selectedState = result.name
+          });
       })
   }
 
-  dialogueActivity(states) {
-    const elem = document.querySelector(".mat-toolbar-single-row")
-    const dialogRef = this.dialog.open(AdminTrendingStatesDialoug, {
-      panelClass: "admin-trending-states-dialoug",
-      width: window.innerWidth + 'px',
-      height: window.innerHeight - elem.clientHeight + 'px',
-      data: states,
-      disableClose: true
-    });
-    dialogRef.afterClosed().
-      subscribe(result => {
-        this.selectedState = result.name
-        console.log('The dialog was closed', result);
-      });
+  openClientsDialog(): void {
+    this.commonService.getData('clients')
+      .subscribe(clients => {
+        const dialogRef = this.dialogueConfig(clients)(AdminTrendingClientsDialogue)
+        dialogRef.afterClosed().
+          subscribe(result => {
+            this.selectedClient = result.name
+          });
+      })
   }
 
   ngOnInit() {
 
     /* this.commonService.getData()
       .subscribe(data => {
-        console.log("TCL: AdminTrendingComponent -> ngOnInit -> data", data)
+        // console.log("TCL: AdminTrendingComponent -> ngOnInit -> data", data)
       }) */
   }
 

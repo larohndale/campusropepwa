@@ -15,7 +15,7 @@ export class CommonService {
   constructor(private http: HttpClient, private readonly constantService: ConstantsService) { }
   private _commonAPI: string = 'https://vast-sands-97057.herokuapp.com/';
   getData(url, page = 1): Observable<ITrending[]> {
-    const urlWithPagination = `${this._commonAPI}${url}?_start=${(this.contentPerPage * page) - (this.contentPerPage - 1)}&_limit=${this.contentPerPage}`
+    const urlWithPagination = `${this._commonAPI}${url}?_start=${((this.contentPerPage * page) - 1) - (this.contentPerPage - 1)}&_limit=${this.contentPerPage}`
     return this.http.get<ITrending[]>(urlWithPagination);
   }
   getDataBy(parameter, value): Observable<ITrending[]> {
@@ -38,4 +38,5 @@ export class CommonService {
       obs.complete()
     })
   }
+
 }

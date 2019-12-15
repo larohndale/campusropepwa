@@ -1,0 +1,9 @@
+<h1 class="dialog-title" mat-dialog-title>Manage Clients</h1>
+<div class="dialog-content" mat-dialog-content>
+    <div class="add-client-btn">
+        <button>Add Client</button>
+    </div>
+    <ul *ngFor="let client of clients">
+        <li (click)="select(client)">{{client.name}}</li>
+    </ul>
+</div>
