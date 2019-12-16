@@ -30,11 +30,18 @@ export const trendingRoutes: Routes = [
       )
   },
   {
-    path:'topics',
-    loadChildren:() =>
-    import ('./pages/topics/topics.module').then(
-      m => m.TopicsModule
-    )
+    path: 'topics',
+    loadChildren: () =>
+      import('./pages/topics/topics.module').then(
+        m => m.TopicsModule
+      )
+  },
+  {
+    path: 'clients',
+    loadChildren: () =>
+      import('./pages/clients/clients.module').then(
+        m => m.ClientsModule
+      )
   }
 ];
 

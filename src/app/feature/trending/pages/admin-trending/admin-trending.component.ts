@@ -13,7 +13,6 @@ import { AdminTrendingClientsDialogue } from './admin-trending-clients-dialogue/
 })
 export class AdminTrendingComponent implements OnInit {
   selectedState: string = "Select State";
-  selectedClient: string = "Manage Clients";
 
   constructor(public dialog: MatDialog, public readonly commonService: CommonService) { }
 
@@ -36,17 +35,6 @@ export class AdminTrendingComponent implements OnInit {
         dialogRef.afterClosed().
           subscribe(result => {
             this.selectedState = result.name
-          });
-      })
-  }
-
-  openClientsDialog(): void {
-    this.commonService.getData('clients')
-      .subscribe(clients => {
-        const dialogRef = this.dialogueConfig(clients)(AdminTrendingClientsDialogue)
-        dialogRef.afterClosed().
-          subscribe(result => {
-            this.selectedClient = result.name
           });
       })
   }

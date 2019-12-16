@@ -30,9 +30,9 @@
                   </mat-grid-tile>
 
                   <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <button type="button" (click)="openClientsDialog()" style="height: 30px; width: 160px;"
+                    <button type="button" [routerLink]="['/trending/clients']" style="height: 30px; width: 160px;"
                       class="rounded-button">
-                      {{selectedClient}}
+                      Manage Clients
                     </button>
                   </mat-grid-tile>
 

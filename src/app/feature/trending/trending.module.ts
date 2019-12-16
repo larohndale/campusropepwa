@@ -3,10 +3,9 @@ import { CommonModule } from "@angular/common";
 
 import { TrendingRoutingModule } from "./trending-routing.module";
 import { TrendingListComponent } from "./components/trending-list/trending-list.component";
-import { ClientsComponent } from './pages/clients/clients.component';
 
 @NgModule({
-  declarations: [TrendingListComponent, ClientsComponent],
+  declarations: [TrendingListComponent],
   imports: [TrendingRoutingModule, CommonModule]
 })
-export class TrendingModule {}
+export class TrendingModule { }
