@@ -1,1 +1,14 @@
-<p>add-client-dialog works!</p>
+<div mat-dialog-content class="mat-dialog-content">
+    <h3>Add Client</h3>
+    <form class="example-form" autocomplete="off">
+        <h5>Client Name</h5>
+        <mat-form-field class="example-full-width" appearance="outline">
+            <input matInput>
+        </mat-form-field>
+    </form>
+    <button>Upload Logo</button>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Post</button>
+</div>

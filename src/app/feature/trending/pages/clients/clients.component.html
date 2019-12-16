@@ -4,6 +4,6 @@
         <button (click)="addClient()">Add Client</button>
     </div>
     <ul *ngFor="let client of clients">
-        <li (click)="select(client)">{{client.name}}</li>
+        <li (click)="selectedClient(client)">{{client.name}}</li>
     </ul>
 </div>

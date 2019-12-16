@@ -4,7 +4,6 @@ import { TableNames } from '../../../../core/config/TableNames';
 import { MatDialog, } from '@angular/material/dialog';
 import { AdminTrendingStatesDialoug } from './admin-trending-states-dialoug/admin-trending-states-dialoug.component';
 import { Router } from '@angular/router';
-import { AdminTrendingClientsDialogue } from './admin-trending-clients-dialogue/admin-trending-clients-dialogue.component';
 
 @Component({
   selector: 'app-admin-trending',

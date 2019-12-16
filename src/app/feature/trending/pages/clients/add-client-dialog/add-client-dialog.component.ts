@@ -16,4 +16,8 @@ export class AddClientDialog {
     this.dialogRef.close(selectedClient);
   }
 
+  onNoClick() {
+    this.dialogRef.close()
+  }
+
 }
