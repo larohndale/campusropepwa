@@ -5,6 +5,7 @@ import { AuthService } from "../core/services/auth.service";
 import { LayoutService } from "../core/services/layout.service";
 import { routeAnimations } from "../core/core.module";
 import { LocationService } from "../core/services/location.service";
+import { ROUTE_ANIMATIONS_ELEMENTS } from "../core/animations/route.animations";
 
 @Component({
   selector: "app-shell",
@@ -20,6 +21,7 @@ export class ShellComponent implements OnInit {
   routes: string[] = ["", "/helpline", "/trending"];
   currentRoutePosition: string;
   routeChangeCounter = 0;
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   constructor(
     private router: Router,

@@ -25,7 +25,7 @@
       </div>
       <div
         class="Middle"
-        [@routeAnimations]="o.isActivated"
+        [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path"
         (swipeleft)="navigateToDirection(-1)"
         (swiperight)="navigateToDirection(1)"
       >
