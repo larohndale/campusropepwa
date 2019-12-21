@@ -24,6 +24,7 @@ import { CampusRopeISYoutubeComponent } from "./campusrope-infinite-scroll/campu
 import { ClickToOpenComponent } from "./click-to-open/click-to-open.component";
 import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open-dialog.component";
 import { MaterailDialogComponent } from './materail-dialog/materail-dialog.component';
+import { ConcatUrlPipe } from './campusrope-infinite-scroll/concat-url.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MaterailDialogComponent } from './materail-dialog/materail-dialog.compo
     UserSearchComponent,
     StateSelectionPaneComponent,
     FilterPipe,
+    ConcatUrlPipe,
     StateSelectionComponent,
     ClickToCallComponent,
     ClickToCallDialogComponent,

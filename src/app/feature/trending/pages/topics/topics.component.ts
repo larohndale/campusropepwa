@@ -10,7 +10,7 @@ import { CommonService } from 'src/app/core/services/common.service';
 })
 export class TopicsComponent implements OnInit {
 
-  constructor(private readonly commonService: CommonService,public dialog: MatDialog) { }
+  constructor(public commonService: CommonService, public dialog: MatDialog) { }
   ngOnInit() {
   }
   openDialog(): void {
