@@ -24,6 +24,7 @@ import { CampusRopeISYoutubeComponent } from "./campusrope-infinite-scroll/campu
 import { ClickToOpenComponent } from "./click-to-open/click-to-open.component";
 import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open-dialog.component";
 import { MaterailDialogComponent } from './materail-dialog/materail-dialog.component';
+import { SearchableStateSelectionComponent } from './searchable-state-selection/searchable-state-selection.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MaterailDialogComponent } from './materail-dialog/materail-dialog.compo
     CampusRopeISListComponent,
     CampusRopeISYoutubeComponent,
     SafePipe,
-    MaterailDialogComponent
+    MaterailDialogComponent,
+    SearchableStateSelectionComponent
   ],
   imports: [
     CommonModule,

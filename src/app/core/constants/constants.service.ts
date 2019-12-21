@@ -1,15 +1,21 @@
-import { Injectable } from '@angular/core';
-import states from './states';
+import { Injectable } from "@angular/core";
+import states from "./states";
+import { of } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ConstantsService {
+  constructor() {}
 
-constructor() { }
+  public getStates() {
+    return states;
+  }
 
-public getStates() {
-  return states;
-}
-
+  public searchState(term) {
+    const filteredStates = states.filter(state => {
+      return state.name.includes(term);
+    });
+    return of(filteredStates);
+  }
 }
