@@ -8,7 +8,7 @@ import { CommonService } from '../../../../core/services/common.service';
 })
 export class UserTrendingComponent implements OnInit {
 
-  constructor(private readonly commonService: CommonService) { }
+  constructor(public commonService: CommonService) { }
 
   ngOnInit() {
   }
