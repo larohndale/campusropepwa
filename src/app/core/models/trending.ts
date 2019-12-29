@@ -1,9 +1,10 @@
+
 export interface ITrending {
-  _id: string;
-  // headline: string;
-  youtubeUrl: string;
-  state: string;
-  title: string;
-  topic: {};
-  client: {};
+    _id: string;
+    headline: string;
+    name: string;
+    youtubeUrl: string;
+    state: string;
+    topic: {},
+    client: {}
 }

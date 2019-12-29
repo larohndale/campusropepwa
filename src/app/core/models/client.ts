@@ -1,6 +1,6 @@
 export interface IClient {
   _id: string;
-  title:string;
+  name: string;
   logoUrl: string;
 }
 
