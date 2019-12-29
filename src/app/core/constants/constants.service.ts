@@ -14,7 +14,7 @@ export class ConstantsService {
 
   public searchState(term) {
     const filteredStates = states.filter(state => {
-      return state.name.includes(term);
+      return state.title.includes(term);
     });
     return of(filteredStates);
   }
