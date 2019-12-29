@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { of, Observable } from 'rxjs';
-import { Router } from '@angular/router';
-import { AuthService } from '../core/services/auth.service';
-import { LayoutService } from '../core/services/layout.service';
-import { routeAnimations } from '../core/core.module';
-import { LocationService } from '../core/services/location.service';
+import { Component, OnInit } from "@angular/core";
+import { of, Observable } from "rxjs";
+import { Router } from "@angular/router";
+import { AuthService } from "../core/services/auth.service";
+import { LayoutService } from "../core/services/layout.service";
+import { routeAnimations } from "../core/core.module";
+import { LocationService } from "../core/services/location.service";
+import { ROUTE_ANIMATIONS_ELEMENTS } from "../core/animations/route.animations";
 
 @Component({
-  selector: 'app-shell',
-  templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.scss'],
+  selector: "app-shell",
+  templateUrl: "./shell.component.html",
+  styleUrls: ["./shell.component.scss"],
   animations: [routeAnimations]
 })
 export class ShellComponent implements OnInit {
@@ -17,9 +18,10 @@ export class ShellComponent implements OnInit {
   isDesktop$: Observable<boolean>;
   showDrawer$: Observable<boolean>;
   loggedUser$: Observable<any>;
-  routes: string[] = ['', '/helpline', '/trending'];
+  routes: string[] = ["", "/helpline", "/trending"];
   currentRoutePosition: string;
   routeChangeCounter = 0;
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   constructor(
     private router: Router,
@@ -46,13 +48,16 @@ export class ShellComponent implements OnInit {
     this.router.navigate([this.currentRoutePosition]);
   }
 
-  isHelplineRoute() {
-    switch (this.locationService.getCurrentRouteUrl()) {
-      case '/helpline':
-          return false;
-      default:
-          return true;
-    }
+  swipeRightInDrawer() {
+    this.layoutService.toggleDrawer();
   }
 
+  isHelplineRoute() {
+    switch (this.locationService.getCurrentRouteUrl()) {
+      case "/helpline":
+        return false;
+      default:
+        return true;
+    }
+  }
 }

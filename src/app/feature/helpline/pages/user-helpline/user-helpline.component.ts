@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/animations/route.animations';
-import { HelplineService } from '../../services/helpline.service';
-import { ConstantsService } from 'src/app/core/core.module';
-import { IState } from 'src/app/core/models/state';
+import { Component, OnInit } from "@angular/core";
+import { ROUTE_ANIMATIONS_ELEMENTS } from "../../../../core/animations/route.animations";
+import { HelplineService } from "../../services/helpline.service";
+import { ConstantsService } from "src/app/core/core.module";
+import { IState } from "src/app/core/models/state";
 
 @Component({
-  selector: 'app-user-helpline',
-  templateUrl: './user-helpline.component.html',
-  styleUrls: ['./user-helpline.component.scss']
+  selector: "app-user-helpline",
+  templateUrl: "./user-helpline.component.html",
+  styleUrls: ["./user-helpline.component.scss"]
 })
 export class UserHelplineComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   states: IState[];
-  selectedState = 'National';
+  selectedState = "National";
 
   helplines$ = this.helplineService.helplines$;
 
@@ -27,9 +27,10 @@ export class UserHelplineComponent implements OnInit {
   }
 
   onStateChange(selectedState: string) {
+    this.selectedState = selectedState;
     this.helplineService.findHelplinesByState(selectedState);
   }
   onSelectedGroupChanged(value: object) {
-    console.log(value, 'testing');
+    console.log(value, "testing");
   }
 }
