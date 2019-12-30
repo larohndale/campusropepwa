@@ -1,5 +1,13 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
+.back-button {
+  padding: 5px;
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
 mat-toolbar {
   position: relative;
   width: 100%;
@@ -21,9 +29,19 @@ mat-toolbar {
     text-align: center;
     color: #ffffff;
     font-size: 36px !important;
-    font-family: 'Berkshire Swash', cursive !important;
+    font-family: Berkshire Swash, cursive !important;
     margin: 0 !important;
     line-height: 38px !important;
     cursor: pointer;
+  }
+
+  .menu-button {
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    width: 70px;
+    border-radius: 0;
   }
 }

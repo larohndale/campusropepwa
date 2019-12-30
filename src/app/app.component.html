@@ -1,2 +1,4 @@
 <app-top-bar></app-top-bar>
-<router-outlet></router-outlet>
+<div [@routeAnimations]="o.isActivated">
+  <router-outlet #o="outlet"></router-outlet>
+</div>

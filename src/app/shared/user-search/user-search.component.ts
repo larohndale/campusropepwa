@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { IUser } from "../../core/models/user";
 import { Subject, concat, of, Observable } from "rxjs";
-import { UserService } from "../user-search/user.services";
+import { UserService } from "../../core/services/user.service";
 import {
   debounceTime,
   distinctUntilChanged,
