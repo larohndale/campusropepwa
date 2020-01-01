@@ -76,17 +76,6 @@ mat-panel-title{
   }
 }
 
-
-.social-icons {
-  display:flex;
-  justify-content: center;
-  margin-top: 10px;
-
-  > img{
-    cursor: pointer;
-  }
-}
-
 @media (min-width: $min-width) {
   .helpline-content-btn {
     > span, h5 {
