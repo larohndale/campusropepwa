@@ -15,10 +15,7 @@ import { FilterPipe } from "./utils/filter.pipe";
 import { ClickToCallComponent } from "./click-to-call/click-to-call.component";
 import { ClickToCallDialogComponent } from "./click-to-call-dialog/click-to-call-dialog.component";
 import { ImageUploadComponent } from "./image-upload/image-upload.component";
-import {
-  CampusRopeIScrollComponent,
-  SafePipe
-} from "./campusrope-infinite-scroll/campusrope-infinite-scroll.component";
+import { CampusRopeIScrollComponent } from "./campusrope-infinite-scroll/campusrope-infinite-scroll.component";
 import { CampusRopeISListComponent } from "./campusrope-infinite-scroll/campusrope-infinite-list/campusrope-infinite-list.component";
 import { CampusRopeISYoutubeComponent } from "./campusrope-infinite-scroll/campusrope-infinite-youtube/campusrope-infinite-youtube.component";
 import { ClickToOpenComponent } from "./click-to-open/click-to-open.component";
@@ -26,6 +23,7 @@ import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open
 import { MaterailDialogComponent } from "./materail-dialog/materail-dialog.component";
 import { ConcatUrlPipe } from "./campusrope-infinite-scroll/concat-url.pipe";
 import { SearchableStateSelectionComponent } from "./searchable-state-selection/searchable-state-selection.component";
+import { SafePipe } from "./utils/safe.pipe";
 
 @NgModule({
   declarations: [
@@ -79,7 +77,8 @@ import { SearchableStateSelectionComponent } from "./searchable-state-selection/
     ClickToCallComponent,
     ClickToCallDialogComponent,
     ClickToOpenComponent,
-    ClickToOpenDialogComponent
+    ClickToOpenDialogComponent,
+    SafePipe
   ],
   entryComponents: [
     ClickToOpenDialogComponent,
