@@ -15,8 +15,9 @@
         <div>
           Helpline Number
         </div>
-        <app-click-to-call [phoneNumber]="helplineData.phoneNumber">
-        </app-click-to-call>
+        <div *ngFor="let pno of helplineData.phoneNumber.split(',')">
+          <app-click-to-call [phoneNumber]="pno"> </app-click-to-call>
+        </div>
 
         <div class="helpline-content-btn">
           <span>
@@ -40,10 +41,8 @@
           </h5>
         </div>
 
-       <app-social-network-icons
-          [helpline]="helplineData">
-       </app-social-network-icons>
-
+        <app-social-network-icons [helpline]="helplineData">
+        </app-social-network-icons>
       </div>
       <app-helpline-form-actions
         *ngIf="showControls"
