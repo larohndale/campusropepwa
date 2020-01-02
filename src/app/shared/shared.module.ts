@@ -24,6 +24,7 @@ import { MaterailDialogComponent } from "./materail-dialog/materail-dialog.compo
 import { ConcatUrlPipe } from "./campusrope-infinite-scroll/concat-url.pipe";
 import { SearchableStateSelectionComponent } from "./searchable-state-selection/searchable-state-selection.component";
 import { SafePipe } from "./utils/safe.pipe";
+import { SocialNetworkIconsComponent } from "./social-network-icons/social-network-icons.component";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { SafePipe } from "./utils/safe.pipe";
     CampusRopeISYoutubeComponent,
     SafePipe,
     MaterailDialogComponent,
-    SearchableStateSelectionComponent
+    SearchableStateSelectionComponent,
+    SocialNetworkIconsComponent
   ],
   imports: [
     CommonModule,
@@ -78,6 +80,7 @@ import { SafePipe } from "./utils/safe.pipe";
     ClickToCallDialogComponent,
     ClickToOpenComponent,
     ClickToOpenDialogComponent,
+    SocialNetworkIconsComponent,
     SafePipe
   ],
   entryComponents: [

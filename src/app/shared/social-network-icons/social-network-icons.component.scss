@@ -1,0 +1,16 @@
+.social-icons {
+  display:flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  > a {
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+    margin-right: 10px;
+    > img{
+      width: inherit;
+      height: inherit;
+    }
+  }
+}

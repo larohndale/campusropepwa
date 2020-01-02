@@ -40,12 +40,10 @@
           </h5>
         </div>
 
-        <div class="social-icons">
-          <img src="assets/facebook.png" />
-          <img src="assets/twitter.png" />
-          <img src="assets/instagram.png" />
-          <img src="assets/whatsapp.png" />
-        </div>
+       <app-social-network-icons
+          [helpline]="helplineData">
+       </app-social-network-icons>
+
       </div>
       <app-helpline-form-actions
         *ngIf="showControls"
