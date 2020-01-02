@@ -1,0 +1,9 @@
+<h1 class="dialog-title">Manage Clients</h1>
+<div class="dialog-content">
+  <div class="add-client-btn">
+    <button (click)="addClient()">Add Client</button>
+  </div>
+  <ul *ngFor="let client of clients">
+    <li (click)="selectedClient(client)">{{ client.name }}</li>
+  </ul>
+</div>

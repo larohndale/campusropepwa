@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { TrendingModule } from './feature/trending/trending.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,9 +21,10 @@ import { CoreModule } from './core/core.module';
       enabled: environment.production
     }),
     BrowserAnimationsModule,
+    TrendingModule,
     DeviceDetectorModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

@@ -10,7 +10,7 @@ import { AdminTrendingStatesDialoug } from './admin-trending-states-dialoug/admi
   declarations: [AdminTrendingComponent, AdminTrendingStatesDialoug],
   imports: [CommonModule, SharedModule, AdminTrendingRoutingModule],
   entryComponents: [
-    AdminTrendingStatesDialoug
+    AdminTrendingStatesDialoug,
   ],
 })
 export class AdminTrendingModule { }

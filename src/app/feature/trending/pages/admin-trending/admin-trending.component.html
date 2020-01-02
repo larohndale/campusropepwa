@@ -15,7 +15,7 @@
 
                 <mat-grid-list cols="3" rowHeight="40px">
                   <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <button (click)="openDialog()" type="button" style="height: 30px; width: 160px;"
+                    <button (click)="openStatesDialog()" type="button" style="height: 30px; width: 160px;"
                       class="rounded-button">
                       {{selectedState}}
                     </button>
@@ -23,14 +23,15 @@
                   </mat-grid-tile>
 
                   <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <button type="button" [routerLink] = "['/trending/topics']" style="height: 30px; width: 160px; background-color: green; color: white"
-                      class="rounded-button">
+                    <button type="button" [routerLink]="['/trending/topics']"
+                      style="height: 30px; width: 160px; background-color: green; color: white" class="rounded-button">
                       Topics
                     </button>
                   </mat-grid-tile>
 
                   <mat-grid-tile [colspan]="1" [rowspan]="1">
-                    <button type="button" style="height: 30px; width: 160px;" class="rounded-button">
+                    <button type="button" [routerLink]="['/trending/clients']" style="height: 30px; width: 160px;"
+                      class="rounded-button">
                       Manage Clients
                     </button>
                   </mat-grid-tile>
@@ -43,7 +44,9 @@
                   <mat-grid-tile [colspan]="1" [rowspan]="1">
 
                     <button type="button" style="height: 25px; width: 160px;" class="rounded-button">
-                      <span><mat-icon class="rounded-button-micon">add</mat-icon></span>
+                      <span>
+                        <mat-icon class="rounded-button-micon">add</mat-icon>
+                      </span>
 
                       Add News
                     </button>
