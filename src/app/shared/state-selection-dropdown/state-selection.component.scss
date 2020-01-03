@@ -1,11 +1,11 @@
 mat-form-field {
-  width: 30%;
+  width: auto;
+  padding: 5px;
 }
 
 ::ng-deep .mat-form-field-flex {
   background: white;
   border-radius: 29px;
-  padding: 5px 40px;
 }
 
 ::ng-deep .mat-form-field-underline {
@@ -15,3 +15,17 @@ mat-form-field {
 ::ng-deep .mat-select-value-text {
   color: rgb(52, 16, 130);
 }
+::ng-deep .mat-select-arrow {
+  color: rgb(52, 16, 130) !important;
+}
+::ng-deep .mat-select
+{
+background: #FFFFFF;
+border: 1px solid #E1E1E1;
+box-sizing: border-box;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+border-radius: 10px;
+width:150px!important;
+
+}
+

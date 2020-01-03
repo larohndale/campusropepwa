@@ -1,7 +1,7 @@
 <div class="helpline-wrapper">
   <mat-accordion>
     <mat-expansion-panel *ngFor="let helplineData of helplineList$ | async">
-      <mat-expansion-panel-header>
+      <mat-expansion-panel-header [collapsedHeight]="'auto'">
         <mat-panel-title>
           {{ helplineData.name }}
         </mat-panel-title>
@@ -12,21 +12,31 @@
       </p>
 
       <div class="expansion-panel-items">
-        <div>
+        <!-- <div>
           Helpline Number
         </div>
         <div *ngFor="let pno of helplineData.phoneNumber.split(',')">
           <app-click-to-call [phoneNumber]="pno"> </app-click-to-call>
+        </div> -->
+        <div class="helpline-content-btn">
+          <span class="headingHelpline">
+            Helpline Number
+          </span>
+           <span *ngFor="let pno of helplineData.phoneNumber.split(',')">
+            <p>
+              <app-click-to-call [phoneNumber]="pno"> </app-click-to-call>
+              </p>
+              </span>
+          
+
         </div>
 
         <div class="helpline-content-btn">
-          <span>
+          <span class="headingHelpline">
             Website
           </span>
           <h5>
-            <app-click-to-open
-              [url]="helplineData.websiteLink"
-            ></app-click-to-open>
+            <app-click-to-open [url]="helplineData.websiteLink"></app-click-to-open>
           </h5>
         </div>
 
@@ -35,19 +45,14 @@
             File Online Complaints
           </span>
           <h5>
-            <app-click-to-open
-              [url]="helplineData.fileOnlineComplaintLink"
-            ></app-click-to-open>
+            <app-click-to-open [url]="helplineData.fileOnlineComplaintLink"></app-click-to-open>
           </h5>
         </div>
 
         <app-social-network-icons [helpline]="helplineData">
         </app-social-network-icons>
       </div>
-      <app-helpline-form-actions
-        *ngIf="showControls"
-        [helplineData]="helplineData"
-      ></app-helpline-form-actions>
+      <app-helpline-form-actions *ngIf="showControls" [helplineData]="helplineData"></app-helpline-form-actions>
     </mat-expansion-panel>
   </mat-accordion>
 
