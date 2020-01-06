@@ -15,20 +15,35 @@ mat-accordion {
 }
 
 mat-expansion-panel {
-  border-radius: 15px !important;
-  box-shadow: none;
+  // border-radius: 15px !important;
+  // box-shadow: none;
+  // border: 1px solid #ff0000;
+  // box-sizing: border-box;
+  margin-bottom: 40px !important;
+  // background: #ededed;
   border: 1px solid #ff0000;
   box-sizing: border-box;
-  margin-bottom: 15px !important;
+  border-radius: 11px !important;
 }
 
 mat-panel-title {
   justify-content: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
 }
 
 .expansion-panel-desc {
   margin: 10px 20px !important;
-  text-align: justify !important;
+  text-align: center !important;
+  font-weight: 450;
 }
 
 .expansion-panel-items {
@@ -37,17 +52,21 @@ mat-panel-title {
   padding-bottom: 10px;
 }
 
+::ng-deep .mat-expansion-panel-header {
+  padding: 10px !important;
+  font-weight: 600;
+}
 .helpline-content-btn {
   word-break: break-word;
   background: #ededed;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 103px;
   padding: 5px 20px;
-  display: flex;
+  display: inline-block;
   margin: 10px 20px;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  text-align: center;
   cursor: pointer;
 
   > span {
@@ -98,7 +117,13 @@ mat-panel-title {
     }
   }
 }
-
+::ng-deep .mat-expansion-panel-header {
+  background: #ededed;
+}
+::ng-deep .mat-expansion-indicator {
+  // background: #636363;
+  transform: rotate(-180deg);
+}
 @media (max-width: $max-width) {
   .helpline-wrapper {
     margin-left: 15px;
@@ -121,4 +146,8 @@ mat-panel-title {
       font-size: 18px;
     }
   }
+}
+.headingHelpline {
+  color: #27007a;
+  font-weight: 600;
 }

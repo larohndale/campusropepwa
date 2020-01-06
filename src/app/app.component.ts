@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { AuthService } from "src/app/core/services/auth.service";
 import { routeAnimations } from "./core/core.module";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-root",
@@ -10,7 +11,15 @@ import { routeAnimations } from "./core/core.module";
 })
 export class AppComponent {
   title = "campusropepwa";
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+    public router: Router
+    ) {
+      
     this.authService.setupLoggedUser();
   }
+
+  onActivate(event) {
+    window.scroll(0,0);
+   
+}
 }

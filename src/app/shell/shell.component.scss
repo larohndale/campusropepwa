@@ -31,18 +31,22 @@
   .Left {
     width: 20%;
     z-index: 2;
-    background-color: grey;
+    background-color: #CDCDCD;
   }
   
   .Middle {
     flex: 1;
+    background-color: #EDEDED;
+    padding: 75px;
+
+
   }
   
   .Right {
     width: 20%;
     z-index: 2;
-    background-color: grey;
-  }
+    background-color:#CDCDCD;
+  } 
   
   .left-btn {
     left: -45px;

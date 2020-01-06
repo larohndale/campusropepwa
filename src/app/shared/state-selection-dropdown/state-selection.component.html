@@ -1,8 +1,10 @@
-<mat-form-field>
+
+<mat-form-field>    
+    
     <mat-select
-    placeholder="State"
     (selectionChange)="selectOption()"
     [(ngModel)]="selectedState">
+    
     <mat-option *ngFor="let state of states" [value]="state.title">
         {{ state.title }}
     </mat-option>
