@@ -28,14 +28,22 @@ mat-expansion-panel {
 
 mat-panel-title {
   justify-content: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
 }
 
 .expansion-panel-desc {
   margin: 10px 20px !important;
   text-align: center !important;
-  font-weight: 600;
-  
- 
+  font-weight: 450;
 }
 
 .expansion-panel-items {
@@ -47,7 +55,6 @@ mat-panel-title {
 ::ng-deep .mat-expansion-panel-header {
   padding: 10px !important;
   font-weight: 600;
-
 }
 .helpline-content-btn {
   word-break: break-word;
@@ -139,13 +146,8 @@ mat-panel-title {
       font-size: 18px;
     }
   }
-
 }
-.headingHelpline{
-  color: #27007A;
+.headingHelpline {
+  color: #27007a;
   font-weight: 600;
 }
-
-
-
-

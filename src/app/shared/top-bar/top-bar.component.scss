@@ -16,6 +16,7 @@ mat-toolbar {
   justify-content: space-between;
   align-items: center;
   height: $toolbar-height;
+  background-color:#27007A ;
 
   img {
     cursor: pointer;
@@ -28,11 +29,14 @@ mat-toolbar {
   .app-title {
     text-align: center;
     color: #ffffff;
-    font-size: 36px !important;
-    font-family: Berkshire Swash, cursive !important;
+    // font-family: Berkshire Swash, cursive !important;
     margin: 0 !important;
-    line-height: 38px !important;
     cursor: pointer;
+    font-family: Berkshire Swash !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
   }
 
   .menu-button {
