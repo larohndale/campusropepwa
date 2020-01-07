@@ -34,7 +34,6 @@ export class TopBarComponent implements OnInit {
       }
     });
 
-    console.log(this.route)
     
     this.isAuthenticated$ = this.authService.isAuthenticated$;
   }
