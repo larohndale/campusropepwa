@@ -1,6 +1,7 @@
 <ng-select
   [items]="stateList$ | async"
-  bindLabel="name"
+  bindLabel="title"
+  class="custom"
   [trackByFn]="trackByFn"
   [typeahead]="stateSelectionInput$"
   [(ngModel)]="selectedState"

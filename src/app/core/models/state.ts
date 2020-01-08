@@ -1,6 +1,4 @@
 export interface IState {
-  //  name: string;
-  title:string;
+  title: string;
   code: string;
 }
-

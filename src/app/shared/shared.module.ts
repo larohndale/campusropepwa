@@ -81,7 +81,8 @@ import { SocialNetworkIconsComponent } from "./social-network-icons/social-netwo
     ClickToOpenComponent,
     ClickToOpenDialogComponent,
     SocialNetworkIconsComponent,
-    SafePipe
+    SafePipe,
+    SearchableStateSelectionComponent
   ],
   entryComponents: [
     ClickToOpenDialogComponent,

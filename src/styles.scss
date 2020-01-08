@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-
-@import '~@ng-select/ng-select/themes/material.theme.css';
 // @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap');
+
+@import "./ng-select.material.scss";
 
 html,
 body {
@@ -9,12 +9,15 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 /* Let's get this party started */
 ::-webkit-scrollbar {
   width: 5px;
+}
+.ng-select .custom ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items {
+  min-height: 350px !important;
 }
 
 /* Track */
@@ -41,20 +44,25 @@ body {
   text-align: center;
 }
 
+.rounded-button {
+  border-radius: 20px;
+  cursor: pointer;
+}
 
-.rounded-button {border-radius: 20px; cursor: pointer;}
-
-
-.rounded-button-micon{ font-size: 20px; vertical-align: middle; cursor: pointer; }
+.rounded-button-micon {
+  font-size: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
 
 .card-clickable {
   cursor: pointer;
 }
 
-.admin-trending-dialougs{
-  .mat-dialog-container{
-  margin-top: 30px;
-  background: #EDEDED;
+.admin-trending-dialougs {
+  .mat-dialog-container {
+    margin-top: 30px;
+    background: #ededed;
   }
   .mat-dialog-content {
     display: block;
@@ -64,4 +72,3 @@ body {
     overflow: auto;
   }
 }
-

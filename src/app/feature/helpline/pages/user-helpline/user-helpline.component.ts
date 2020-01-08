@@ -12,23 +12,27 @@ import { IState } from "src/app/core/models/state";
 export class UserHelplineComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   states: IState[];
-  selectedState = "National";
+  selectedState: IState;
 
   helplines$ = this.helplineService.helplines$;
 
   constructor(
     private helplineService: HelplineService,
     private constantsService: ConstantsService
-  ) {}
+  ) {
+    this.selectedState = this.constantsService
+      .getStates()
+      .find(s => s.title === "National");
+  }
 
   ngOnInit() {
     this.onStateChange(this.selectedState);
     this.states = this.constantsService.getStates();
   }
 
-  onStateChange(selectedState: string) {
+  onStateChange(selectedState: IState) {
     this.selectedState = selectedState;
-    this.helplineService.findHelplinesByState(selectedState);
+    this.helplineService.findHelplinesByState(selectedState.title);
   }
   onSelectedGroupChanged(value: object) {
     console.log(value, "testing");
