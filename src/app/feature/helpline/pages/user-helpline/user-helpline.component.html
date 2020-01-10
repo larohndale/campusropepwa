@@ -1,12 +1,10 @@
-<h3 class="text-center">{{ selectedState }} Helpline</h3>
+<h3 class="text-center">{{ selectedState.title }} Helpline</h3>
 
 <div [ngClass]="routeAnimationsElements" class="national-sec">
   <div class="state-selection-drop">
-    <app-state-selection
-      [states]="states"
-      [selectedState]="selectedState"
-      (onStateChange)="onStateChange($event)"
-    ></app-state-selection>
+    <app-searchable-state-selection
+      (stateSelected)="onStateChange($event)"
+    ></app-searchable-state-selection>
   </div>
   <app-helpline-list
     [helplineList$]="helplines$"

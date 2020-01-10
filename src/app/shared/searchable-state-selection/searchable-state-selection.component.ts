@@ -25,6 +25,10 @@ export class SearchableStateSelectionComponent implements OnInit {
 
   ngOnInit() {
     this.setupStateSearch();
+    this.stateList$ = of(this.constantsService.getStates());
+    this.selectedState = this.constantsService
+      .getStates()
+      .find(s => s.title === "National");
   }
   trackByFn(item: IState) {
     return item.code;

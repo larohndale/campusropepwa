@@ -13,11 +13,11 @@
 
       <div class="expansion-panel-items">
 
-        <div class="helpline-content-btn">
+        <div class="helpline-content-btn" *ngFor="let pno of helplineData.phoneNumber.split(',')">
           <span class="headingHelpline">
             Helpline Number
           </span>
-           <span *ngFor="let pno of helplineData.phoneNumber.split(',')">
+           <span >
             <p>
               <app-click-to-call [phoneNumber]="pno"> </app-click-to-call>
               </p>

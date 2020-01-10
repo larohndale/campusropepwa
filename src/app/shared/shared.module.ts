@@ -23,8 +23,8 @@ import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open
 import { MaterailDialogComponent } from "./materail-dialog/materail-dialog.component";
 import { ConcatUrlPipe } from "./campusrope-infinite-scroll/concat-url.pipe";
 import { SearchableStateSelectionComponent } from "./searchable-state-selection/searchable-state-selection.component";
-import { SafePipe } from "./utils/safe.pipe";
 import { SocialNetworkIconsComponent } from "./social-network-icons/social-network-icons.component";
+import { SafePipe } from "./safe.pipe";
 
 @NgModule({
   declarations: [
@@ -44,10 +44,10 @@ import { SocialNetworkIconsComponent } from "./social-network-icons/social-netwo
     CampusRopeIScrollComponent,
     CampusRopeISListComponent,
     CampusRopeISYoutubeComponent,
-    SafePipe,
     MaterailDialogComponent,
     SearchableStateSelectionComponent,
-    SocialNetworkIconsComponent
+    SocialNetworkIconsComponent,
+    SafePipe
   ],
   imports: [
     CommonModule,
@@ -81,7 +81,8 @@ import { SocialNetworkIconsComponent } from "./social-network-icons/social-netwo
     ClickToOpenComponent,
     ClickToOpenDialogComponent,
     SocialNetworkIconsComponent,
-    SafePipe
+    SafePipe,
+    SearchableStateSelectionComponent
   ],
   entryComponents: [
     ClickToOpenDialogComponent,
