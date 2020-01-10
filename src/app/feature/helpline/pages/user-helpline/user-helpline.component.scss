@@ -14,3 +14,15 @@ h3 {
   font-weight: 450;
   top: 46px;
 }
+
+@media (max-width:970px) {
+  .national-sec {
+    margin-top: 70px;
+  }
+}
+@media (max-width:768px) {
+.national-sec {
+  margin-top: 70px;
+}
+
+}

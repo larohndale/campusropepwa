@@ -49,3 +49,19 @@ mat-toolbar {
     border-radius: 0;
   }
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    
+  .app-title {
+    text-align: center;
+    color: #ffffff;
+    // font-family: Berkshire Swash, cursive !important;
+    margin: 0 !important;
+    cursor: pointer;
+    font-family: Berkshire Swash !important;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
+  }
+  
+}
