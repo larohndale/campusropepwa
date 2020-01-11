@@ -6,7 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
+  width: 10%;
+  height: 100%;
 }
 mat-toolbar {
   position: relative;
@@ -16,7 +17,7 @@ mat-toolbar {
   justify-content: space-between;
   align-items: center;
   height: $toolbar-height;
-  background-color:#27007A ;
+  background-color: #27007a;
 
   img {
     cursor: pointer;
@@ -50,7 +51,6 @@ mat-toolbar {
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    
   .app-title {
     text-align: center;
     color: #ffffff;
@@ -63,5 +63,4 @@ mat-toolbar {
     font-size: 40px;
     line-height: 50px;
   }
-  
 }
