@@ -1,7 +1,30 @@
-.ng-select .ng-select-container {
-  min-height: 20px;
+.ng-select-div {
+  width: 200px;
+  display: inline-block;
+
+  ::ng-deep .ng-select {
+    background: white;
+    border-radius: 29px;
+    padding: 0px 15px;
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  ::ng-deep .ng-select .ng-select-container:after {
+    border: none;
+  }
+
+  ::ng-deep .ng-clear-wrapper {
+    display: none;
+  }
 }
 
-.ng-select.ng-select-single .ng-select-container {
-  height: 20px;
+@media only screen and (max-width: 425px) {
+  .ng-select-div {
+    width: 200px !important;
+  }
+
+  ::ng-deep .Middle {
+    padding: 100px 0 !important;
+  }
 }

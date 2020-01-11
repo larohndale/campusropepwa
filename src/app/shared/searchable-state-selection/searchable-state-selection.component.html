@@ -1,10 +1,12 @@
-<ng-select
-  [items]="stateList$ | async"
-  bindLabel="title"
-  class="custom"
-  [trackByFn]="trackByFn"
-  [typeahead]="stateSelectionInput$"
-  [(ngModel)]="selectedState"
-  (change)="onSelect()"
->
-</ng-select>
+<div class="ng-select-div">
+  <ng-select
+    [items]="stateList$ | async"
+    bindLabel="title"
+    class="custom"
+    [trackByFn]="trackByFn"
+    [typeahead]="stateSelectionInput$"
+    [(ngModel)]="selectedState"
+    (change)="onSelect()"
+  >
+  </ng-select>
+</div>
