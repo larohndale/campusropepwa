@@ -3,7 +3,7 @@
   text-align: center;
 }
 h3 {
-  background: #CDCDCD;
+  background: #cdcdcd;
   border: 1px solid #b5b5b5;
   box-sizing: border-box;
   padding: 15px !important;
@@ -15,14 +15,8 @@ h3 {
   top: 46px;
 }
 
-@media (max-width:970px) {
+@media (max-width: 768px) {
   .national-sec {
     margin-top: 70px;
   }
-}
-@media (max-width:768px) {
-.national-sec {
-  margin-top: 70px;
-}
-
 }

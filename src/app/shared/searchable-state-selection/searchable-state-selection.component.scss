@@ -3,7 +3,7 @@
   display: inline-block;
 
   ::ng-deep .ng-select {
-    background: white;
+    background-color: white;
     border-radius: 29px;
     padding: 0px 15px;
     width: 100%;
@@ -25,6 +25,6 @@
   }
 
   ::ng-deep .Middle {
-    padding: 100px 0 !important;
+    padding: 0 !important;
   }
 }
