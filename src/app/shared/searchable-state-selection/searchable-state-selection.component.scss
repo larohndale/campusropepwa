@@ -1,10 +1,10 @@
 .ng-select-div {
-  width: 200px;
+  width: 90%;
   display: inline-block;
 
   ::ng-deep .ng-select {
     background-color: white;
-    border-radius: 29px;
+    // border-radius: 29px;
     padding: 0px 15px;
     width: 100%;
     padding-bottom: 0;
@@ -13,15 +13,22 @@
   ::ng-deep .ng-select .ng-select-container:after {
     border: none;
   }
+  ::ng-deep .ng-value-container {
+    display: block !important;
+  }
 
   ::ng-deep .ng-clear-wrapper {
     display: none;
+  }
+
+  ::ng-deep .ng-select.ng-select-single .ng-select-container .ng-arrow-wrapper {
+    bottom: 15px;
   }
 }
 
 @media only screen and (max-width: 425px) {
   .ng-select-div {
-    width: 200px !important;
+    // width: 200px !important;
   }
 
   ::ng-deep .Middle {

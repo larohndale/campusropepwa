@@ -1,18 +1,30 @@
-.state-selection-drop {
-  width: 100%;
-  text-align: center;
-}
-h3 {
-  background: #cdcdcd;
-  border: 1px solid #b5b5b5;
-  box-sizing: border-box;
-  padding: 15px !important;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  z-index: 3;
-  font-weight: 450;
-  top: 46px;
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+
+  .state-selection-drop {
+    width: 90%;
+    text-align: center;
+    background-color: white;
+    border-radius: 29px;
+  }
+  h3 {
+    background: #cdcdcd;
+    border: 1px solid #b5b5b5;
+    box-sizing: border-box;
+    padding: 15px !important;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 3;
+    font-weight: 450;
+    top: 46px;
+  }
+
+  ::ng-deep .mat-icon {
+    top: 5px !important;
+    position: relative !important;
+  }
 }
 
 @media (max-width: 768px) {
