@@ -6,18 +6,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10%;
+  width: 50px;
   height: 100%;
 }
 mat-toolbar {
   position: relative;
   width: 100%;
   z-index: 10;
+  height: $toolbar-height;
+  background-color: #27007a;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: $toolbar-height;
-  background-color: #27007a;
+  height: 55px;
 
   img {
     cursor: pointer;
