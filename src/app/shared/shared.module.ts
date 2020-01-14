@@ -20,6 +20,7 @@ import { CampusRopeISListComponent } from "./campusrope-infinite-scroll/campusro
 import { CampusRopeISYoutubeComponent } from "./campusrope-infinite-scroll/campusrope-infinite-youtube/campusrope-infinite-youtube.component";
 import { ClickToOpenComponent } from "./click-to-open/click-to-open.component";
 import { ClickToOpenDialogComponent } from "./click-to-open-dialog/click-to-open-dialog.component";
+import { ComingsoonDialogComponent } from './comingsoon-dialog/comingsoon-dialog.component';
 import { MaterailDialogComponent } from "./materail-dialog/materail-dialog.component";
 import { ConcatUrlPipe } from "./campusrope-infinite-scroll/concat-url.pipe";
 import { SearchableStateSelectionComponent } from "./searchable-state-selection/searchable-state-selection.component";
@@ -40,6 +41,7 @@ import { SafePipe } from "./safe.pipe";
     ClickToCallDialogComponent,
     ClickToOpenComponent,
     ClickToOpenDialogComponent,
+    ComingsoonDialogComponent,
     ImageUploadComponent,
     CampusRopeIScrollComponent,
     CampusRopeISListComponent,
@@ -80,6 +82,7 @@ import { SafePipe } from "./safe.pipe";
     ClickToCallDialogComponent,
     ClickToOpenComponent,
     ClickToOpenDialogComponent,
+    ComingsoonDialogComponent,
     SocialNetworkIconsComponent,
     SafePipe,
     SearchableStateSelectionComponent
@@ -87,7 +90,8 @@ import { SafePipe } from "./safe.pipe";
   entryComponents: [
     ClickToOpenDialogComponent,
     ClickToCallDialogComponent,
-    MaterailDialogComponent
+    MaterailDialogComponent,
+    ComingsoonDialogComponent
   ]
 })
 export class SharedModule {}

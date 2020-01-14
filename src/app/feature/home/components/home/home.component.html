@@ -1,15 +1,23 @@
 <div class="home-menu-container">
-  <button class="home-menu-button" mat-raised-button [routerLink]="'/trending'">
+  <button class="home-menu-button" mat-raised-button>
+    <img src="assets/zenyoga.svg" alt="Zen-Yoga" />
+    <span>Zen-Yoga</span>
+  </button>
+  <!-- <button class="home-menu-button" mat-raised-button [routerLink]="'/trending'">
     <img src="assets/trending_news.svg" alt="Trending News" />
     <span>Trending News</span>
+  </button> -->
+  <button class="home-menu-button" mat-raised-button [routerLink]="'/helpline'">
+    <img src="assets/helpline.svg" alt=" India Helpline" />
+    <span> India Helpline</span>
   </button>
   <button class="home-menu-button" mat-raised-button [routerLink]="'/feed'">
     <img src="assets/feeds.svg" alt="Feeds" />
     <span>Feeds</span>
   </button>
-  <button class="home-menu-button" mat-raised-button [routerLink]="'/helpline'">
-    <img src="assets/helpline.svg" alt=" India Helpline" />
-    <span> India Helpline</span>
+  <button class="home-menu-button" mat-raised-button (click)="comingsoon()">
+    <img src="assets/ngo.svg" alt=" NGOs" />
+    <span> NGOs</span>
   </button>
   <a class="anchorStyle" target="_blank" href="https://gocrowdera.com/IN/self/for-NGO-Start-up/Akshay-17130"> <button class="home-menu-button" mat-raised-button > 
     <img src="assets/Vector.svg" alt="About Us" />
@@ -20,3 +28,4 @@
     <span> Support Us</span>
   </button></a>
 </div>
+
