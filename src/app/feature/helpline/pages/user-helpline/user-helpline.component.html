@@ -2,6 +2,8 @@
 
 <div [ngClass]="routeAnimationsElements" class="national-sec">
   <div class="state-selection-drop">
+    <span><i class="fa fa-search" aria-hidden="true"></i></span>
+
     <app-searchable-state-selection
       (stateSelected)="onStateChange($event)"
     ></app-searchable-state-selection>

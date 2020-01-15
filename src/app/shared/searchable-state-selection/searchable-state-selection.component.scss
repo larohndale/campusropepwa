@@ -1,7 +1,52 @@
-.ng-select .ng-select-container {
-  min-height: 20px;
+
+.ng-select.custom ::ng-deep .ng-select-container  {
+  border-radius: 50px!important;
+  background: white!important;
+  height: 30px!important;
+  color: #27007A!important;
+  z-index: 1;
+font-weight: 450;
+}
+.ng-select.custom ::ng-deep .ng-select-container:after {
+  border-bottom: none!important;
+
+  width: 0%;
 }
 
-.ng-select.ng-select-single .ng-select-container {
-  height: 20px;
+
+.ng-select.custom ::ng-deep .ng-value-label.ng-star-inserted   {
+position: absolute!important;
+top: 50%!important;
+left: 50%!important;
+transform: translate(-50%, -50%)!important;
 }
+.ng-select.custom ::ng-deep .ng-clear-wrapper.ng-star-inserted{
+  display: none!important;
+}
+.ng-select.custom ::ng-deep.ng-arrow-wrapper {
+  align-self: flex-end;
+  bottom: 16px!important;
+  right:10px!important;
+  color: #27007A!important;
+font-weight: 600!important;
+}
+.ng-select.custom ::ng-deep.ng-input {
+  position: absolute!important;
+  top: 50%!important;
+  left: 57%!important;
+  transform: translate(-50%, -43%)!important;
+}
+.ng-select.custom ::ng-deep .ng-dropdown-panel{
+z-index: 1!important;
+ }
+
+
+//  On screens that are 600px or less, set the background color to olive */
+ @media screen and (max-width: 480px) {
+  .ng-select.custom ::ng-deep.ng-input {
+    position: absolute!important;
+    top: 50%!important;
+    left: 60%!important;
+    transform: translate(-50%, -43%)!important;
+  }
+   }

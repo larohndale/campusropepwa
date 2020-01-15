@@ -12,7 +12,7 @@ h3 {
   left: 0;
   z-index: 3;
   font-weight: 450;
-  top: 46px;
+  top: 43px;
 }
 
 @media (max-width:970px) {
@@ -25,4 +25,15 @@ h3 {
   margin-top: 70px;
 }
 
+}
+
+.state-selection-drop{
+  position: relative;
+}
+.fa-search{
+  position: absolute!important;
+  top: 25%;
+  z-index: 2;
+  left: 3%;
+  font-size: 17px!important;
 }
