@@ -1,13 +1,5 @@
-
-<ng-select
-  [items]="stateList$ | async"
-  bindLabel="title"
-  class="custom"
-  [trackByFn]="trackByFn"
-  [dropdownPosition] ="bottom"
-  [(ngModel)]="selectedState"
-  (change)="onSelect()"
->
+<ng-select [items]="stateList$ | async" bindLabel="title" class="custom" [trackByFn]="trackByFn"
+  dropdownPosition="bottom" [(ngModel)]="selectedState" (change)="onSelect()">
 </ng-select>
 
 <!-- <ng-select
@@ -20,4 +12,3 @@ bindLabel="title"
 </ng-select>
 
 <div style="margin-top:300px"></div> -->
-
