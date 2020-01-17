@@ -1,52 +1,83 @@
-
-.ng-select.custom ::ng-deep .ng-select-container  {
-  border-radius: 50px!important;
-  background: white!important;
-  height: 30px!important;
-  color: #27007A!important;
+.ng-select.custom ::ng-deep .ng-select-container {
+  border-radius: 50px !important;
+  background: white !important;
+  height: 30px !important;
+  color: #27007a !important;
   z-index: 1;
-font-weight: 450;
+  font-weight: 450;
 }
 .ng-select.custom ::ng-deep .ng-select-container:after {
-  border-bottom: none!important;
+  border-bottom: none !important;
 
   width: 0%;
 }
 
-
-.ng-select.custom ::ng-deep .ng-value-label.ng-star-inserted   {
-position: absolute!important;
-top: 50%!important;
-left: 50%!important;
-transform: translate(-50%, -50%)!important;
+.ng-select.custom ::ng-deep .ng-value-label.ng-star-inserted {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
 }
-.ng-select.custom ::ng-deep .ng-clear-wrapper.ng-star-inserted{
-  display: none!important;
+.ng-select.custom ::ng-deep .ng-clear-wrapper.ng-star-inserted {
+  display: none !important;
 }
 .ng-select.custom ::ng-deep.ng-arrow-wrapper {
   align-self: flex-end;
-  bottom: 16px!important;
-  right:10px!important;
-  color: #27007A!important;
-font-weight: 600!important;
+  bottom: 16px !important;
+  right: 10px !important;
+  color: #27007a !important;
+  font-weight: 600 !important;
 }
 .ng-select.custom ::ng-deep.ng-input {
-  position: absolute!important;
-  top: 50%!important;
-  left: 57%!important;
-  transform: translate(-50%, -43%)!important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 60% !important;
+  transform: translate(-50%, -40%) !important;
 }
-.ng-select.custom ::ng-deep .ng-dropdown-panel{
-z-index: 1!important;
- }
-
-
-//  On screens that are 600px or less, set the background color to olive */
- @media screen and (max-width: 480px) {
+.ng-select.custom ::ng-deep .ng-dropdown-panel {
+  z-index: 1 !important;
+}
+// @media screen and (max-width: 320px) {
+//   .ng-select.custom ::ng-deep.ng-input {
+//     position: absolute !important;
+//     top: 50% !important;
+//     left: 60% !important;
+//     transform: translate(-50%, -40%) !important;
+//   }
+// }
+@media only screen and (max-width: 480px) and (min-width:320px)
+{
   .ng-select.custom ::ng-deep.ng-input {
-    position: absolute!important;
-    top: 50%!important;
-    left: 60%!important;
-    transform: translate(-50%, -43%)!important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 62% !important;
+    transform: translate(-50%, -38%) !important;
   }
-   }
+}
+
+@media only screen and (max-width: 760px) and (min-width: 480px)
+{
+  .ng-select.custom ::ng-deep.ng-input {
+    position: absolute !important;
+    top: 50% !important;
+    left: 60% !important;
+    transform: translate(-50%, -40%) !important;
+  }
+}
+
+
+@media only screen and (max-width: 970px) and (min-width: 768px)
+{
+  .ng-select.custom ::ng-deep.ng-input {
+    position: absolute !important;
+    top: 50% !important;
+    left: 62% !important;
+    transform: translate(-50%, -48%) !important;
+  }
+}
+
+
+
+
+
+
