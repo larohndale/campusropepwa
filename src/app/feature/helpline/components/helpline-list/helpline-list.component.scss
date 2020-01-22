@@ -44,6 +44,7 @@ mat-panel-title {
   margin: 10px 20px !important;
   text-align: center !important;
   font-weight: 450;
+  white-space: pre-line;
 }
 
 .expansion-panel-items {
@@ -57,7 +58,7 @@ mat-panel-title {
   font-weight: 600;
 }
 ::ng-deep .mat-expansion-panel-header-title {
-  margin-right: 0!important;
+  margin-right: 0 !important;
 }
 .helpline-content-btn {
   word-break: break-word;
