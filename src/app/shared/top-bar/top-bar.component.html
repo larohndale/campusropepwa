@@ -1,10 +1,21 @@
 <mat-toolbar>
-  <span class="back-button" >
-    <img  [hidden]="hideElement" src="assets/app-back-icon.png" alt="go-back" (click)="goBack()" />
+  <span class="back-button">
+    <img
+      [hidden]="hideElement"
+      src="assets/app-back-icon.png"
+      alt="go-back"
+      (click)="goBack()"
+    />
   </span>
   <h3 class="app-title" [routerLink]="'/'">CampusRope</h3>
-  <button [style.visibility]="(isAuthenticated$ | async) ? 'visible' : 'hidden'" mat-icon-button class="menu-button"
-    (click)="toggleDrawer()">
-    <mat-icon aria-hidden="false" aria-label="drawer menu icon">reorder</mat-icon>
+  <button
+    [style.visibility]="(isAuthenticated$ | async) ? 'visible' : 'hidden'"
+    mat-icon-button
+    class="menu-button"
+    (click)="toggleDrawer()"
+  >
+    <mat-icon aria-hidden="false" aria-label="drawer menu icon"
+      >reorder</mat-icon
+    >
   </button>
 </mat-toolbar>

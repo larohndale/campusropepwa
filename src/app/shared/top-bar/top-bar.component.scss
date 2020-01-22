@@ -7,16 +7,18 @@
   justify-content: center;
   align-items: center;
   width: 50px;
+  position: absolute;
+  left: 0;
 }
 mat-toolbar {
   position: relative;
   width: 100%;
   z-index: 10;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: $toolbar-height;
-  background-color:#27007A ;
+  background-color: #27007a;
 
   img {
     cursor: pointer;
@@ -47,10 +49,11 @@ mat-toolbar {
     line-height: 0;
     width: 70px;
     border-radius: 0;
+    position: absolute;
+    right: 10px;
   }
 }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    
   .app-title {
     text-align: center;
     color: #ffffff;
@@ -63,5 +66,4 @@ mat-toolbar {
     font-size: 40px;
     line-height: 50px;
   }
-  
 }
