@@ -31,6 +31,11 @@ export class UserHelplineComponent implements OnInit {
   }
 
   onStateChange(selectedState: IState) {
+    if (!selectedState) {
+      selectedState = this.states.find(s => s.title === "National");
+
+      return;
+    }
     this.selectedState = selectedState;
     this.helplineService.findHelplinesByState(selectedState.title);
   }
