@@ -2,7 +2,7 @@
 
 .Container {
   display: flex;
-  overflow: scroll;
+  overflow: hidden;
   height: calc(120vh - 64px); //64 = height of topbar
   margin-top: -64px;
   padding-top: 64px;
