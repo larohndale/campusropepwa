@@ -1,5 +1,3 @@
-
-
 .Container {
   display: flex;
   overflow: hidden;
@@ -18,7 +16,7 @@
 
 .Middle {
   height: 100%;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 .Left,
 .Middle,
@@ -105,8 +103,6 @@
 
 /* (320x480) Smartphone, Portrait */
 @media only screen and (max-width: 480px) and (min-width: 320px) {
-  .Container {
-  }
   .Middle {
     flex: 1;
     background-color: #ededed;

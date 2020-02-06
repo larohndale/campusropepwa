@@ -3,37 +3,36 @@
   text-align: center;
 }
 h3 {
-  background: #CDCDCD;
+  background: #cdcdcd;
   border: 1px solid #b5b5b5;
   box-sizing: border-box;
   padding: 15px !important;
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
-  z-index: 3;
+  z-index: 101;
   font-weight: 450;
   top: 43px;
 }
 
-@media (max-width:970px) {
+@media (max-width: 970px) {
   .national-sec {
     margin-top: 70px;
   }
 }
-@media (max-width:768px) {
-.national-sec {
-  margin-top: 70px;
+@media (max-width: 768px) {
+  .national-sec {
+    margin-top: 70px;
+  }
 }
 
-}
-
-.state-selection-drop{
+.state-selection-drop {
   position: relative;
 }
-.fa-search{
-  position: absolute!important;
-  top: 25%;
+.fa-search {
+  position: absolute !important;
+  top: 61%;
   z-index: 2;
   left: 4%;
-  font-size: 18px!important;
+  font-size: 16px !important;
 }
