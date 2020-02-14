@@ -3,13 +3,17 @@
 
 @import "./ng-select.material.scss";
 
-html,
-body {
-  height: 100%;
+body, html {
+  height: initial !important;
+
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: scroll !important;
+  height: initial !important;
+
 }
 
 /* Let's get this party started */
