@@ -47,13 +47,86 @@ export class CampusRopeIScrollComponent implements OnInit {
 
   getData() {
     console.log("this.apiurl :" + this.apiurl);
-    return new Promise(res => {
-      const url = this.apiurl;
-      this.commonService.getData(url).subscribe((data: ITrending[]) => {
-        this.sampledatasource = data;
+
+    if(this.apiurl === "zenyoga"){
+
+      // https://youtu.be/w_OLzeoEims
+      // https://youtu.be/Cs9g7M2sOGs
+      // https://youtu.be/jYJHHeMyZLU
+      // https://youtu.be/TBcSNUeEOYw
+      // https://youtu.be/-smIS9ucYIA
+      // https://youtu.be/T2vduf6L2xE
+      // https://youtu.be/9et-6Ianbyo
+      // https://youtu.be/deeJuB30OsI
+      // https://youtu.be/mdtOD3Z7oJ4
+      // https://youtu.be/D-X9TloL-WQ
+      // https://youtu.be/ejvYfqQjGcA
+      // https://youtu.be/EDAPk4QGxyc
+      // https://youtu.be/PrNI39qqjks
+      // https://youtu.be/10ec0usDraM
+      // https://youtu.be/upOogs9p6_Y
+
+      var zenyoga = [
+      "https://www.youtube.com/embed/w_OLzeoEims",
+      "https://www.youtube.com/embed/Cs9g7M2sOGs",
+      "https://www.youtube.com/embed/jYJHHeMyZLU",
+      "https://www.youtube.com/embed/TBcSNUeEOYw",
+      "https://www.youtube.com/embed/-smIS9ucYIA",
+      "https://www.youtube.com/embed/T2vduf6L2xE",
+      "https://www.youtube.com/embed/9et-6Ianbyo",
+      "https://www.youtube.com/embed/deeJuB30OsI",
+      "https://www.youtube.com/embed/mdtOD3Z7oJ4",
+      "https://www.youtube.com/embed/D-X9TloL-WQ",
+      "https://www.youtube.com/embed/ejvYfqQjGcA",
+      "https://www.youtube.com/embed/EDAPk4QGxyc",
+      "https://www.youtube.com/embed/PrNI39qqjks",
+      "https://www.youtube.com/embed/10ec0usDraM",
+      "https://www.youtube.com/embed/upOogs9p6_Y",
+      "https://www.youtube.com/embed/y2XGVynUTE8",
+      "https://www.youtube.com/embed/X5m49sBSKGI",
+      "https://www.youtube.com/embed/tzSyrDsfHX8",
+      "https://www.youtube.com/embed/CHL3u8DHhEY",
+      "https://www.youtube.com/embed/HQtOGi6t710",
+      "https://www.youtube.com/embed/Fx91-h2B_jg",
+      "https://www.youtube.com/embed/lO_Y7wKXMFs",
+      "https://www.youtube.com/embed/lobWPHvRc-I",
+      "https://www.youtube.com/embed/M2g-eaBmpeI",
+      "https://www.youtube.com/embed/AawjMfPqEvg",
+      "https://www.youtube.com/embed/pyLXk7y0olA",
+      "https://www.youtube.com/embed/8r_yZSaFUL0",
+      "https://www.youtube.com/embed/C1Yn0RWMh2w",
+      "https://www.youtube.com/embed/BADprJFCCIQ"]
+
+      this.sampledatasource = [];
+      for(var i=0; i<=28; i++){
+        this.sampledatasource.push({ youtubeUrl : zenyoga[i], _id: "", headline : "" , name : "",  state : "", topic : {}, client : {} });
+      }
+      
+      return new Promise(res => {
         res();
       });
-    });
+    
+
+  //     _id: string;
+  // headline: string;
+  // name: string;
+  // youtubeUrl: string;
+  // state: string;
+  // topic: {};
+  // client: {};
+
+    } else {
+      return new Promise(res => {
+        const url = this.apiurl;
+        this.commonService.getData(url).subscribe((data: ITrending[]) => {
+          // console.log(data);
+          this.sampledatasource = data;
+          res();
+        });
+      });
+    }
+    
+    
   }
 
   selectDataFromSource(data: any) {

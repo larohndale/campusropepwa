@@ -16,6 +16,11 @@ export const shellChildRoutes: Routes = [
     path: "feed",
     loadChildren: () =>
       import("../feature/trending/trending.module").then(m => m.TrendingModule)
+  },
+  {
+    path: "zenyoga",
+    loadChildren: () =>
+      import("../feature/zenyoga/zenyoga.module").then(m => m.ZenYogaModule)
   }
 ];
 
