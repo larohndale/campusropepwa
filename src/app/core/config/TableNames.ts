@@ -6,4 +6,7 @@ export class TableNames {
     public static readonly Constants: string = 'constants';
     public static readonly Clients: string = 'clients';
     public static readonly Admintasks: string = 'admintasks';
+    public static readonly ZenYoga: string = 'zenyoga';
+    
+
 }
