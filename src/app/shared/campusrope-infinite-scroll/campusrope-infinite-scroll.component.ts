@@ -11,6 +11,7 @@ import { ITrending } from "src/app/core/models/trending";
 import { CommonService } from "src/app/core/services/common.service";
 import { TableNames } from "../../core/config/TableNames";
 import { Router } from "@angular/router";
+import { YoutubePlayerService } from 'ngx-youtube-player';
 
 @Component({
   selector: "campusrope-infinite-scroll",
@@ -27,7 +28,8 @@ export class CampusRopeIScrollComponent implements OnInit {
 
   constructor(
     private readonly commonService: CommonService,
-    public router: Router
+    public router: Router,
+    public youtubeService: YoutubePlayerService
   ) {
     console.log("this.apiurl :" + this.apiurl);
   }

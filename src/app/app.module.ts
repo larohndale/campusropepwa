@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { TrendingModule } from './feature/trending/trending.module';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +27,8 @@ import { TrendingModule } from './feature/trending/trending.module';
     NgProgressHttpModule,
     BrowserAnimationsModule,
     TrendingModule,
-    DeviceDetectorModule.forRoot()
+    DeviceDetectorModule.forRoot(),
+    NgxYoutubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

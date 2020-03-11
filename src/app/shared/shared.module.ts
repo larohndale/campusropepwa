@@ -26,6 +26,7 @@ import { ConcatUrlPipe } from "./campusrope-infinite-scroll/concat-url.pipe";
 import { SearchableStateSelectionComponent } from "./searchable-state-selection/searchable-state-selection.component";
 import { SocialNetworkIconsComponent } from "./social-network-icons/social-network-icons.component";
 import { SafePipe } from "./safe.pipe";
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { SafePipe } from "./safe.pipe";
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    ClipboardModule
+    ClipboardModule,
+    NgxYoutubePlayerModule
   ],
   exports: [
     MaterialModule,
