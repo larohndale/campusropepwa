@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --optimization=true  --prod=true",
     "build-production": "ng build --optimization=true  --prod=true --aot",
-    "empty-s3-bucket": "aws s3 rm s3://campusrope-site/* --recursive --profile campusrope-dev",
+    "empty-s3-bucket": "aws s3 rm s3://campusrope-site --recursive --profile campusrope-dev",
     "uploading-build": "aws s3 sync ./dist/campusropepwa s3://campusrope-site --profile campusrope-dev",
     "clear-cloudfront-cache": "aws cloudfront create-invalidation --distribution-id E3HH8Q15T7YXW3 --paths '/*' --profile campusrope-dev",
     "deploy-prod": "npm run build-production && npm run empty-s3-bucket && npm run uploading-build && npm run clear-cloudfront-cache",
